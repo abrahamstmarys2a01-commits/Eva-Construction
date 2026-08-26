@@ -43,6 +43,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -80,17 +82,17 @@ a {
   transition: var(--transition-fast);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Common Layout Components */
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1.25rem;
-  }
+  padding: 0 clamp(1rem, 5vw, 2rem);
 }
 
 /* Section Header */
@@ -111,7 +113,7 @@ a {
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   text-transform: uppercase;
   position: relative;
   display: inline-block;
@@ -228,7 +230,7 @@ a {
 .luxury-form {
   background-color: var(--bg-card);
   border: 1px solid var(--border-gold);
-  padding: 3rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
@@ -334,7 +336,7 @@ textarea.form-control {
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  padding: 3rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
   animation: modalFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

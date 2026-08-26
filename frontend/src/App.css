@@ -131,6 +131,7 @@
     gap: 2.5rem;
     transition: var(--transition-smooth);
     border-top: 1px solid var(--border-gold);
+    overflow-y: auto;
   }
 
   .nav-links.mobile-active {
@@ -199,7 +200,7 @@
   position: relative;
   background-color: var(--bg-main);
   border-bottom: 1px solid var(--border-gold);
-  padding: 4rem 0;
+  padding: clamp(2rem, 5vw, 4rem) 0;
   overflow: hidden;
 }
 
@@ -234,7 +235,7 @@
 
 .hero-title-main {
   font-family: var(--font-serif);
-  font-size: 3.5rem;
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
   line-height: 1.15;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
@@ -242,12 +243,6 @@
   background: linear-gradient(to right, #ffffff, #c5a880);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-@media (max-width: 768px) {
-  .hero-title-main {
-    font-size: 2.5rem;
-  }
 }
 
 .hero-desc {
@@ -259,6 +254,7 @@
 
 .hero-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 3rem;
 }
@@ -379,7 +375,7 @@
 
 /* About Us Layout Split */
 .about-section {
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .about-grid {
@@ -465,7 +461,7 @@
 
 /* Services Page & Grid */
 .services-section {
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .services-grid {
@@ -567,7 +563,7 @@
 
 /* Projects Page & Grid */
 .projects-section {
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .projects-grid {
@@ -657,7 +653,7 @@
 
 /* Project Detail Page */
 .project-detail-section {
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .project-detail-grid {
@@ -791,7 +787,7 @@
 
 /* Gallery Grid */
 .gallery-section {
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .gallery-grid {
@@ -867,7 +863,7 @@
 
 /* BOQ & Estimation Page */
 .boq-section {
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .boq-grid {
@@ -946,6 +942,12 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .boq-report-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
 .boq-summary-card {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid var(--border-gold);
@@ -1006,7 +1008,7 @@
 
 /* Blog Page & Cards */
 .blog-section {
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .blog-grid {
@@ -1102,7 +1104,7 @@
 
 /* Contact Page */
 .contact-section {
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .contact-grid {
@@ -1225,7 +1227,7 @@
 .footer {
   background-color: #040405;
   border-top: 1px solid var(--border-gold);
-  padding: 5rem 0 2.5rem;
+  padding: clamp(3rem, 8vw, 5rem) 0 2.5rem;
 }
 
 .footer-grid {
@@ -1323,6 +1325,20 @@
 
 .newsletter-form {
   display: flex;
+}
+
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .newsletter-form .form-control {
+    border-right: 1px solid var(--border-gold);
+  }
+  .newsletter-form button {
+    padding: 0.85rem;
+    width: 100%;
+  }
 }
 
 .newsletter-form .form-control {
