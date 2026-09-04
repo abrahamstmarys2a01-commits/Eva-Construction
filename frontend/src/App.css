@@ -300,13 +300,34 @@
   padding: 0.75rem;
   background: rgba(197, 168, 128, 0.02);
   width: 100%;
+  position: relative;
 }
 
-.hero-image-wrap img {
+.hero-image-slider-container {
   width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image-slider {
+  display: flex;
+  width: 400%; /* 4 images * 100% */
+  animation: slideWave 20s infinite cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.hero-image-slider img {
+  width: 25%; /* 100% / 4 */
   display: block;
   object-fit: cover;
   aspect-ratio: 4/3;
+}
+
+@keyframes slideWave {
+  0%, 20% { transform: translateX(0%); }
+  25%, 45% { transform: translateX(-25%); }
+  50%, 70% { transform: translateX(-50%); }
+  75%, 95% { transform: translateX(-75%); }
+  100% { transform: translateX(0%); }
 }
 
 /* Home Section Layouts: Split Featured Projects + Stats Box */
@@ -467,8 +488,8 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
 }
 
 @media (max-width: 992px) {

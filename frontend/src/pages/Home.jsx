@@ -39,7 +39,14 @@ export default function Home({ navigateTo, projects, openProjectDetails, heroVil
             </div>
 
             <div className="hero-image-wrap">
-              <img src={heroVillaImg} alt="Luxury Modern Villa" />
+              <div className="hero-image-slider-container">
+                <div className="hero-image-slider">
+                  <img src={heroVillaImg} alt="Luxury Modern Villa" />
+                  <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Luxury Interior" />
+                  <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Modern Home" />
+                  <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Villa Exterior" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
