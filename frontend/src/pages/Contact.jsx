@@ -20,7 +20,7 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
                 <Phone className="contact-info-icon" size={24} />
                 <div className="contact-info-text">
                   <h4>Phone</h4>
-                  <p>+91 12345 67890</p>
+                  <p>+91 7397101215</p>
                 </div>
               </div>
 
@@ -28,7 +28,7 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
                 <Mail className="contact-info-icon" size={24} />
                 <div className="contact-info-text">
                   <h4>Email</h4>
-                  <p>info@evaateliergroup.com</p>
+                  <p>the.evaateliers@gmail.com</p>
                 </div>
               </div>
 
@@ -36,7 +36,7 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
                 <MapPin className="contact-info-icon" size={24} />
                 <div className="contact-info-text">
                   <h4>Address</h4>
-                  <p>No. 123, Anna Salai, Chennai,<br />Tamil Nadu - 600002</p>
+                  <p>WD-54, Anandha bhavan complex, Second floor,<br />17/52, Puthur High Rd, Tiruchirappalli,<br />Tamil Nadu 620017</p>
                 </div>
               </div>
 
@@ -121,7 +121,7 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
             <div className="map-dots"></div>
             <MapPin className="map-marker" size={50} style={{color: 'var(--primary-gold)'}} />
             <div className="map-label" style={{fontSize: '1rem', color: '#fff'}}>Eva Atelier Group</div>
-            <p style={{fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.25rem'}}>No. 123, Anna Salai, Chennai, Tamil Nadu - 600002</p>
+            <p style={{fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.25rem'}}>WD-54, Anandha bhavan complex, Second floor, 17/52, Puthur High Rd, Tiruchirappalli, Tamil Nadu 620017</p>
           </div>
         </div>
       </div>

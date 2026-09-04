@@ -65,6 +65,7 @@
   text-transform: uppercase;
   letter-spacing: 0.3em;
   display: block;
+  font-weight: bold;
 }
 
 .nav-links {
