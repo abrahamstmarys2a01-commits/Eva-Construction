@@ -21,7 +21,6 @@ import './App.css';
 // Import local generated assets
 import heroVillaImg from './assets/hero_villa.png';
 import aboutVillaImg from './assets/about_villa.png';
-import boqEstimationImg from './assets/boq_estimation.png';
 
 // Import newly created page components
 import Home from './pages/Home';
@@ -30,37 +29,23 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Gallery from './pages/Gallery';
-import BOQ from './pages/BOQ';
-import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import GetQuote from './pages/GetQuote';
 
 export default function App() {
-  const [activePage, setActivePage] = useState('HOME');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarScrolled, setNavbarScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   
   // Filtering & Detail States
   const [projectFilter, setProjectFilter] = useState('ALL');
   const [galleryFilter, setGalleryFilter] = useState('ALL');
   const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedBlog, setSelectedBlog] = useState(null);
   const [selectedGalleryImg, setSelectedGalleryImg] = useState(null);
   const [activeProjectThumbIndex, setActiveProjectThumbIndex] = useState(0);
+  const [showQuotePage, setShowQuotePage] = useState(false);
 
   // Forms
-  const [boqForm, setBoqForm] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    projectType: '',
-    projectLocation: '',
-    projectArea: '',
-    finishLevel: 'Premium',
-    message: ''
-  });
-  const [boqResult, setBoqResult] = useState(null);
-  const [boqModalOpen, setBoqModalOpen] = useState(false);
-  
   const [contactForm, setContactForm] = useState({
     fullName: '',
     email: '',
@@ -72,12 +57,10 @@ export default function App() {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSuccess, setNewsletterSuccess] = useState(false);
 
-  // Scroll to top on page change
+  // Scroll to top on page change or project detail open
   useEffect(() => {
     window.scrollTo(0, 0);
-    setMobileMenuOpen(false);
-    setSelectedProject(null);
-  }, [activePage]);
+  }, [selectedProject]);
 
   // Navbar scroll effect
   useEffect(() => {
@@ -91,6 +74,25 @@ export default function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Intersection Observer for scrollspy (active section)
+  useEffect(() => {
+    if (showQuotePage || selectedProject) return;
+
+    const sections = document.querySelectorAll('div[id="home"], section[id="about"], section[id="services"], section[id="projects"], section[id="gallery"], section[id="contact"]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: "-100px 0px -40% 0px" });
+
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [showQuotePage, selectedProject]);
 
   // Hardcoded Data
   const projects = [
@@ -246,99 +248,10 @@ export default function App() {
     { id: 3, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" },
     { id: 4, type: 'ARCHITECTURE', image: aboutVillaImg },
     { id: 5, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" },
-    { id: 6, type: 'CONSTRUCTION', image: boqEstimationImg },
+    { id: 6, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
     { id: 7, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
     { id: 8, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" }
   ];
-
-  const blogPosts = [
-    {
-      id: 1,
-      date: "May 24, 2024",
-      title: "Top 10 Modern Architecture Trends in 2024",
-      desc: "Discover the latest architecture trends that are shaping the future of design.",
-      image: heroVillaImg,
-      fullContent: "The architectural landscape is shifting rapidly. In 2024, sustainability is no longer an afterthought—it's the core. 1. Biophilic design where green trees and light wells cut deep into modern high-rises. 2. Curved and organic facades manufactured using robotic 3D-printing technologies. 3. Smart energy micro-grids integrated into residential glass structures. Developers and architects are focusing on breathable materials that minimize carbon footprints, creating homes that feel connected to the soil while implementing peak tech comfort."
-    },
-    {
-      id: 2,
-      date: "Apr 18, 2024",
-      title: "How to Plan Your Dream Home in 7 Steps",
-      desc: "A complete guide to planning your dream home with ease.",
-      image: aboutVillaImg,
-      fullContent: "Planning a home can feel overwhelming. Here's our signature 7-step blueprint: 1. Establish your maximum budget and lock site variables. 2. Outline key space requirements based on lifestyle (do you host? do you need home offices?). 3. Hire an integrated architecture + construction firm to prevent designer-contractor misalignments. 4. Conceptualize initial spaces. 5. Detail BOQs (Bill of Quantities) to prevent surprises. 6. Source durable premium local items. 7. Execute, track timelines, and apply micro-audits."
-    },
-    {
-      id: 3,
-      date: "Mar 10, 2024",
-      title: "Interior Design Tips for a Luxury Living Room",
-      desc: "Easy tips to design a living room that reflects your style and comfort.",
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
-      fullContent: "Luxury living rooms share common design principles: symmetry, scales, textures, and bespoke lighting. Avoid matching sofa sets; instead, mix leather seating with velvet textures. Use large area rugs to anchor spaces. Accentuate with natural stones like marble panels or raw quartz consoles. Implement three-layered lighting: ambient ceiling troughs, decorative brass suspensions, and warm floor lanterns at 2700K color temperatures."
-    }
-  ];
-
-  // BOQ Calculator Handler
-  const handleCalculateBOQ = (e) => {
-    e.preventDefault();
-    const area = parseFloat(boqForm.projectArea);
-    if (isNaN(area) || area <= 0) return alert("Please enter a valid positive area!");
-
-    let type = boqForm.projectType || 'Villa';
-    let ratePerSqFt = 0;
-    if (type === 'Villa') {
-      if (boqForm.finishLevel === 'Standard') ratePerSqFt = 2500;
-      else if (boqForm.finishLevel === 'Premium') ratePerSqFt = 3500;
-      else ratePerSqFt = 4800;
-    } else if (type === 'Residential') {
-      if (boqForm.finishLevel === 'Standard') ratePerSqFt = 2100;
-      else if (boqForm.finishLevel === 'Premium') ratePerSqFt = 2900;
-      else ratePerSqFt = 3800;
-    } else if (type === 'Commercial') {
-      if (boqForm.finishLevel === 'Standard') ratePerSqFt = 2000;
-      else if (boqForm.finishLevel === 'Premium') ratePerSqFt = 2700;
-      else ratePerSqFt = 3500;
-    } else { // Interior
-      if (boqForm.finishLevel === 'Standard') ratePerSqFt = 1000;
-      else if (boqForm.finishLevel === 'Premium') ratePerSqFt = 1600;
-      else ratePerSqFt = 2400;
-    }
-
-    const totalEstimate = ratePerSqFt * area;
-    const materialCost = totalEstimate * 0.5;
-    const laborCost = totalEstimate * 0.35;
-    const consultingFee = totalEstimate * 0.15;
-
-    const breakdown = [
-      { name: 'Cement & Concrete Works', pct: 15, cost: materialCost * 0.3 },
-      { name: 'Steel Reinforcement', pct: 12, cost: materialCost * 0.24 },
-      { name: 'Bricks & Sand Masonry', pct: 8, cost: materialCost * 0.16 },
-      { name: 'Wood, Windows & Glass', pct: 7, cost: materialCost * 0.14 },
-      { name: 'Premium Finishes & Paints', pct: 8, cost: materialCost * 0.16 },
-      { name: 'Contractor Labor Forces', pct: 35, cost: laborCost },
-      { name: 'Architecture & Supervision', pct: 15, cost: consultingFee }
-    ];
-
-    let timelineWeeks = 16;
-    if (type === 'Villa' || type === 'Residential') {
-      timelineWeeks = Math.round(12 + (area / 300));
-    } else if (type === 'Commercial') {
-      timelineWeeks = Math.round(24 + (area / 1000));
-    } else { // Interior
-      timelineWeeks = Math.round(6 + (area / 800));
-    }
-
-    setBoqResult({
-      total: totalEstimate,
-      breakdown,
-      timeline: `${timelineWeeks} Weeks`,
-      area: `${area.toLocaleString()} sq.ft`,
-      finish: boqForm.finishLevel,
-      type: type
-    });
-
-    setBoqModalOpen(true);
-  };
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
@@ -367,8 +280,23 @@ export default function App() {
   };
 
   // Navigations helper
-  const navigateTo = (page) => {
-    setActivePage(page);
+  const scrollToSection = (sectionId) => {
+    setMobileMenuOpen(false);
+    setSelectedProject(null); // Close project details if open
+    setShowQuotePage(false); // Close quote page if open
+    
+    // Allow React state to update before scrolling
+    setTimeout(() => {
+      if (sectionId === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 80; // 80px is navbar height
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    }, 100);
   };
 
   return (
@@ -376,13 +304,13 @@ export default function App() {
       {/* Navigation Bar */}
       <nav className={`navbar ${navbarScrolled ? 'navbar-scrolled' : ''}`}>
         <div className="container">
-          <div className="logo-area" onClick={() => navigateTo('HOME')} style={{cursor: 'pointer'}}>
+          <div className="logo-area" onClick={() => scrollToSection('home')} style={{cursor: 'pointer'}}>
             <div className="logo-icon">
               <div className="logo-icon-inner"></div>
             </div>
             <div className="logo-text">
-              <h1>Eva Atelier Group</h1>
-              <span>Crafting the future, one space at a time</span>
+              <h1 style={{ color: 'var(--primary-gold)' }}>EVA ATELIER GROUP</h1>
+              <span style={{ textTransform: 'uppercase', letterSpacing: '0.05em' }}>CRAFTING THE FUTURE, ONE SPACE AT A TIME.</span>
             </div>
           </div>
 
@@ -391,77 +319,61 @@ export default function App() {
           </button>
 
           <ul className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-            <li><span className={`nav-link ${activePage === 'HOME' && !selectedProject ? 'active' : ''}`} onClick={() => navigateTo('HOME')}>Home</span></li>
-            <li><span className={`nav-link ${activePage === 'ABOUT' ? 'active' : ''}`} onClick={() => navigateTo('ABOUT')}>About Us</span></li>
-            <li><span className={`nav-link ${activePage === 'SERVICES' ? 'active' : ''}`} onClick={() => navigateTo('SERVICES')}>Services</span></li>
-            <li><span className={`nav-link ${activePage === 'PROJECTS' || selectedProject ? 'active' : ''}`} onClick={() => navigateTo('PROJECTS')}>Projects</span></li>
-            <li><span className={`nav-link ${activePage === 'GALLERY' ? 'active' : ''}`} onClick={() => navigateTo('GALLERY')}>Gallery</span></li>
-            <li><span className={`nav-link ${activePage === 'CONTACT' ? 'active' : ''}`} onClick={() => navigateTo('CONTACT')}>Contact</span></li>
-            <li><button className="btn-primary" onClick={() => navigateTo('BOQ')}>Get a Quote</button></li>
+            <li><span className={`nav-link ${activeSection === 'home' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('home')} style={{cursor: 'pointer'}}>Home</span></li>
+            <li><span className={`nav-link ${activeSection === 'about' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('about')} style={{cursor: 'pointer'}}>About Us</span></li>
+            <li><span className={`nav-link ${activeSection === 'services' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('services')} style={{cursor: 'pointer'}}>Services</span></li>
+            <li><span className={`nav-link ${activeSection === 'projects' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('projects')} style={{cursor: 'pointer'}}>Projects</span></li>
+            <li><span className={`nav-link ${activeSection === 'gallery' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('gallery')} style={{cursor: 'pointer'}}>Gallery</span></li>
+            <li><span className={`nav-link ${activeSection === 'contact' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('contact')} style={{cursor: 'pointer'}}>Contact</span></li>
+            <li><button className="btn-primary" onClick={() => { setMobileMenuOpen(false); setSelectedProject(null); setShowQuotePage(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Get a Quote</button></li>
           </ul>
         </div>
       </nav>
 
       {/* Main Pages Wrapper */}
       <div className="page-wrapper">
-        {selectedProject ? (
-          <ProjectDetail 
-            selectedProject={selectedProject} 
-            setSelectedProject={setSelectedProject} 
-            activeProjectThumbIndex={activeProjectThumbIndex} 
-            setActiveProjectThumbIndex={setActiveProjectThumbIndex} 
-          />
+        {showQuotePage ? (
+          <div className="quote-overlay-wrapper">
+            <GetQuote setShowQuotePage={setShowQuotePage} />
+          </div>
+        ) : selectedProject ? (
+          <div className="project-detail-overlay-wrapper" style={{ paddingTop: '5rem' }}>
+
+            <ProjectDetail 
+              selectedProject={selectedProject} 
+              setSelectedProject={setSelectedProject} 
+              activeProjectThumbIndex={activeProjectThumbIndex} 
+              setActiveProjectThumbIndex={setActiveProjectThumbIndex} 
+            />
+          </div>
         ) : (
           <>
-            {activePage === 'HOME' && (
-              <Home 
-                navigateTo={navigateTo} 
-                projects={projects} 
-                openProjectDetails={openProjectDetails} 
-                heroVillaImg={heroVillaImg} 
-              />
-            )}
-            {activePage === 'ABOUT' && (
-              <About aboutVillaImg={aboutVillaImg} />
-            )}
-            {activePage === 'SERVICES' && (
-              <Services navigateTo={navigateTo} />
-            )}
-            {activePage === 'PROJECTS' && (
-              <Projects 
-                projects={projects} 
-                openProjectDetails={openProjectDetails} 
-                projectFilter={projectFilter} 
-                setProjectFilter={setProjectFilter} 
-              />
-            )}
-            {activePage === 'GALLERY' && (
-              <Gallery 
-                galleryItems={galleryItems} 
-                galleryFilter={galleryFilter} 
-                setGalleryFilter={setGalleryFilter} 
-                setSelectedGalleryImg={setSelectedGalleryImg} 
-              />
-            )}
-            {activePage === 'BOQ' && (
-              <BOQ 
-                boqForm={boqForm} 
-                setBoqForm={setBoqForm} 
-                handleCalculateBOQ={handleCalculateBOQ} 
-                boqEstimationImg={boqEstimationImg} 
-              />
-            )}
-            {activePage === 'BLOG' && (
-              <Blog blogPosts={blogPosts} setSelectedBlog={setSelectedBlog} />
-            )}
-            {activePage === 'CONTACT' && (
-              <Contact 
-                contactForm={contactForm} 
-                setContactForm={setContactForm} 
-                handleContactSubmit={handleContactSubmit} 
-                contactSuccess={contactSuccess} 
-              />
-            )}
+            <Home 
+              scrollToSection={scrollToSection} 
+              projects={projects} 
+              openProjectDetails={openProjectDetails} 
+              heroVillaImg={heroVillaImg} 
+            />
+            <About aboutVillaImg={aboutVillaImg} />
+            <Services scrollToSection={scrollToSection} />
+            <Projects 
+              projects={projects} 
+              openProjectDetails={openProjectDetails} 
+              projectFilter={projectFilter} 
+              setProjectFilter={setProjectFilter} 
+            />
+            <Gallery 
+              galleryItems={galleryItems} 
+              galleryFilter={galleryFilter} 
+              setGalleryFilter={setGalleryFilter} 
+              setSelectedGalleryImg={setSelectedGalleryImg} 
+            />
+            <Contact 
+              contactForm={contactForm} 
+              setContactForm={setContactForm} 
+              handleContactSubmit={handleContactSubmit} 
+              contactSuccess={contactSuccess} 
+            />
           </>
         )}
       </div>
@@ -471,13 +383,13 @@ export default function App() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-logo-desc">
-              <div className="logo-area" onClick={() => navigateTo('HOME')} style={{cursor: 'pointer'}}>
+              <div className="logo-area" onClick={() => scrollToSection('home')} style={{cursor: 'pointer'}}>
                 <div className="logo-icon">
                   <div className="logo-icon-inner"></div>
                 </div>
                 <div className="logo-text">
-                  <h1 style={{fontSize: '1rem'}}>Eva Atelier Group</h1>
-                  <span>Crafting the future, one space at a time</span>
+                  <h1 style={{fontSize: '1rem', color: 'var(--primary-gold)'}}>EVA ATELIER GROUP</h1>
+                  <span style={{ textTransform: 'uppercase', letterSpacing: '0.05em' }}>CRAFTING THE FUTURE, ONE SPACE AT A TIME.</span>
                 </div>
               </div>
               <p>
@@ -493,18 +405,18 @@ export default function App() {
             <div className="footer-col">
               <h3>Quick Links</h3>
               <ul className="footer-links">
-                <li><span style={{cursor: 'pointer'}} onClick={() => navigateTo('HOME')}>Home</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => navigateTo('ABOUT')}>About Us</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => navigateTo('SERVICES')}>Services</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => navigateTo('PROJECTS')}>Projects</span></li>
+                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('home')}>Home</span></li>
+                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('about')}>About Us</span></li>
+                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('services')}>Services</span></li>
+                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('projects')}>Projects</span></li>
               </ul>
             </div>
 
             <div className="footer-col">
               <h3>Company</h3>
               <ul className="footer-links">
-                <li><span style={{cursor: 'pointer'}} onClick={() => navigateTo('GALLERY')}>Gallery</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => navigateTo('CONTACT')}>Contact</span></li>
+                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('gallery')}>Gallery</span></li>
+                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('contact')}>Contact</span></li>
               </ul>
             </div>
 
@@ -534,92 +446,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-
-      {/* BOQ CALCULATOR MODAL REPORT */}
-      {boqModalOpen && boqResult && (
-        <div className="modal-overlay" onClick={() => setBoqModalOpen(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setBoqModalOpen(false)}><X size={24} /></button>
-            <h3 className="boq-report-title">Detailed BOQ Report</h3>
-            
-            <div className="boq-report-summary">
-              <div className="boq-summary-card">
-                <h4>Project Scope</h4>
-                <p>{boqResult.type}</p>
-              </div>
-              <div className="boq-summary-card">
-                <h4>Est. Cost Range</h4>
-                <p>₹ {Math.round(boqResult.total * 0.95).toLocaleString()} - ₹ {Math.round(boqResult.total * 1.05).toLocaleString()}</p>
-              </div>
-              <div className="boq-summary-card">
-                <h4>Est. Timeline</h4>
-                <p>{boqResult.timeline}</p>
-              </div>
-            </div>
-
-            <h4 style={{fontFamily: 'var(--font-serif)', color: '#fff', fontSize: '1rem', marginBottom: '1rem', textTransform: 'uppercase'}}>Cost Component Breakdown</h4>
-            <table className="boq-breakdown-table">
-              <thead>
-                <tr>
-                  <th>Cost Item Category</th>
-                  <th style={{textAlign: 'center'}}>Percentage</th>
-                  <th style={{textAlign: 'right'}}>Estimated Cost</th>
-                </tr>
-              </thead>
-              <tbody>
-                {boqResult.breakdown.map((item, idx) => (
-                  <tr key={idx}>
-                    <td>
-                      <div>{item.name}</div>
-                      <div className="boq-progress-container">
-                        <div className="boq-progress-bar" style={{width: `${item.pct}%`}}></div>
-                      </div>
-                    </td>
-                    <td style={{textAlign: 'center', fontWeight: '600', color: 'var(--primary-gold)'}}>{item.pct}%</td>
-                    <td style={{textAlign: 'right', fontFamily: 'monospace'}}>₹ {Math.round(item.cost).toLocaleString()}</td>
-                  </tr>
-                ))}
-                <tr style={{borderTop: '2px solid var(--primary-gold)', fontWeight: 'bold'}}>
-                  <td>Grand Total Estimate (Base Projection)</td>
-                  <td>100%</td>
-                  <td style={{textAlign: 'right', fontFamily: 'monospace', color: 'var(--primary-gold)', fontSize: '1rem'}}>₹ {Math.round(boqResult.total).toLocaleString()}</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div style={{textAlign: 'center', marginTop: '2rem'}}>
-              <button className="btn-primary" onClick={() => { setBoqModalOpen(false); navigateTo('CONTACT'); }}>
-                Schedule Architectural Discussion
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* BLOG READ MORE MODAL */}
-      {selectedBlog && (
-        <div className="modal-overlay" onClick={() => setSelectedBlog(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedBlog(null)}><X size={24} /></button>
-            <span className="blog-date" style={{display: 'block', marginBottom: '1rem'}}>{selectedBlog.date}</span>
-            <h3 style={{fontSize: '1.75rem', textTransform: 'uppercase', marginBottom: '1.5rem', color: '#fff', lineHeight: 1.3}}>{selectedBlog.title}</h3>
-            
-            <div style={{border: '1px solid var(--border-gold)', padding: '0.5rem', marginBottom: '2rem'}}>
-              <img src={selectedBlog.image} alt={selectedBlog.title} style={{width: '100%', maxHeight: '350px', objectFit: 'cover', display: 'block'}} />
-            </div>
-
-            <p style={{fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: '1.8', whiteSpace: 'pre-wrap'}}>
-              {selectedBlog.fullContent}
-            </p>
-
-            <div style={{textAlign: 'center', marginTop: '3rem'}}>
-              <button className="btn-outline" onClick={() => setSelectedBlog(null)}>
-                Close Journal
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* GALLERY LIGHTBOX MODAL */}
       {selectedGalleryImg && (

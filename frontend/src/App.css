@@ -35,21 +35,32 @@
 }
 
 .logo-icon {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--primary-gold);
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--primary-gold);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(45deg);
-  background: rgba(197, 168, 128, 0.1);
+  background: transparent;
 }
 
 .logo-icon-inner {
-  width: 20px;
-  height: 20px;
-  background: var(--gold-gradient);
-  transform: rotate(-45deg);
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--primary-gold);
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.logo-icon-inner::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--primary-gold);
 }
 
 .logo-text h1 {
@@ -241,7 +252,7 @@
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(to right, #ffffff, #c5a880);
+  background: linear-gradient(to right, #ffffff, #cb7b0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
