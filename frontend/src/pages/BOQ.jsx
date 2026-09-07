@@ -5,7 +5,7 @@ export default function BOQ({ boqForm, setBoqForm, handleCalculateBOQ, boqEstima
   return (
     <section className="boq-section">
       <div className="container">
-        <span className="breadcrumbs">Home &gt; BOQ & Estimation</span>
+
         <div className="section-header-left">
           <h2>BOQ & Estimation</h2>
           <span className="subtitle" style={{textTransform: 'none', letterSpacing: 'normal', color: 'var(--text-secondary)', marginTop: '0.5rem', maxWidth: '800px', display: 'block'}}>

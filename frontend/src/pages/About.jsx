@@ -14,10 +14,9 @@ export default function About({ aboutVillaImg }) {
         </div>
       </div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '6rem', paddingBottom: '3rem' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '6rem', paddingBottom: '3rem', margin: '0', paddingLeft: 'clamp(1rem, 3vw, 2rem)', maxWidth: '1400px' }}>
         <div className="section-header-left" style={{ marginBottom: '2rem' }}>
           <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', marginBottom: '0.5rem' }}>ABOUT US</h2>
-          <span className="breadcrumbs" style={{ color: 'var(--text-secondary)', textTransform: 'none', letterSpacing: 'normal', fontSize: '0.9rem' }}>Home &gt; About Us</span>
         </div>
 
         <div style={{ maxWidth: '600px' }}>
@@ -56,7 +55,7 @@ export default function About({ aboutVillaImg }) {
 
       {/* Bottom Stats Bar */}
       <div style={{ position: 'relative', zIndex: 1, background: '#080809', borderTop: '1px solid var(--border-gold)' }}>
-        <div className="container">
+        <div className="container" style={{ margin: '0', paddingLeft: 'clamp(1rem, 3vw, 2rem)', maxWidth: '1400px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', padding: '2.5rem 0', textAlign: 'center' }}>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)' }}>
               <h3 style={{ color: 'var(--primary-gold)', fontSize: '2.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>15+</h3>

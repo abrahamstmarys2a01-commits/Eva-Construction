@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Maximize2 } from 'lucide-react';
 
 export default function Gallery({ galleryItems, galleryFilter, setGalleryFilter, setSelectedGalleryImg }) {
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setInView(true);
+          } else {
+            setInView(false);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="gallery" className="gallery-section" style={{ background: '#050506', paddingTop: '5rem', paddingBottom: '5rem' }}>
+    <section id="gallery" ref={sectionRef} className="gallery-section" style={{ background: '#050506', paddingTop: '5rem', paddingBottom: '5rem' }}>
       <div className="container">
         {/* Section Header */}
         <div style={{ borderTop: '1px solid var(--border-gold)', paddingTop: '1rem', marginBottom: '2rem' }}>
@@ -43,9 +71,9 @@ export default function Gallery({ galleryItems, galleryFilter, setGalleryFilter,
               if (galleryFilter === 'COMPLETED') return true;
               return item.type === galleryFilter;
             })
-            .map((item) => (
+            .map((item, index) => (
               <div 
-                key={item.id} 
+                key={`${galleryFilter}-${item.id}-${inView}`} 
                 className="gallery-item-wrapper"
                 onClick={() => setSelectedGalleryImg(item.image)}
                 style={{ 
@@ -56,7 +84,10 @@ export default function Gallery({ galleryItems, galleryFilter, setGalleryFilter,
                   cursor: 'pointer',
                   position: 'relative',
                   padding: '2px', // tiny inner gap before the image
-                  background: 'rgba(197, 168, 128, 0.1)'
+                  background: 'rgba(197, 168, 128, 0.1)',
+                  animation: inView ? 'slideInLeftGallery 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards' : 'none',
+                  animationDelay: `${index * 0.1}s`,
+                  opacity: 0
                 }}
               >
                 <div style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden', position: 'relative' }}>

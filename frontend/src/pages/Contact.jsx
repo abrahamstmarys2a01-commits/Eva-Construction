@@ -11,9 +11,23 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
           <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.05em' }}>CONTACT</h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr 1.5fr', gap: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1.2fr', gap: '3rem' }}>
           
-          {/* Column 1: Contact Info */}
+          {/* Column 1: Map (Moved to left side) */}
+          <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '4px', overflow: 'hidden', position: 'relative', minHeight: '400px' }}>
+            <iframe 
+              src="https://maps.google.com/maps?q=WD-54,+Anandha+bhavan+complex,+Second+floor,+17/52,+Puthur+High+Rd,+Tiruchirappalli,+Tamil+Nadu+620017&t=m&z=15&output=embed&iwloc=near" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0, position: 'absolute', top: 0, left: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Eva Atelier Group Location"
+            ></iframe>
+          </div>
+
+          {/* Column 2: Contact Info */}
           <div>
             <h2 style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--primary-gold)', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.05em' }}>GET IN TOUCH</h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '2rem' }}>
@@ -59,7 +73,7 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
             </div>
           </div>
 
-          {/* Column 2: Contact Form */}
+          {/* Column 3: Contact Form */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', padding: '2.5rem', borderRadius: '4px' }}>
             <h3 style={{ fontSize: '1.1rem', color: 'var(--primary-gold)', textTransform: 'uppercase', marginBottom: '2rem', letterSpacing: '0.05em' }}>
               SEND US A MESSAGE
@@ -109,23 +123,6 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
                 </button>
               </form>
             )}
-          </div>
-
-          {/* Column 3: Map */}
-          <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '4px', overflow: 'hidden', position: 'relative' }}>
-            {/* Simple static dark map background using unsplash and a dark overlay */}
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
-              <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80" alt="Map" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3, filter: 'grayscale(100%)' }} />
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(5, 5, 6, 0.7)' }}></div>
-            </div>
-            
-            {/* Map Marker centered */}
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <MapPin size={40} style={{ color: 'var(--primary-gold)', fill: 'rgba(197, 168, 128, 0.2)' }} />
-              <span style={{ color: 'var(--primary-gold)', fontWeight: 700, fontSize: '1.1rem', whiteSpace: 'nowrap', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
-                EVA ATELIER GROUP
-              </span>
-            </div>
           </div>
 
         </div>

@@ -14,8 +14,8 @@ export default function Home({ scrollToSection, projects, openProjectDetails, he
           </div>
         </div>
 
-        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="hero-content" style={{ maxWidth: '600px', padding: '4rem 0 6rem' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, margin: '0', paddingLeft: 'clamp(1rem, 3vw, 2rem)', maxWidth: '1400px' }}>
+          <div className="hero-content" style={{ maxWidth: '650px', padding: '4rem 0 6rem' }}>
             <h2 className="hero-title-main" style={{ fontSize: '4rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-primary)', lineHeight: '1.1', background: 'none', WebkitTextFillColor: 'initial' }}>
               CRAFTING THE <span style={{display: 'block', fontSize: '5.5rem', color: 'var(--primary-gold)'}}>FUTURE,</span> <span style={{fontSize: '2rem'}}>ONE SPACE AT A TIME.</span>
             </h2>
@@ -68,7 +68,7 @@ export default function Home({ scrollToSection, projects, openProjectDetails, he
 
       {/* Featured Projects Grid & Stats Column */}
       <section className="projects-section" style={{ background: '#050506', paddingTop: '3rem', paddingBottom: '3rem' }}>
-        <div className="container">
+        <div className="container" style={{ margin: '0', paddingLeft: 'clamp(1rem, 3vw, 2rem)', maxWidth: '1400px' }}>
           <div className="section-header-left" style={{ marginBottom: '1.5rem' }}>
             <h2 style={{ fontSize: '1.5rem', color: 'var(--primary-gold)', letterSpacing: '0.1em' }}>FEATURED PROJECTS</h2>
           </div>

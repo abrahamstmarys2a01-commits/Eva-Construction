@@ -4,7 +4,7 @@ export default function Blog({ blogPosts, setSelectedBlog }) {
   return (
     <section className="blog-section">
       <div className="container">
-        <span className="breadcrumbs">Home &gt; Blog</span>
+
         <div className="section-header" style={{textAlign: 'center', marginBottom: '4rem'}}>
           <h2>Our Blog</h2>
           <span className="subtitle" style={{textTransform: 'none', letterSpacing: 'normal', color: 'var(--text-secondary)', marginTop: '1rem', display: 'block'}}>
