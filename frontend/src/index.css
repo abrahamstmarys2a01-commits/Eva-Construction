@@ -2,27 +2,32 @@
 
 :root {
   /* Premium Dark Gold Color Palette */
-  --bg-main: #070708;
-  --bg-card: #111113;
-  --bg-card-hover: #17171a;
-  --bg-navbar: rgba(7, 7, 8, 0.85);
+  --bg-main: #080A0C;
+  --bg-secondary: #111417;
+  --bg-card: #15191C;
+  --bg-card-hover: #1c2125;
+  --bg-navbar: rgba(5, 6, 7, 0.85); /* Based on #050607 */
+  --bg-footer: #050607;
   
-  --primary-gold: #c5a880; /* Elegant Warm Gold */
-  --accent-gold: #e2c293; /* Brighter accent gold */
-  --dark-gold: #8f7451; /* Muted darker gold */
-  --gold-gradient: linear-gradient(135deg, #c5a880 0%, #8f7451 100%);
-  --gold-glow: rgba(197, 168, 128, 0.15);
+  --primary-gold: #D4AF37; /* Primary Gold */
+  --accent-gold: #F2C75C; /* Bright Gold */
+  --dark-gold: #9A7418; /* Dark Gold */
+  --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #9A7418 100%);
+  --gold-glow: rgba(212, 175, 55, 0.15);
   
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a5;
-  --text-muted: #66666a;
+  --text-primary: #F5F1E8; /* Main Heading */
+  --text-secondary: #C7C7C2; /* Body Text */
+  --text-muted: #8F9498; /* Secondary Text */
+  --text-nav: #E7E3DA; /* Navigation */
+  --text-btn: #080A0C; /* Button Text */
   
-  --border-light: rgba(255, 255, 255, 0.06);
-  --border-gold: rgba(197, 168, 128, 0.2);
-  --border-gold-hover: rgba(197, 168, 128, 0.5);
+  --border-light: rgba(245, 241, 232, 0.06);
+  --border-gold: rgba(212, 175, 55, 0.35);
+  --border-gold-hover: rgba(242, 199, 92, 0.5);
+  --border-gold-active: #D4AF37;
   
   /* Fonts */
-  --font-serif: 'Cinzel', serif;
+  --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Montserrat', sans-serif;
   
   /* Transitions */
@@ -66,14 +71,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   color: var(--text-primary);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   font-weight: 500;
 }
 
 p {
-  font-size: 0.95rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 a {
@@ -133,17 +138,18 @@ img {
 
 /* Button Premium Styles */
 .btn-primary {
-  font-family: var(--font-serif);
-  background: var(--gold-gradient);
-  color: #070708;
+  font-family: var(--font-sans);
+  background: var(--primary-gold);
+  color: var(--text-btn);
   border: none;
-  padding: 0.85rem 2rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  padding: 15px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -166,30 +172,31 @@ img {
 }
 
 .btn-primary:hover {
-  background: #ffffff;
-  color: #000;
-  box-shadow: 0 8px 24px rgba(197, 168, 128, 0.35);
+  background: var(--accent-gold);
+  color: var(--text-btn);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
   transform: translateY(-2px);
 }
 
 .btn-outline {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   background: transparent;
-  color: var(--primary-gold);
-  border: 1px solid var(--border-gold);
-  padding: 0.85rem 2rem;
-  font-size: 0.85rem;
+  color: var(--text-primary);
+  border: 1px solid var(--border-gold-active);
+  padding: 15px 28px;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  background: rgba(197, 168, 128, 0.08);
+  background: var(--primary-gold);
   border-color: var(--primary-gold);
-  color: #ffffff;
+  color: var(--text-btn);
   transform: translateY(-2px);
 }
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Check, ArrowLeft } from 'lucide-react';
 
-export default function ProjectDetail({ selectedProject, setSelectedProject, activeProjectThumbIndex, setActiveProjectThumbIndex }) {
+export default function ProjectDetail({ selectedProject, setSelectedProject, closeProjectDetails, activeProjectThumbIndex, setActiveProjectThumbIndex }) {
   return (
     <section className="project-detail-section" style={{ background: '#000000', minHeight: '100vh', paddingTop: '3rem', paddingBottom: '5rem', position: 'relative' }}>
       
       {/* Back Arrow Button */}
       <button 
-        onClick={() => setSelectedProject(null)} 
+        onClick={closeProjectDetails} 
         style={{ 
           position: 'absolute', 
           top: '2rem', 

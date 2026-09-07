@@ -59,8 +59,21 @@ export default function App() {
 
   // Scroll to top on page change or project detail open
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (selectedProject) {
+      window.scrollTo(0, 0);
+    }
   }, [selectedProject]);
+
+  const closeProjectDetails = () => {
+    setSelectedProject(null);
+    setTimeout(() => {
+      const el = document.getElementById('projects');
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 80; // 80px is navbar height
+        window.scrollTo({ top: y, behavior: 'instant' });
+      }
+    }, 100);
+  };
 
   // Navbar scroll effect
   useEffect(() => {
@@ -342,6 +355,7 @@ export default function App() {
             <ProjectDetail 
               selectedProject={selectedProject} 
               setSelectedProject={setSelectedProject} 
+              closeProjectDetails={closeProjectDetails}
               activeProjectThumbIndex={activeProjectThumbIndex} 
               setActiveProjectThumbIndex={setActiveProjectThumbIndex} 
             />

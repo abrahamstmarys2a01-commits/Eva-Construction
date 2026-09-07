@@ -16,8 +16,8 @@ export default function Home({ scrollToSection, projects, openProjectDetails, he
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="hero-content" style={{ maxWidth: '600px', padding: '4rem 0 6rem' }}>
-            <h2 className="hero-title-main" style={{ fontSize: '4rem', fontWeight: 700, marginBottom: '1rem', background: 'linear-gradient(to right, #f2d8a7, #c5a880)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1' }}>
-              CRAFTING THE <span style={{display: 'block', fontSize: '5.5rem'}}>FUTURE,</span> <span style={{fontSize: '2rem'}}>ONE SPACE AT A TIME.</span>
+            <h2 className="hero-title-main" style={{ fontSize: '4rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-primary)', lineHeight: '1.1', background: 'none', WebkitTextFillColor: 'initial' }}>
+              CRAFTING THE <span style={{display: 'block', fontSize: '5.5rem', color: 'var(--primary-gold)'}}>FUTURE,</span> <span style={{fontSize: '2rem'}}>ONE SPACE AT A TIME.</span>
             </h2>
             <p className="hero-desc" style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '2.5rem', maxWidth: '500px' }}>
               We design, build, and transform exceptional residential and commercial spaces with innovative architecture, quality construction, and refined interior design.
