@@ -11,7 +11,7 @@ export default function Projects({ projects, openProjectDetails, projectFilter, 
             <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>OUR PROJECTS</h2>
           </div>
           
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {['ALL', 'RESIDENTIAL', 'VILLAS', 'COMMERCIAL', 'INTERIOR'].map((tab) => (
               <button 
                 key={tab} 

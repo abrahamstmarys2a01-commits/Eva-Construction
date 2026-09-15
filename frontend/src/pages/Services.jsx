@@ -106,7 +106,7 @@ export default function Services({ scrollToSection }) {
 
         {/* Quality Badges */}
         <div style={{ borderTop: '1px solid var(--border-gold)', borderBottom: '1px solid var(--border-gold)', padding: '1.5rem 0' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', textAlign: 'center' }}>
+          <div className="about-stats-bar-horizontal" style={{ textAlign: 'center' }}>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
               <CheckCircle size={20} style={{ color: 'var(--primary-gold)' }} />
               <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8rem', textTransform: 'uppercase', color: '#fff', fontWeight: 600 }}>QUALITY ASSURANCE</span>

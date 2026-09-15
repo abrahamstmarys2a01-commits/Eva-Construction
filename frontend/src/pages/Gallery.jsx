@@ -39,7 +39,7 @@ export default function Gallery({ galleryItems, galleryFilter, setGalleryFilter,
         </div>
 
         {/* Gallery Filter Tabs */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
           {['ALL', 'ARCHITECTURE', 'CONSTRUCTION', 'INTERIORS', 'COMPLETED'].map((tab) => (
             <button 
               key={tab} 
