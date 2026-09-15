@@ -6,7 +6,7 @@ export default function Projects({ projects, openProjectDetails, projectFilter, 
       <div className="container" style={{ maxWidth: '1400px' }}>
         
         {/* Header and Filters in one row */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', borderBottom: '1px solid rgba(197, 168, 128, 0.1)', paddingBottom: '1rem' }}>
+        <div className="projects-header-container">
           <div>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>OUR PROJECTS</h2>
           </div>
