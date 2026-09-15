@@ -34,7 +34,7 @@ export default function ProjectDetail({ selectedProject, setSelectedProject, clo
         
         
         {/* 2 Column Layout */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
+        <div className="project-detail-grid">
           
           {/* Left Column: Images */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -42,7 +42,7 @@ export default function ProjectDetail({ selectedProject, setSelectedProject, clo
               <img src={selectedProject.thumbnails[activeProjectThumbIndex]} alt={selectedProject.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+            <div className="gallery-grid">
               {selectedProject.thumbnails.map((thumb, index) => (
                 <div 
                   key={index} 
@@ -68,7 +68,7 @@ export default function ProjectDetail({ selectedProject, setSelectedProject, clo
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', color: '#fff', marginBottom: '2rem' }}>{selectedProject.title}</h2>
             
             {/* Meta Info Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '120px 20px 1fr', rowGap: '1rem', marginBottom: '2rem' }}>
+            <div className="project-specs-grid" style={{ marginBottom: '2rem' }}>
               <div style={{ color: 'var(--primary-gold)', fontWeight: 600 }}>Category</div>
               <div style={{ color: '#fff' }}>:</div>
               <div style={{ color: '#fff' }}>{selectedProject.category === 'VILLAS' ? 'Residential Villa' : selectedProject.category}</div>

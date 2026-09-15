@@ -17,11 +17,23 @@ export default function GetQuote({ setShowQuotePage }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setQuoteSuccess(true);
-    setTimeout(() => {
-      setQuoteSuccess(false);
-      setShowQuotePage(false); // Go back after success
-    }, 3000);
+
+    const messageDetails = `New BOQ & Estimation Enquiry
+
+Full Name: ${quoteForm.fullName}
+Email Address: ${quoteForm.email}
+Phone Number: ${quoteForm.phone}
+Project Type: ${quoteForm.projectType}
+Project Location: ${quoteForm.projectLocation}
+Project Area: ${quoteForm.projectArea} sq.ft
+
+Message:
+${quoteForm.message}`;
+
+    const encodedMessage = encodeURIComponent(messageDetails);
+    const whatsappURL = `https://wa.me/919087997874?text=${encodedMessage}`;
+    
+    window.location.href = whatsappURL;
   };
 
   const features = [
@@ -37,7 +49,7 @@ export default function GetQuote({ setShowQuotePage }) {
       <div style={{ width: '100%', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
         
         {/* 2 Column Layout */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', flexGrow: 1 }}>
+        <div className="boq-grid" style={{ flexGrow: 1 }}>
           
           {/* Left Column: Image Background and Features */}
           <div style={{ position: 'relative', padding: '4rem 3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

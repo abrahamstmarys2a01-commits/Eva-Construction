@@ -64,7 +64,7 @@ export default function Gallery({ galleryItems, galleryFilter, setGalleryFilter,
         </div>
 
         {/* 4 Column Image Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
+        <div className="gallery-grid">
           {galleryItems
             .filter(item => {
               if (galleryFilter === 'ALL') return true;

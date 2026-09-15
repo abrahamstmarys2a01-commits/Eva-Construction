@@ -36,7 +36,7 @@ export default function Projects({ projects, openProjectDetails, projectFilter, 
         </div>
 
         {/* 4 Column Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+        <div className="projects-grid" style={{ marginBottom: '3rem' }}>
           {projects
             .filter(p => projectFilter === 'ALL' || p.category.toUpperCase() === projectFilter)
             .slice(0, 8)

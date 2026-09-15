@@ -32,7 +32,7 @@ export default function Home({ scrollToSection, projects, openProjectDetails, he
         {/* Badges Strip */}
         <div style={{ position: 'relative', zIndex: 1, background: '#080809', borderTop: '1px solid var(--border-gold)', borderBottom: '1px solid var(--border-gold)' }}>
           <div className="container">
-            <div className="hero-badges-row" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem', border: 'none', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', alignItems: 'center' }}>
+            <div className="hero-badges-row" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem', border: 'none', alignItems: 'center' }}>
               <div className="hero-badge-item" style={{ flexDirection: 'row', alignItems: 'center', gap: '1rem' }}>
                 <Compass size={32} style={{ color: 'var(--primary-gold)' }} />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -73,9 +73,9 @@ export default function Home({ scrollToSection, projects, openProjectDetails, he
             <h2 style={{ fontSize: '1.5rem', color: 'var(--primary-gold)', letterSpacing: '0.1em' }}>FEATURED PROJECTS</h2>
           </div>
 
-          <div style={{ display: 'flex', gap: '2rem' }}>
+          <div className="featured-section-grid">
             <div style={{ flex: '1' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
+              <div className="projects-grid" style={{ marginBottom: '2rem' }}>
                 {projects.slice(0, 4).map((proj) => (
                   <div key={proj.id} className="project-card" onClick={() => openProjectDetails(proj)} style={{ border: '1px solid var(--border-gold)', padding: '0.25rem', background: 'rgba(197, 168, 128, 0.05)', aspectRatio: 'auto', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ overflow: 'hidden', height: '160px' }}>
@@ -92,7 +92,7 @@ export default function Home({ scrollToSection, projects, openProjectDetails, he
               </div>
             </div>
 
-            <div style={{ width: '250px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', paddingLeft: '2rem', borderLeft: '1px solid var(--border-gold)' }}>
+            <div className="home-stats-panel" style={{ paddingLeft: '2rem', borderLeft: '1px solid var(--border-gold)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <Shield size={36} style={{ color: 'var(--primary-gold)' }} />
                 <div>

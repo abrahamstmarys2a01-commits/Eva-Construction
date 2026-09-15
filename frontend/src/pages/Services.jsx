@@ -12,7 +12,7 @@ export default function Services({ scrollToSection }) {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1.5rem', marginBottom: '4rem' }}>
+        <div className="services-grid" style={{ marginBottom: '4rem' }}>
           {/* Card 1 */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', height: '220px' }}>

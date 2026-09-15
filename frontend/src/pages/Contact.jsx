@@ -11,7 +11,7 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
           <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.05em' }}>CONTACT</h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1.2fr', gap: '3rem' }}>
+        <div className="contact-grid">
           
           {/* Column 1: Map (Moved to left side) */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '4px', overflow: 'hidden', position: 'relative', minHeight: '400px' }}>

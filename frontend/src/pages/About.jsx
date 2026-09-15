@@ -56,7 +56,7 @@ export default function About({ aboutVillaImg }) {
       {/* Bottom Stats Bar */}
       <div style={{ position: 'relative', zIndex: 1, background: '#080809', borderTop: '1px solid var(--border-gold)' }}>
         <div className="container" style={{ margin: '0', paddingLeft: 'clamp(1rem, 3vw, 2rem)', maxWidth: '1400px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', padding: '2.5rem 0', textAlign: 'center' }}>
+          <div className="about-stats-bar-horizontal" style={{ padding: '2.5rem 0', textAlign: 'center' }}>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)' }}>
               <h3 style={{ color: 'var(--primary-gold)', fontSize: '2.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>15+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Years of Experience</p>

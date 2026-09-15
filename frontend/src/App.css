@@ -1619,3 +1619,5 @@ img {
     padding: 0.75rem;
   }
 }
+.project-specs-grid { display: grid; grid-template-columns: 120px 20px 1fr; row-gap: 1rem; }
+
