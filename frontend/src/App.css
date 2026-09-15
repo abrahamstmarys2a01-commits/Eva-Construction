@@ -1407,3 +1407,114 @@
   0% { opacity: 0; transform: translateX(-50px); }
   100% { opacity: 1; transform: translateX(0); }
 }
+
+/* --- Global Mobile Responsiveness Tweaks --- */
+@media (max-width: 768px) {
+  /* Layout tweaks */
+  .hero-section, .about-section, .services-section, .projects-section, .project-detail-section, .gallery-section, .boq-section, .blog-section, .contact-section {
+    padding: 3rem 0;
+  }
+  .section-header-left h2 {
+    font-size: 2rem;
+  }
+  .home-stats-panel {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+  .home-stat-box h3 {
+    font-size: 2rem;
+  }
+  .featured-section-grid, .about-grid, .boq-grid, .contact-grid, .project-detail-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Global */
+  .section-header-left h2 {
+    font-size: 1.8rem;
+  }
+  .page-wrapper {
+    padding-top: 70px;
+  }
+  .navbar .container {
+    height: 70px;
+  }
+  
+  /* Header */
+  .logo-text h1 {
+    font-size: 1rem;
+  }
+  .logo-text span {
+    font-size: 0.5rem;
+  }
+
+  /* Hero */
+  .hero-title-main {
+    font-size: 2.2rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-buttons a, .hero-buttons button, .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+  }
+  .hero-badges-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* About */
+  .about-stats-bar-horizontal {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Services */
+  .services-badges-bar {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projects & Gallery */
+  .project-thumbnails {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-card, .gallery-item {
+    aspect-ratio: auto;
+    height: 250px;
+  }
+
+  /* BOQ */
+  .boq-report-summary {
+    grid-template-columns: 1fr;
+  }
+  .boq-features-list {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Footer */
+  .footer-grid {
+    gap: 2rem;
+    text-align: center;
+  }
+  .footer-logo-desc p, .footer-newsletter p {
+    text-align: center;
+  }
+  .footer-col h3 {
+    display: block;
+    text-align: center;
+  }
+  .footer-col h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-socials {
+    justify-content: center;
+  }
+  .footer-links {
+    align-items: center;
+  }
+}
