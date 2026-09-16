@@ -24,14 +24,13 @@
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  max-width: 95%;
-  width: 100%;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  margin-left: 1.5rem;
 }
 
 .logo-icon {
@@ -373,11 +372,11 @@
 .home-stats-panel {
   border: 1px solid var(--border-gold);
   background: var(--bg-card);
-  padding: 3rem 2rem;
+  padding: 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .home-stat-box {
@@ -1620,6 +1619,6 @@ img {
 .project-specs-grid { display: grid; grid-template-columns: 120px 20px 1fr; row-gap: 1rem; }
 
 
-.projects-header-container { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; border-bottom: 1px solid rgba(197, 168, 128, 0.1); padding-bottom: 1rem; }
+.projects-header-container { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
 @media (max-width: 768px) { .projects-header-container { flex-direction: column; align-items: flex-start; gap: 1.5rem; } }
 

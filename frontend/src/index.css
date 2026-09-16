@@ -95,9 +95,10 @@ img {
 
 /* Common Layout Components */
 .container {
-  max-width: 1280px;
+  width: 95%;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 5vw, 2rem);
+  padding: 0;
 }
 
 /* Section Header */

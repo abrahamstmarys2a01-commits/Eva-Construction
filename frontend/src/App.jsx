@@ -17,6 +17,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import './App.css';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 
 // Import local generated assets
 import heroVillaImg from './assets/hero_villa.png';
@@ -35,7 +36,9 @@ import GetQuote from './pages/GetQuote';
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarScrolled, setNavbarScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const activeSection = location.pathname === '/' ? 'home' : location.pathname.substring(1);
   
   // Filtering & Detail States
   const [projectFilter, setProjectFilter] = useState('ALL');
@@ -88,24 +91,7 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Intersection Observer for scrollspy (active section)
-  useEffect(() => {
-    if (showQuotePage || selectedProject) return;
 
-    const sections = document.querySelectorAll('div[id="home"], section[id="about"], section[id="services"], section[id="projects"], section[id="gallery"], section[id="contact"]');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    }, { threshold: 0.2, rootMargin: "-100px 0px -40% 0px" });
-
-    sections.forEach(section => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, [showQuotePage, selectedProject]);
 
   // Hardcoded Data
   const projects = [
@@ -263,7 +249,12 @@ export default function App() {
     { id: 5, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" },
     { id: 6, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
     { id: 7, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
-    { id: 8, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" }
+    { id: 8, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" },
+    { id: 9, type: 'COMPLETED', image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" },
+    { id: 10, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" },
+    { id: 11, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" },
+    { id: 12, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" },
+    { id: 13, type: 'COMPLETED', image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" }
   ];
 
   const handleContactSubmit = (e) => {
@@ -295,21 +286,38 @@ export default function App() {
   // Navigations helper
   const scrollToSection = (sectionId) => {
     setMobileMenuOpen(false);
-    setSelectedProject(null); // Close project details if open
-    setShowQuotePage(false); // Close quote page if open
+    setSelectedProject(null);
+    setShowQuotePage(false);
     
-    // Allow React state to update before scrolling
-    setTimeout(() => {
-      if (sectionId === 'home') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (['about', 'services', 'projects', 'gallery', 'contact'].includes(sectionId)) {
+      navigate('/' + sectionId);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          if (sectionId === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            const el = document.getElementById(sectionId);
+            if (el) {
+              const y = el.getBoundingClientRect().top + window.scrollY - 80;
+              window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+          }
+        }, 100);
       } else {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 80; // 80px is navbar height
-          window.scrollTo({ top: y, behavior: 'smooth' });
+        if (sectionId === 'home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
         }
       }
-    }, 100);
+    }
   };
 
   return (
@@ -343,7 +351,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Main Pages Wrapper */}
+            {/* Main Pages Wrapper */}
       <div className="page-wrapper">
         {showQuotePage ? (
           <div className="quote-overlay-wrapper">
@@ -361,34 +369,57 @@ export default function App() {
             />
           </div>
         ) : (
-          <>
-            <Home 
-              scrollToSection={scrollToSection} 
-              projects={projects} 
-              openProjectDetails={openProjectDetails} 
-              heroVillaImg={heroVillaImg} 
-            />
-            <About aboutVillaImg={aboutVillaImg} />
-            <Services scrollToSection={scrollToSection} />
-            <Projects 
-              projects={projects} 
-              openProjectDetails={openProjectDetails} 
-              projectFilter={projectFilter} 
-              setProjectFilter={setProjectFilter} 
-            />
-            <Gallery 
-              galleryItems={galleryItems} 
-              galleryFilter={galleryFilter} 
-              setGalleryFilter={setGalleryFilter} 
-              setSelectedGalleryImg={setSelectedGalleryImg} 
-            />
-            <Contact 
-              contactForm={contactForm} 
-              setContactForm={setContactForm} 
-              handleContactSubmit={handleContactSubmit} 
-              contactSuccess={contactSuccess} 
-            />
-          </>
+          <Routes>
+            <Route path="/" element={
+              <Home 
+                scrollToSection={scrollToSection} 
+                projects={projects} 
+                openProjectDetails={openProjectDetails} 
+                heroVillaImg={heroVillaImg} 
+                aboutVillaImg={aboutVillaImg}
+                projectFilter={projectFilter}
+                setProjectFilter={setProjectFilter}
+                galleryItems={galleryItems}
+                galleryFilter={galleryFilter}
+                setGalleryFilter={setGalleryFilter}
+                setSelectedGalleryImg={setSelectedGalleryImg}
+                contactForm={contactForm}
+                setContactForm={setContactForm}
+                handleContactSubmit={handleContactSubmit}
+                contactSuccess={contactSuccess}
+              />
+            } />
+            <Route path="/about" element={
+              <About aboutVillaImg={aboutVillaImg} />
+            } />
+            <Route path="/services" element={
+              <Services scrollToSection={scrollToSection} />
+            } />
+            <Route path="/projects" element={
+              <Projects 
+                projects={projects} 
+                openProjectDetails={openProjectDetails} 
+                projectFilter={projectFilter} 
+                setProjectFilter={setProjectFilter} 
+              />
+            } />
+            <Route path="/gallery" element={
+              <Gallery 
+                galleryItems={galleryItems} 
+                galleryFilter={galleryFilter} 
+                setGalleryFilter={setGalleryFilter} 
+                setSelectedGalleryImg={setSelectedGalleryImg} 
+              />
+            } />
+            <Route path="/contact" element={
+              <Contact 
+                contactForm={contactForm} 
+                setContactForm={setContactForm} 
+                handleContactSubmit={handleContactSubmit} 
+                contactSuccess={contactSuccess} 
+              />
+            } />
+          </Routes>
         )}
       </div>
 
