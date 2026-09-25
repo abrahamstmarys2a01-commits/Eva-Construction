@@ -8,17 +8,27 @@ export default function About({ aboutVillaImg, isHomePage = false }) {
       <div style={{ position: 'relative', zIndex: 0 }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', zIndex: 0 }}>
           <div style={{ flex: 1, background: '#050506' }}></div>
-          <div style={{ flex: 1.2, position: 'relative' }}>
-            <img src={aboutVillaImg} alt="About Studio" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to right, #050506 0%, rgba(5,5,6,0.7) 40%, transparent 100%)' }}></div>
-            <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '30%', background: 'linear-gradient(to top, #050506 0%, transparent 100%)' }}></div>
+          <div style={{ flex: 1.5, position: 'relative' }}>
+            <img 
+              src={aboutVillaImg} 
+              alt="About Studio" 
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover', 
+                objectPosition: 'center',
+                filter: 'brightness(1.05) contrast(1.02)'
+              }} 
+            />
+            {/* Subtle smooth edge feathering only at the left seam */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to right, #050506 0%, rgba(5,5,6,0.3) 10%, transparent 25%)' }}></div>
           </div>
         </div>
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '6rem', paddingBottom: '6rem' }}>
-        <div className="section-header-left" style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', marginBottom: '0.5rem' }}>ABOUT US</h2>
-        </div>
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '2.5rem', paddingBottom: '4rem', paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
+          <div className="section-header-left" style={{ marginBottom: '1.5rem' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase' }}>ABOUT US</h2>
+          </div>
 
         <div style={{ maxWidth: '600px' }}>
           <h2 style={{fontFamily: 'var(--font-serif)', fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--primary-gold)'}}>Building Tomorrow, Together.</h2>

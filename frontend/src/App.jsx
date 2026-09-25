@@ -22,6 +22,15 @@ import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 // Import local generated assets
 import heroVillaImg from './assets/hero_villa.png';
 import aboutVillaImg from './assets/about_villa.png';
+import galleryVilla1 from './assets/gallery_villa_1.jpg';
+import galleryVilla2 from './assets/gallery_villa_2.jpg';
+import galleryVilla3 from './assets/gallery_villa_3.jpg';
+import galleryVilla4 from './assets/gallery_villa_4.jpg';
+import galleryVilla5 from './assets/gallery_villa_5.jpg';
+import galleryVilla6 from './assets/gallery_villa_6.jpg';
+import galleryVilla7 from './assets/gallery_villa_7.jpg';
+import galleryVilla8 from './assets/gallery_villa_8.jpg';
+import galleryVilla9 from './assets/gallery_villa_9.jpg';
 
 // Import newly created page components
 import Home from './pages/Home';
@@ -32,10 +41,12 @@ import ProjectDetail from './pages/ProjectDetail';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import GetQuote from './pages/GetQuote';
+import Careers from './pages/Careers';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarScrolled, setNavbarScrolled] = useState(false);
+  const [showCareersPage, setShowCareersPage] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const activeSection = location.pathname === '/' ? 'home' : location.pathname.substring(1);
@@ -238,23 +249,109 @@ export default function App() {
       ],
       description: "Elegant residential revamp focusing on modular panelings, hidden storage solutions, custom cove LED illuminations, and premium custom upholstered furniture layouts.",
       features: ["Custom Veneered Paneling", "Smart Hidden storage", "Italian Light Fixtures", "Bespoke Bed Frames", "Premium Brass Accents"]
+    },
+    {
+      id: 9,
+      title: "Grand Contemporary Villa - Salem",
+      category: "VILLAS",
+      location: "Salem, Tamil Nadu",
+      area: "5,800 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: galleryVilla6,
+      thumbnails: [
+        galleryVilla6,
+        galleryVilla7,
+        galleryVilla8,
+        galleryVilla9
+      ],
+      description: "Striking 2-story contemporary villa featuring exposed brick patterns, cantilevered slabs, integrated balcony planter boxes, and warm architectural landscape lighting.",
+      features: ["Exposed Brick Architecture", "Cantilevered Balconies", "Landscape Lighting", "Italian Marble Flooring", "Smart Home Automation"]
+    },
+    {
+      id: 10,
+      title: "Signature Residence - Vellore",
+      category: "RESIDENTIAL",
+      location: "Vellore, Tamil Nadu",
+      area: "6,200 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: galleryVilla7,
+      thumbnails: [
+        galleryVilla7,
+        galleryVilla6,
+        galleryVilla4,
+        galleryVilla1
+      ],
+      description: "Modern 3-story vertical residence showcasing dynamic wooden wall louvers, exposed brick pillars, textured stone masonry, and a signature circular architectural cutout.",
+      features: ["Geometric Cutout Feature", "Vertical Wooden Louvers", "Private Terrace Garden", "Double Glazed Windows", "High-End Security Gate"]
+    },
+    {
+      id: 11,
+      title: "Modernist Horizon Home - Pondicherry",
+      category: "RESIDENTIAL",
+      location: "Pondicherry",
+      area: "4,600 sq.ft",
+      year: "2023",
+      status: "Completed",
+      image: galleryVilla8,
+      thumbnails: [
+        galleryVilla8,
+        galleryVilla2,
+        galleryVilla3,
+        galleryVilla6
+      ],
+      description: "Sophisticated single-story minimalist villa blending earthy terracotta tones, dark wood accents, recessed soffit lighting, and welcoming symmetrical entryway architecture.",
+      features: ["Minimalist Single Story", "Terracotta Facade Accent", "Lush Entryway Planters", "Integrated Soffit Lights", "Spacious Portico Deck"]
+    },
+    {
+      id: 12,
+      title: "Heritage Fusion Villa - Kochi",
+      category: "VILLAS",
+      location: "Kochi, Kerala",
+      area: "7,500 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: galleryVilla9,
+      thumbnails: [
+        galleryVilla9,
+        galleryVilla3,
+        galleryVilla1,
+        galleryVilla7
+      ],
+      description: "A breathtaking fusion of traditional Kerala sloping hip roof geometry and sleek contemporary white stucco walls, accompanied by a grand paved driveway and stone column portico.",
+      features: ["Heritage Fusion Roof", "Grand Car Portico", "Stone Clad Columns", "Expansive Paved Driveway", "Lush Manicured Lawn"]
     }
   ];
 
   const galleryItems = [
-    { id: 1, type: 'ARCHITECTURE', image: heroVillaImg },
-    { id: 2, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
-    { id: 3, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" },
-    { id: 4, type: 'ARCHITECTURE', image: aboutVillaImg },
-    { id: 5, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" },
-    { id: 6, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
-    { id: 7, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
-    { id: 8, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" },
-    { id: 9, type: 'COMPLETED', image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" },
-    { id: 10, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" },
-    { id: 11, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" },
-    { id: 12, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" },
-    { id: 13, type: 'COMPLETED', image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" }
+    { id: 1, type: 'ARCHITECTURE', image: galleryVilla1 },
+    { id: 2, type: 'ARCHITECTURE', image: galleryVilla2 },
+    { id: 3, type: 'ARCHITECTURE', image: galleryVilla3 },
+    { id: 4, type: 'ARCHITECTURE', image: galleryVilla4 },
+    { id: 5, type: 'ARCHITECTURE', image: galleryVilla5 },
+    { id: 6, type: 'ARCHITECTURE', image: galleryVilla6 },
+    { id: 7, type: 'ARCHITECTURE', image: galleryVilla7 },
+    { id: 8, type: 'ARCHITECTURE', image: galleryVilla8 },
+    { id: 9, type: 'ARCHITECTURE', image: galleryVilla9 },
+    { id: 10, type: 'COMPLETED', image: galleryVilla1 },
+    { id: 11, type: 'COMPLETED', image: galleryVilla6 },
+    { id: 12, type: 'COMPLETED', image: galleryVilla7 },
+    { id: 13, type: 'COMPLETED', image: galleryVilla8 },
+    { id: 14, type: 'COMPLETED', image: galleryVilla9 },
+    { id: 15, type: 'ARCHITECTURE', image: heroVillaImg },
+    { id: 16, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
+    { id: 17, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" },
+    { id: 18, type: 'ARCHITECTURE', image: aboutVillaImg },
+    { id: 19, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" },
+    { id: 20, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
+    { id: 21, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
+    { id: 22, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" },
+    { id: 23, type: 'COMPLETED', image: galleryVilla3 },
+    { id: 24, type: 'COMPLETED', image: galleryVilla4 },
+    { id: 25, type: 'CONSTRUCTION', image: galleryVilla5 },
+    { id: 26, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" },
+    { id: 27, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" }
   ];
 
   const handleContactSubmit = (e) => {
@@ -288,6 +385,7 @@ export default function App() {
     setMobileMenuOpen(false);
     setSelectedProject(null);
     setShowQuotePage(false);
+    setShowCareersPage(false);
     
     if (['about', 'services', 'projects', 'gallery', 'contact'].includes(sectionId)) {
       navigate('/' + sectionId);
@@ -340,13 +438,14 @@ export default function App() {
           </button>
 
           <ul className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-            <li><span className={`nav-link ${activeSection === 'home' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('home')} style={{cursor: 'pointer'}}>Home</span></li>
-            <li><span className={`nav-link ${activeSection === 'about' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('about')} style={{cursor: 'pointer'}}>About Us</span></li>
-            <li><span className={`nav-link ${activeSection === 'services' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('services')} style={{cursor: 'pointer'}}>Services</span></li>
-            <li><span className={`nav-link ${activeSection === 'projects' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('projects')} style={{cursor: 'pointer'}}>Projects</span></li>
-            <li><span className={`nav-link ${activeSection === 'gallery' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('gallery')} style={{cursor: 'pointer'}}>Gallery</span></li>
-            <li><span className={`nav-link ${activeSection === 'contact' && !showQuotePage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('contact')} style={{cursor: 'pointer'}}>Contact</span></li>
-            <li><button className="btn-primary" onClick={() => { setMobileMenuOpen(false); setSelectedProject(null); setShowQuotePage(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Get a Quote</button></li>
+            <li><span className={`nav-link ${activeSection === 'home' && !showQuotePage && !showCareersPage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('home')} style={{cursor: 'pointer'}}>Home</span></li>
+            <li><span className={`nav-link ${activeSection === 'about' && !showQuotePage && !showCareersPage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('about')} style={{cursor: 'pointer'}}>About Us</span></li>
+            <li><span className={`nav-link ${activeSection === 'services' && !showQuotePage && !showCareersPage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('services')} style={{cursor: 'pointer'}}>Services</span></li>
+            <li><span className={`nav-link ${activeSection === 'projects' && !showQuotePage && !showCareersPage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('projects')} style={{cursor: 'pointer'}}>Projects</span></li>
+            <li><span className={`nav-link ${activeSection === 'gallery' && !showQuotePage && !showCareersPage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('gallery')} style={{cursor: 'pointer'}}>Gallery</span></li>
+            <li><span className={`nav-link ${showCareersPage ? 'active' : ''}`} onClick={() => { setMobileMenuOpen(false); setSelectedProject(null); setShowQuotePage(false); setShowCareersPage(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{cursor: 'pointer'}}>Careers</span></li>
+            <li><span className={`nav-link ${activeSection === 'contact' && !showQuotePage && !showCareersPage && !selectedProject ? 'active' : ''}`} onClick={() => scrollToSection('contact')} style={{cursor: 'pointer'}}>Contact</span></li>
+            <li><button className="btn-primary" onClick={() => { setMobileMenuOpen(false); setSelectedProject(null); setShowCareersPage(false); setShowQuotePage(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Get a Quote</button></li>
           </ul>
         </div>
       </nav>
@@ -356,6 +455,10 @@ export default function App() {
         {showQuotePage ? (
           <div className="quote-overlay-wrapper">
             <GetQuote setShowQuotePage={setShowQuotePage} />
+          </div>
+        ) : showCareersPage ? (
+          <div className="careers-overlay-wrapper">
+            <Careers setShowCareersPage={setShowCareersPage} scrollToSection={scrollToSection} />
           </div>
         ) : selectedProject ? (
           <div className="project-detail-overlay-wrapper" style={{ paddingTop: '5rem' }}>
@@ -387,6 +490,7 @@ export default function App() {
                 setContactForm={setContactForm}
                 handleContactSubmit={handleContactSubmit}
                 contactSuccess={contactSuccess}
+                setShowQuotePage={setShowQuotePage}
               />
             } />
             <Route path="/about" element={
@@ -418,6 +522,9 @@ export default function App() {
                 handleContactSubmit={handleContactSubmit} 
                 contactSuccess={contactSuccess} 
               />
+            } />
+            <Route path="/careers" element={
+              <Careers setShowCareersPage={setShowCareersPage} scrollToSection={scrollToSection} />
             } />
           </Routes>
         )}
@@ -461,6 +568,7 @@ export default function App() {
               <h3>Company</h3>
               <ul className="footer-links">
                 <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('gallery')}>Gallery</span></li>
+                <li><span style={{cursor: 'pointer'}} onClick={() => { setSelectedProject(null); setShowQuotePage(false); setShowCareersPage(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Careers</span></li>
                 <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('contact')}>Contact</span></li>
               </ul>
             </div>

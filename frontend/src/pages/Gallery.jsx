@@ -31,11 +31,11 @@ export default function Gallery({ galleryItems, galleryFilter, setGalleryFilter,
   }, []);
 
   return (
-    <section id="gallery" ref={sectionRef} className="gallery-section" style={{ background: '#050506', paddingTop: '5rem', paddingBottom: '5rem' }}>
-      <div className="container">
+    <section id="gallery" ref={sectionRef} className="gallery-section" style={{ background: '#050506', paddingTop: '2rem', paddingBottom: '4rem' }}>
+      <div className="container" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
         {/* Section Header */}
-        <div style={{ borderTop: '1px solid var(--border-gold)', paddingTop: '1rem', marginBottom: '2rem' }}>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'left' }}>GALLERY</h2>
+        <div style={{ borderTop: '1px solid var(--border-gold)', paddingTop: '1.5rem', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'left' }}>GALLERY</h2>
         </div>
 
         {/* Gallery Filter Tabs */}

@@ -3,16 +3,16 @@ import { Compass, Hammer, Sparkles, Building2, Users, CheckCircle, Clock, Shield
 
 export default function Services({ scrollToSection }) {
   return (
-    <section id="services" className="services-section" style={{ background: '#080809', padding: '5rem 0' }}>
+    <section id="services" className="services-section" style={{ background: '#080809', padding: '3.5rem 0 3rem' }}>
       <div className="container">
-        <div className="section-header" style={{textAlign: 'center', marginBottom: '3rem'}}>
+        <div className="section-header" style={{textAlign: 'center', marginBottom: '2.5rem'}}>
           <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.05em' }}>OUR SERVICES</h2>
           <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
             Complete solutions for every space. From concept to creation, we deliver excellence in design, construction, and interiors.
           </p>
         </div>
 
-        <div className="services-grid" style={{ marginBottom: '4rem' }}>
+        <div className="services-grid" style={{ marginBottom: '2.5rem' }}>
           {/* Card 1 */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', height: '220px' }}>

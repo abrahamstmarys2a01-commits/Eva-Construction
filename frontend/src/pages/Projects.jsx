@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Projects({ projects, openProjectDetails, projectFilter, setProjectFilter }) {
   return (
-    <section id="projects" className="projects-section" style={{ background: '#050506', paddingTop: '5rem', paddingBottom: '5rem' }}>
-      <div className="container" style={{ maxWidth: '1400px' }}>
+    <section id="projects" className="projects-section" style={{ background: '#050506', paddingTop: '3.5rem', paddingBottom: '3rem' }}>
+      <div className="container" style={{ maxWidth: '1400px', paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
         
         {/* Header and Filters in one row */}
         <div className="projects-header-container">
@@ -39,7 +39,6 @@ export default function Projects({ projects, openProjectDetails, projectFilter, 
         <div className="projects-grid" style={{ marginBottom: '3rem' }}>
           {projects
             .filter(p => projectFilter === 'ALL' || p.category.toUpperCase() === projectFilter)
-            .slice(0, 8)
             .map((proj) => (
               <div key={proj.id} onClick={() => openProjectDetails(proj)} style={{ border: '1px solid var(--border-gold)', padding: '0.25rem', background: 'rgba(197, 168, 128, 0.05)', cursor: 'pointer', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease', borderRadius: '12px', overflow: 'hidden' }}>
                 <div style={{ overflow: 'hidden', height: '200px', borderRadius: '8px' }}>
