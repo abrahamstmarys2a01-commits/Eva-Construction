@@ -59,7 +59,7 @@ export default function Home({
           </div>
         </div>
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '2rem' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingLeft: '2.5rem', paddingRight: '2.5rem', display: 'flex', alignItems: 'center' }}>
           
           {/* Vertical Follow Us Sidebar */}
           <div className="hero-social-sidebar">
@@ -78,7 +78,7 @@ export default function Home({
             </div>
           </div>
 
-          <div className="hero-content" style={{ maxWidth: '650px', padding: '4rem 1rem 6rem 1rem' }}>
+          <div className="hero-content" style={{ maxWidth: '650px', padding: '4rem 0 6rem 0' }}>
             <h2 className="hero-title-main" style={{ fontSize: '4rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-primary)', lineHeight: '1.1', background: 'none', WebkitTextFillColor: 'initial' }}>
               CRAFTING THE <span style={{display: 'block', fontSize: '5.5rem', color: 'var(--primary-gold)'}}>FUTURE,</span> <span style={{fontSize: '2rem'}}>ONE SPACE AT A TIME.</span>
             </h2>
@@ -94,7 +94,7 @@ export default function Home({
 
         {/* Badges Strip */}
         <div style={{ position: 'relative', zIndex: 1, background: '#080809', borderTop: '1px solid var(--border-gold)', borderBottom: '1px solid var(--border-gold)' }}>
-          <div className="container">
+          <div className="container" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
             <div className="hero-badges-row" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem', border: 'none', alignItems: 'center' }}>
               <div className="hero-badge-item" style={{ flexDirection: 'row', alignItems: 'center', gap: '1rem' }}>
                 <Compass size={32} style={{ color: 'var(--primary-gold)' }} />

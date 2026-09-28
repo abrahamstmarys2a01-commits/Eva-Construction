@@ -532,7 +532,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <div className="container">
+        <div className="container" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
           <div className="footer-grid">
             <div className="footer-logo-desc">
               <div className="logo-area" onClick={() => scrollToSection('home')} style={{cursor: 'pointer'}}>

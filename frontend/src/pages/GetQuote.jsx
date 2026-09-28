@@ -52,7 +52,7 @@ ${quoteForm.message}`;
         <div className="boq-grid" style={{ flexGrow: 1 }}>
           
           {/* Left Column: Image Background and Features */}
-          <div style={{ position: 'relative', padding: '4rem 3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ position: 'relative', padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             {/* Background Image */}
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
               <img src={boqBackground} alt="Construction Planning" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -60,18 +60,18 @@ ${quoteForm.message}`;
             </div>
 
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: '#fff', marginBottom: '1rem', lineHeight: '1.2' }}>
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4.5vw, 2.5rem)', color: '#fff', marginBottom: '1rem', lineHeight: '1.2' }}>
                 BOQ & ESTIMATION
               </h2>
-              <p style={{ color: '#eaeaea', fontSize: '1rem', lineHeight: '1.6', marginBottom: '3rem', maxWidth: '90%' }}>
+              <p style={{ color: '#eaeaea', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2.5rem', maxWidth: '90%' }}>
                 Accurate estimation and transparent pricing help you plan your project with confidence.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {features.map((feature, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <CheckCircle size={22} style={{ color: 'var(--primary-gold)' }} />
-                    <span style={{ color: '#fff', fontSize: '1.05rem', fontWeight: 500 }}>{feature}</span>
+                    <CheckCircle size={20} style={{ color: 'var(--primary-gold)', flexShrink: 0 }} />
+                    <span style={{ color: '#fff', fontSize: '1rem', fontWeight: 500 }}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -79,7 +79,7 @@ ${quoteForm.message}`;
           </div>
 
           {/* Right Column: Form */}
-          <div style={{ background: '#0a0a0c', padding: '4rem 3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ background: '#0a0a0c', padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <h3 style={{ fontSize: '1.1rem', color: 'var(--primary-gold)', textTransform: 'uppercase', marginBottom: '2rem', letterSpacing: '0.05em' }}>
               REQUEST ESTIMATION
             </h3>

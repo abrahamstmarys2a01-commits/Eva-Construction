@@ -4,7 +4,7 @@ import { Compass, Hammer, Sparkles, Building2, Users, CheckCircle, Clock, Shield
 export default function Services({ scrollToSection }) {
   return (
     <section id="services" className="services-section" style={{ background: '#080809', padding: '3.5rem 0 3rem' }}>
-      <div className="container">
+      <div className="container" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
         <div className="section-header" style={{textAlign: 'center', marginBottom: '2.5rem'}}>
           <h2 style={{ fontSize: '2rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.05em' }}>OUR SERVICES</h2>
           <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>

@@ -172,12 +172,7 @@ ${formData.coverLetter || 'No cover message provided.'}
     <div style={{ background: '#050506', minHeight: '100vh', color: '#fff' }}>
       
       {/* Careers Hero Banner */}
-      <section style={{ 
-        position: 'relative', 
-        padding: '2.5rem 2.5rem 3rem', 
-        background: 'linear-gradient(180deg, #090b0e 0%, #050506 100%)',
-        borderBottom: '1px solid var(--border-gold)'
-      }}>
+      <section className="careers-hero-section">
         <div className="container" style={{ maxWidth: '1400px' }}>
           
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
@@ -215,11 +210,11 @@ ${formData.coverLetter || 'No cover message provided.'}
               <span style={{ color: 'var(--primary-gold)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>WE ARE HIRING</span>
             </div>
             
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', color: '#fff', lineHeight: '1.15', marginBottom: '1.5rem' }}>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 5.5vw, 3.8rem)', color: '#fff', lineHeight: '1.15', marginBottom: '1.5rem' }}>
               Build Your Future With <span style={{ color: 'var(--primary-gold)' }}>EVA ATELIER GROUP</span>
             </h1>
             
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '700px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.7', maxWidth: '700px' }}>
               We are seeking visionary professionals, dynamic engineers, and execution specialists to create architectural landmarks that stand the test of time. Explore our open positions and apply today.
             </p>
           </div>
@@ -228,24 +223,19 @@ ${formData.coverLetter || 'No cover message provided.'}
       </section>
 
       {/* Project & Management Roles Section */}
-      <section style={{ padding: '4.5rem 2.5rem 4rem' }}>
+      <section className="careers-roles-section">
         <div className="container" style={{ maxWidth: '1400px' }}>
           
-          <div className="section-header-left" style={{ marginBottom: '3rem' }}>
+          <div className="section-header-left" style={{ marginBottom: '2.5rem' }}>
             <span style={{ color: 'var(--primary-gold)', fontSize: '0.85rem', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>
               OPEN POSITIONS
             </span>
-            <h2 style={{ fontSize: '2.2rem', fontWeight: 500, color: '#fff', textTransform: 'uppercase' }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.2rem)', fontWeight: 500, color: '#fff', textTransform: 'uppercase' }}>
               PROJECT & MANAGEMENT ROLES
             </h2>
           </div>
 
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', 
-            gap: '2rem',
-            marginBottom: '4.5rem'
-          }}>
+          <div className="careers-roles-grid">
             {roles.map((role) => (
               <div 
                 key={role.id}
@@ -328,19 +318,13 @@ ${formData.coverLetter || 'No cover message provided.'}
           </div>
 
           {/* Application Form Section */}
-          <div ref={formSectionRef} style={{ 
-            background: '#090b0e', 
-            border: '1px solid var(--border-gold)', 
-            borderRadius: '8px', 
-            padding: 'clamp(2rem, 5vw, 3.5rem)',
-            position: 'relative'
-          }}>
+          <div ref={formSectionRef} className="careers-form-container">
             
             <div style={{ marginBottom: '2.5rem', borderBottom: '1px solid rgba(212, 175, 55, 0.2)', paddingBottom: '1.5rem' }}>
               <span style={{ color: 'var(--primary-gold)', fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 600 }}>
                 CANDIDATE APPLICATION
               </span>
-              <h2 style={{ fontSize: '2rem', color: '#fff', marginTop: '0.5rem', fontFamily: 'var(--font-serif)' }}>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2rem)', color: '#fff', marginTop: '0.5rem', fontFamily: 'var(--font-serif)' }}>
                 Application Form
               </h2>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>
@@ -349,7 +333,7 @@ ${formData.coverLetter || 'No cover message provided.'}
             </div>
 
             {applicationSuccess ? (
-              <div style={{ background: 'rgba(212, 175, 55, 0.08)', border: '1px solid var(--primary-gold)', padding: '3rem 2rem', textAlign: 'center', borderRadius: '6px' }}>
+              <div style={{ background: 'rgba(212, 175, 55, 0.08)', border: '1px solid var(--primary-gold)', padding: '2.5rem 1.5rem', textAlign: 'center', borderRadius: '6px' }}>
                 <CheckCircle2 size={52} style={{ color: 'var(--primary-gold)', margin: '0 auto 1.25rem' }} />
                 <h3 style={{ color: 'var(--primary-gold)', fontSize: '1.6rem', marginBottom: '0.75rem' }}>Application Ready for WhatsApp!</h3>
                 <p style={{ color: '#eaeaea', fontSize: '0.95rem', maxWidth: '600px', margin: '0 auto 1.5rem', lineHeight: '1.6' }}>
@@ -392,6 +376,7 @@ ${formData.coverLetter || 'No cover message provided.'}
                       borderRadius: '4px',
                       display: 'inline-flex',
                       alignItems: 'center',
+                      justifyContent: 'center',
                       gap: '0.5rem'
                     }}
                   >
@@ -435,7 +420,8 @@ ${formData.coverLetter || 'No cover message provided.'}
                       padding: '0.9rem 1rem',
                       borderRadius: '4px',
                       fontSize: '0.9rem',
-                      outline: 'none'
+                      outline: 'none',
+                      boxSizing: 'border-box'
                     }}
                   >
                     {roles.map(r => (
@@ -447,7 +433,7 @@ ${formData.coverLetter || 'No cover message provided.'}
                 </div>
 
                 {/* 2-Column Grid Fields */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+                <div className="careers-form-grid">
                   
                   {/* Full Name */}
                   <div>
@@ -680,16 +666,16 @@ ${formData.coverLetter || 'No cover message provided.'}
                 </div>
 
                 {/* Terms & Privacy Policy Checkbox */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.5rem' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginTop: '0.5rem' }}>
                   <input 
                     type="checkbox" 
                     id="termsAgreement"
                     required
                     checked={agreedToTerms}
                     onChange={(e) => setAgreedToTerms(e.target.checked)}
-                    style={{ accentColor: 'var(--primary-gold)', width: '18px', height: '18px', cursor: 'pointer' }}
+                    style={{ accentColor: 'var(--primary-gold)', width: '18px', height: '18px', cursor: 'pointer', marginTop: '2px', flexShrink: 0 }}
                   />
-                  <label htmlFor="termsAgreement" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', cursor: 'pointer' }}>
+                  <label htmlFor="termsAgreement" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', cursor: 'pointer', lineHeight: '1.4' }}>
                     I agree to the terms & privacy policy and authorize EVA ATELIER GROUP to contact me regarding my job application.
                   </label>
                 </div>
@@ -703,7 +689,9 @@ ${formData.coverLetter || 'No cover message provided.'}
                       background: isSubmitting ? '#a68525' : 'var(--primary-gold)',
                       color: '#000',
                       border: 'none',
-                      padding: '1rem 3rem',
+                      padding: '1rem 2.5rem',
+                      width: '100%',
+                      maxWidth: '380px',
                       fontSize: '0.95rem',
                       fontWeight: 700,
                       textTransform: 'uppercase',
@@ -712,10 +700,12 @@ ${formData.coverLetter || 'No cover message provided.'}
                       borderRadius: '4px',
                       display: 'inline-flex',
                       alignItems: 'center',
+                      justifyContent: 'center',
                       gap: '0.75rem',
                       boxShadow: '0 4px 20px rgba(212, 175, 55, 0.25)',
                       transition: 'all 0.3s ease',
-                      opacity: isSubmitting ? 0.8 : 1
+                      opacity: isSubmitting ? 0.8 : 1,
+                      boxSizing: 'border-box'
                     }}
                   >
                     {isSubmitting ? (
