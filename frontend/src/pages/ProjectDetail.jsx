@@ -3,42 +3,45 @@ import { Check, ArrowLeft } from 'lucide-react';
 
 export default function ProjectDetail({ selectedProject, setSelectedProject, closeProjectDetails, activeProjectThumbIndex, setActiveProjectThumbIndex }) {
   return (
-    <section className="project-detail-section" style={{ background: '#000000', minHeight: '100vh', paddingTop: '3rem', paddingBottom: '5rem', position: 'relative' }}>
+    <section className="project-detail-section" style={{ background: '#000000', minHeight: '100vh', paddingTop: '2rem', paddingBottom: '5rem', position: 'relative' }}>
       
-      {/* Back Arrow Button */}
-      <button 
-        onClick={closeProjectDetails} 
-        style={{ 
-          position: 'absolute', 
-          top: '2rem', 
-          left: '2rem', 
-          background: 'transparent', 
-          border: '1px solid var(--border-gold)', 
-          color: 'var(--primary-gold)', 
-          padding: '0.75rem', 
-          borderRadius: '50%', 
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transition: 'all 0.3s ease'
-        }}
-        onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary-gold)'; e.currentTarget.style.color = '#000'; }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--primary-gold)'; }}
-        title="Back to Projects"
-      >
-        <ArrowLeft size={24} />
-      </button>
+      <div className="container" style={{ maxWidth: '1100px', paddingLeft: 'clamp(1rem, 4vw, 2.5rem)', paddingRight: 'clamp(1rem, 4vw, 2.5rem)' }}>
+        
+        {/* Back Button Above the Image */}
+        <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+          <button 
+            onClick={closeProjectDetails} 
+            style={{ 
+              background: 'rgba(212, 175, 55, 0.12)', 
+              border: '1px solid var(--border-gold)', 
+              color: 'var(--primary-gold)', 
+              padding: '0.6rem 1.25rem', 
+              borderRadius: '30px', 
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary-gold)'; e.currentTarget.style.color = '#000'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(212, 175, 55, 0.12)'; e.currentTarget.style.color = 'var(--primary-gold)'; }}
+            title="Back to Projects"
+          >
+            <ArrowLeft size={18} />
+            <span>Back to Projects</span>
+          </button>
+        </div>
 
-      <div className="container" style={{ maxWidth: '1100px' }}>
-        
-        
         {/* 2 Column Layout */}
         <div className="project-detail-grid">
           
           {/* Left Column: Images */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div style={{ border: '1px solid rgba(197, 168, 128, 0.5)', height: '550px', borderRadius: '12px', overflow: 'hidden' }}>
+            <div style={{ border: '1px solid rgba(197, 168, 128, 0.5)', height: 'clamp(280px, 45vw, 550px)', borderRadius: '12px', overflow: 'hidden' }}>
               <img src={selectedProject.thumbnails[activeProjectThumbIndex]} alt={selectedProject.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             

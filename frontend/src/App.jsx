@@ -602,10 +602,32 @@ export default function App() {
 
       {/* GALLERY LIGHTBOX MODAL */}
       {selectedGalleryImg && (
-        <div className="modal-overlay" onClick={() => setSelectedGalleryImg(null)} style={{background: 'rgba(0,0,0,0.95)'}}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{background: 'transparent', border: 'none', maxWidth: '900px', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0'}}>
-            <button className="modal-close" onClick={() => setSelectedGalleryImg(null)} style={{color: '#fff', fontSize: '2rem'}}><X size={30} /></button>
-            <img src={selectedGalleryImg} alt="Lightbox View" style={{maxWidth: '100%', maxHeight: '85vh', objectFit: 'contain', border: '1px solid var(--border-gold)'}} />
+        <div className="modal-overlay" onClick={() => setSelectedGalleryImg(null)} style={{background: 'rgba(0,0,0,0.95)', padding: '1.25rem'}}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{background: 'transparent', border: 'none', maxWidth: '900px', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.75rem', padding: '0'}}>
+            <button 
+              onClick={() => setSelectedGalleryImg(null)} 
+              style={{
+                background: 'rgba(212, 175, 55, 0.15)', 
+                border: '1px solid var(--border-gold)', 
+                color: 'var(--primary-gold)', 
+                padding: '0.45rem 1rem', 
+                borderRadius: '20px', 
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary-gold)'; e.currentTarget.style.color = '#000'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(212, 175, 55, 0.15)'; e.currentTarget.style.color = 'var(--primary-gold)'; }}
+            >
+              <X size={18} /> Close
+            </button>
+            <img src={selectedGalleryImg} alt="Lightbox View" style={{maxWidth: '100%', maxHeight: '80vh', objectFit: 'contain', border: '1px solid var(--border-gold)', borderRadius: '6px'}} />
           </div>
         </div>
       )}
