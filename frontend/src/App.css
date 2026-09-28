@@ -92,14 +92,19 @@
 
 .nav-link {
   font-family: var(--font-serif);
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.92rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--text-secondary);
   cursor: pointer;
   padding: 0.5rem 0;
   transition: var(--transition-fast);
+}
+
+.nav-links .btn-primary {
+  font-weight: 800;
+  letter-spacing: 0.12em;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -278,7 +283,66 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #050506 0%, rgba(5,5,6,0.4) 30%, transparent 100%);
+  background: linear-gradient(to right, #050506 0%, rgba(5,5,6,0.3) 30%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hero Slider Track (Right to Left Sliding) */
+.hero-slider-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.hero-slide-item {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.hero-slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Hero Slider Navigation Indicators */
+.hero-slider-dots {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  display: flex;
+  gap: 0.6rem;
+  z-index: 4;
+}
+
+.hero-slider-dot {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.hero-slider-dot.active {
+  background: var(--primary-gold);
+  width: 44px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
 }
 
 .about-split-overlay {
@@ -287,7 +351,44 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #050506 0%, rgba(5,5,6,0.3) 10%, transparent 25%);
+  background: linear-gradient(to right, #050506 0%, rgba(5,5,6,0.65) 35%, rgba(5,5,6,0.35) 100%);
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.about-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+  justify-content: center;
+  padding-left: clamp(0rem, 2vw, 2rem);
+}
+
+.about-highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: rgba(5, 5, 6, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  padding: 0.85rem 1.4rem;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 380px;
+}
+
+.about-highlight-card:hover {
+  border-color: var(--primary-gold);
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
 }
 
 @media (max-width: 768px) {
@@ -305,10 +406,23 @@
     height: 100%;
   }
   .hero-split-overlay {
-    background: linear-gradient(180deg, rgba(5,5,6,0.55) 0%, rgba(5,5,6,0.85) 100%);
+    background: linear-gradient(180deg, rgba(5,5,6,0.65) 0%, rgba(5,5,6,0.88) 100%);
   }
   .about-split-overlay {
-    background: linear-gradient(180deg, rgba(5,5,6,0.55) 0%, rgba(5,5,6,0.88) 100%);
+    background: linear-gradient(180deg, rgba(5,5,6,0.85) 0%, rgba(5,5,6,0.95) 100%);
+  }
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+  .about-highlights-list {
+    padding-left: 0;
+    width: 100%;
+  }
+  .about-highlight-card {
+    max-width: 100%;
+    border-radius: 12px;
+    padding: 0.75rem 1.1rem;
   }
 }
 

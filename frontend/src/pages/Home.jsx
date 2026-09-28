@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Compass, Hammer, Clock, Shield } from 'lucide-react';
+
+import galleryVilla1 from '../assets/gallery_villa_1.jpg';
+import galleryVilla6 from '../assets/gallery_villa_6.jpg';
+import galleryVilla7 from '../assets/gallery_villa_7.jpg';
 
 import About from './About';
 import Services from './Services';
@@ -47,15 +51,57 @@ export default function Home({
   contactSuccess,
   setShowQuotePage
 }) {
+  const heroImages = [
+    heroVillaImg,
+    galleryVilla1,
+    galleryVilla6,
+    galleryVilla7
+  ];
+
+  const [currentHeroIdx, setCurrentHeroIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroIdx((prev) => (prev + 1) % heroImages.length);
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
+
   return (
     <div id="home">
       <section className="hero-section" style={{ padding: 0, position: 'relative' }}>
-        {/* Full width split background */}
+        {/* Full width split background with 4-image slider */}
         <div className="hero-split-bg">
           <div className="hero-split-left"></div>
           <div className="hero-split-right">
-            <img src={heroVillaImg} alt="Hero Villa" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <div className="hero-split-overlay"></div>
+            <div className="hero-slider-wrapper">
+              <div 
+                className="hero-slider-track" 
+                style={{ transform: `translateX(-${currentHeroIdx * 100}%)` }}
+              >
+                {heroImages.map((img, idx) => (
+                  <div key={idx} className="hero-slide-item">
+                    <img 
+                      src={img} 
+                      alt={`Luxury Architecture ${idx + 1}`} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="hero-split-overlay"></div>
+              <div className="hero-slider-dots">
+                {heroImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    className={`hero-slider-dot ${currentHeroIdx === idx ? 'active' : ''}`}
+                    onClick={() => setCurrentHeroIdx(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -135,7 +181,7 @@ export default function Home({
       <div style={{ height: '4rem', background: '#050506' }}></div>
 
       {/* Render core sections */}
-      <About aboutVillaImg={aboutVillaImg} isHomePage={true} />
+      <About aboutVillaImg={aboutVillaImg} isHomePage={true} scrollToSection={scrollToSection} />
       <Services scrollToSection={scrollToSection} />
       <Projects 
         projects={projects} 
