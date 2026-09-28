@@ -51,15 +51,15 @@ export default function Home({
     <div id="home">
       <section className="hero-section" style={{ padding: 0, position: 'relative' }}>
         {/* Full width split background */}
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', zIndex: 0 }}>
-          <div style={{ flex: 1, background: '#050506' }}></div>
-          <div style={{ flex: 1.2, position: 'relative' }}>
+        <div className="hero-split-bg">
+          <div className="hero-split-left"></div>
+          <div className="hero-split-right">
             <img src={heroVillaImg} alt="Hero Villa" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to right, #050506 0%, rgba(5,5,6,0.4) 30%, transparent 100%)' }}></div>
+            <div className="hero-split-overlay"></div>
           </div>
         </div>
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, paddingLeft: '2.5rem', paddingRight: '2.5rem', display: 'flex', alignItems: 'center' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingLeft: 'clamp(1rem, 4vw, 2.5rem)', paddingRight: 'clamp(1rem, 4vw, 2.5rem)', display: 'flex', alignItems: 'center' }}>
           
           {/* Vertical Follow Us Sidebar */}
           <div className="hero-social-sidebar">
@@ -78,11 +78,13 @@ export default function Home({
             </div>
           </div>
 
-          <div className="hero-content" style={{ maxWidth: '650px', padding: '4rem 0 6rem 0' }}>
-            <h2 className="hero-title-main" style={{ fontSize: '4rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-primary)', lineHeight: '1.1', background: 'none', WebkitTextFillColor: 'initial' }}>
-              CRAFTING THE <span style={{display: 'block', fontSize: '5.5rem', color: 'var(--primary-gold)'}}>FUTURE,</span> <span style={{fontSize: '2rem'}}>ONE SPACE AT A TIME.</span>
+          <div className="hero-content" style={{ maxWidth: '650px', padding: 'clamp(2.5rem, 6vw, 4.5rem) 0' }}>
+            <h2 className="hero-title-main" style={{ marginBottom: '1rem', background: 'none', WebkitTextFillColor: 'initial' }}>
+              <span className="hero-title-top">CRAFTING THE</span>
+              <span className="hero-title-gold">FUTURE,</span>
+              <span className="hero-title-sub">ONE SPACE AT A TIME.</span>
             </h2>
-            <p className="hero-desc" style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '2.5rem', maxWidth: '500px' }}>
+            <p className="hero-desc" style={{ marginBottom: '2rem', maxWidth: '500px' }}>
               We design, build, and transform exceptional residential and commercial spaces with innovative architecture, quality construction, and refined interior design.
             </p>
             <div className="hero-buttons">
@@ -94,7 +96,7 @@ export default function Home({
 
         {/* Badges Strip */}
         <div style={{ position: 'relative', zIndex: 1, background: '#080809', borderTop: '1px solid var(--border-gold)', borderBottom: '1px solid var(--border-gold)' }}>
-          <div className="container" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
+          <div className="container" style={{ paddingLeft: 'clamp(1rem, 4vw, 2.5rem)', paddingRight: 'clamp(1rem, 4vw, 2.5rem)' }}>
             <div className="hero-badges-row" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem', border: 'none', alignItems: 'center' }}>
               <div className="hero-badge-item" style={{ flexDirection: 'row', alignItems: 'center', gap: '1rem' }}>
                 <Compass size={32} style={{ color: 'var(--primary-gold)' }} />

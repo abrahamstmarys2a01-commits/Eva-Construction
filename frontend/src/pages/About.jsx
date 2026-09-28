@@ -6,9 +6,9 @@ export default function About({ aboutVillaImg, isHomePage = false }) {
     <section id="about" className="about-section" style={{ padding: 0, position: 'relative', background: '#050506' }}>
       {/* Top Section with Split Background */}
       <div style={{ position: 'relative', zIndex: 0 }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', zIndex: 0 }}>
-          <div style={{ flex: 1, background: '#050506' }}></div>
-          <div style={{ flex: 1.5, position: 'relative' }}>
+        <div className="about-split-bg">
+          <div className="about-split-left"></div>
+          <div className="about-split-right">
             <img 
               src={aboutVillaImg} 
               alt="About Studio" 
@@ -20,44 +20,44 @@ export default function About({ aboutVillaImg, isHomePage = false }) {
                 filter: 'brightness(1.05) contrast(1.02)'
               }} 
             />
-            {/* Subtle smooth edge feathering only at the left seam */}
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to right, #050506 0%, rgba(5,5,6,0.3) 10%, transparent 25%)' }}></div>
+            {/* Smooth edge overlay */}
+            <div className="about-split-overlay"></div>
           </div>
         </div>
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '2.5rem', paddingBottom: '4rem', paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: 'clamp(2rem, 5vw, 2.5rem)', paddingBottom: 'clamp(2.5rem, 6vw, 4rem)', paddingLeft: 'clamp(1rem, 4vw, 2.5rem)', paddingRight: 'clamp(1rem, 4vw, 2.5rem)' }}>
           <div className="section-header-left" style={{ marginBottom: '1.5rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 400, color: '#fff', textTransform: 'uppercase' }}>ABOUT US</h2>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 4.5vw, 2.5rem)', fontWeight: 400, color: '#fff', textTransform: 'uppercase' }}>ABOUT US</h2>
           </div>
 
         <div style={{ maxWidth: '600px' }}>
-          <h2 style={{fontFamily: 'var(--font-serif)', fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--primary-gold)'}}>Building Tomorrow, Together.</h2>
-          <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '3rem' }}>
+          <h2 style={{fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.5rem, 4vw, 2rem)', marginBottom: '1.25rem', color: 'var(--primary-gold)'}}>Building Tomorrow, Together.</h2>
+          <p style={{ fontSize: 'clamp(0.9rem, 2.5vw, 0.95rem)', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '2.5rem' }}>
             EVA ATELIER GROUP is a multidisciplinary firm specializing in Architecture, Construction, and Interior Design. We blend creativity, functionality, and engineering expertise to deliver spaces that inspire and elevate everyday living.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-              <Compass size={28} style={{ color: 'var(--primary-gold)', flexShrink: 0 }} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+              <Compass size={26} style={{ color: 'var(--primary-gold)', flexShrink: 0, marginTop: '2px' }} />
               <div>
-                <h3 style={{ fontSize: '1rem', color: 'var(--primary-gold)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Our Vision</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>To be a global leader in innovative design and construction.</p>
+                <h3 style={{ fontSize: '0.95rem', color: 'var(--primary-gold)', marginBottom: '0.35rem', textTransform: 'uppercase' }}>Our Vision</h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>To be a global leader in innovative design and construction.</p>
               </div>
             </div>
             
-            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-              <Target size={28} style={{ color: 'var(--primary-gold)', flexShrink: 0 }} />
+            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+              <Target size={26} style={{ color: 'var(--primary-gold)', flexShrink: 0, marginTop: '2px' }} />
               <div>
-                <h3 style={{ fontSize: '1rem', color: 'var(--primary-gold)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Our Mission</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>To deliver exceptional spaces through creativity, quality, and commitment.</p>
+                <h3 style={{ fontSize: '0.95rem', color: 'var(--primary-gold)', marginBottom: '0.35rem', textTransform: 'uppercase' }}>Our Mission</h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>To deliver exceptional spaces through creativity, quality, and commitment.</p>
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-              <Shield size={28} style={{ color: 'var(--primary-gold)', flexShrink: 0 }} />
+            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+              <Shield size={26} style={{ color: 'var(--primary-gold)', flexShrink: 0, marginTop: '2px' }} />
               <div>
-                <h3 style={{ fontSize: '1rem', color: 'var(--primary-gold)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Our Values</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>Integrity, innovation, quality, transparency, and client satisfaction.</p>
+                <h3 style={{ fontSize: '0.95rem', color: 'var(--primary-gold)', marginBottom: '0.35rem', textTransform: 'uppercase' }}>Our Values</h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>Integrity, innovation, quality, transparency, and client satisfaction.</p>
               </div>
             </div>
           </div>
@@ -98,22 +98,22 @@ export default function About({ aboutVillaImg, isHomePage = false }) {
 
       {/* Bottom Stats Bar */}
       <div style={{ position: 'relative', zIndex: 1, background: '#080809', borderTop: '1px solid var(--border-gold)' }}>
-        <div className="container">
-          <div className="about-stats-bar-horizontal" style={{ padding: '2.5rem 0', textAlign: 'center' }}>
+        <div className="container" style={{ paddingLeft: 'clamp(1rem, 4vw, 2.5rem)', paddingRight: 'clamp(1rem, 4vw, 2.5rem)' }}>
+          <div className="about-stats-bar-horizontal" style={{ padding: 'clamp(1.75rem, 4vw, 2.5rem) 0', textAlign: 'center' }}>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)' }}>
-              <h3 style={{ color: 'var(--primary-gold)', fontSize: '2.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>15+</h3>
+              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 'bold' }}>15+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Years of Experience</p>
             </div>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)' }}>
-              <h3 style={{ color: 'var(--primary-gold)', fontSize: '2.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>150+</h3>
+              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 'bold' }}>150+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Projects Completed</p>
             </div>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)' }}>
-              <h3 style={{ color: 'var(--primary-gold)', fontSize: '2.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>100+</h3>
+              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 'bold' }}>100+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Happy Clients</p>
             </div>
             <div>
-              <h3 style={{ color: 'var(--primary-gold)', fontSize: '2.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>50+</h3>
+              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 'bold' }}>50+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Team Members</p>
             </div>
           </div>
