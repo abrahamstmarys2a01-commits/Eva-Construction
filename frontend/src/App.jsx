@@ -43,6 +43,28 @@ import Contact from './pages/Contact';
 import GetQuote from './pages/GetQuote';
 import Careers from './pages/Careers';
 
+const FacebookIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
+const LinkedinIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarScrolled, setNavbarScrolled] = useState(false);
@@ -534,6 +556,7 @@ export default function App() {
       <footer className="footer">
         <div className="container" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
           <div className="footer-grid">
+            {/* Column 1: Brand & Bio */}
             <div className="footer-logo-desc">
               <div className="logo-area" onClick={() => scrollToSection('home')} style={{cursor: 'pointer'}}>
                 <div className="logo-icon">
@@ -545,57 +568,78 @@ export default function App() {
                 </div>
               </div>
               <p>
-                We design, build, and transform exceptional residential and commercial spaces with cutting-edge architecture and interior methodologies.
+                We design, build, and transform exceptional residential and commercial spaces with cutting-edge architecture, interior craftsmanship, and turnkey excellence.
               </p>
               <div className="footer-socials">
-                <a href="#facebook" className="footer-social-icon"><Compass size={18} /></a>
-                <a href="#instagram" className="footer-social-icon"><Sparkles size={18} /></a>
-                <a href="#linkedin" className="footer-social-icon"><Building2 size={18} /></a>
+                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="footer-social-icon" aria-label="Facebook">
+                  <FacebookIcon />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="footer-social-icon" aria-label="Instagram">
+                  <InstagramIcon />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="footer-social-icon" aria-label="LinkedIn">
+                  <LinkedinIcon />
+                </a>
               </div>
             </div>
 
+            {/* Column 2: Quick Links */}
             <div className="footer-col">
               <h3>Quick Links</h3>
               <ul className="footer-links">
-                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('home')}>Home</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('about')}>About Us</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('services')}>Services</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('projects')}>Projects</span></li>
+                <li><span onClick={() => scrollToSection('home')}>Home</span></li>
+                <li><span onClick={() => scrollToSection('about')}>About Us</span></li>
+                <li><span onClick={() => scrollToSection('services')}>Services</span></li>
+                <li><span onClick={() => scrollToSection('projects')}>Projects</span></li>
+                <li><span onClick={() => scrollToSection('gallery')}>Gallery</span></li>
+                <li><span onClick={() => { setSelectedProject(null); setShowQuotePage(false); setShowCareersPage(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Careers</span></li>
+                <li><span onClick={() => scrollToSection('contact')}>Contact Us</span></li>
               </ul>
             </div>
 
+            {/* Column 3: Our Services */}
             <div className="footer-col">
-              <h3>Company</h3>
+              <h3>Our Services</h3>
               <ul className="footer-links">
-                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('gallery')}>Gallery</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => { setSelectedProject(null); setShowQuotePage(false); setShowCareersPage(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Careers</span></li>
-                <li><span style={{cursor: 'pointer'}} onClick={() => scrollToSection('contact')}>Contact</span></li>
+                <li><span onClick={() => scrollToSection('services')}>Architectural Planning</span></li>
+                <li><span onClick={() => scrollToSection('services')}>Luxury Villa Construction</span></li>
+                <li><span onClick={() => scrollToSection('services')}>Turnkey Interior Design</span></li>
+                <li><span onClick={() => scrollToSection('services')}>Commercial Architecture</span></li>
+                <li><span onClick={() => scrollToSection('services')}>3D BIM & Elevation</span></li>
+                <li><span onClick={() => scrollToSection('services')}>Structural Engineering</span></li>
               </ul>
             </div>
 
-            <div className="footer-col footer-newsletter">
-              <h3>Newsletter</h3>
-              <p>Subscribe to receive architectural updates, trending designs, and resources.</p>
-              {newsletterSuccess ? (
-                <p style={{color: 'var(--primary-gold)', fontWeight: 600}}>Thank you for subscribing!</p>
-              ) : (
-                <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
-                  <input 
-                    type="email" 
-                    className="form-control" 
-                    placeholder="Your email address" 
-                    required
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                  />
-                  <button type="submit"><ArrowRight size={18} /></button>
-                </form>
-              )}
+            {/* Column 4: Trichy Head Office / Contact Info */}
+            <div className="footer-col">
+              <h3>Trichy Office</h3>
+              <ul className="footer-contact-list">
+                <li className="footer-contact-item">
+                  <MapPin size={18} className="footer-contact-icon" />
+                  <span>
+                    WD-54, Anandha Bhavan Complex, 2nd Floor, 17/52, Puthur High Rd, Tiruchirappalli, Tamil Nadu - 620017
+                  </span>
+                </li>
+                <li className="footer-contact-item">
+                  <Phone size={18} className="footer-contact-icon" />
+                  <a href="tel:+917397101215">+91 7397101215</a>
+                </li>
+                <li className="footer-contact-item">
+                  <Mail size={18} className="footer-contact-icon" />
+                  <a href="mailto:the.evaateliers@gmail.com">the.evaateliers@gmail.com</a>
+                </li>
+                <li className="footer-contact-item">
+                  <Clock size={18} className="footer-contact-icon" />
+                  <span>Mon &ndash; Sat: 9:30 AM &ndash; 7:30 PM</span>
+                </li>
+              </ul>
             </div>
           </div>
 
+          {/* Bottom Bar */}
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Eva Atelier Group. All Rights Reserved. Designed for premium luxury layouts.</p>
+            <p>&copy; {new Date().getFullYear()} EVA ATELIER GROUP. All Rights Reserved.</p>
+            <p style={{ color: 'var(--primary-gold)', opacity: 0.85 }}>Architecture &bull; Construction &bull; Interiors &bull; Trichy, Tamil Nadu</p>
           </div>
         </div>
       </footer>

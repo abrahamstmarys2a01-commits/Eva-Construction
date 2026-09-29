@@ -68,6 +68,49 @@ export default function Home({
     return () => clearInterval(timer);
   }, [heroImages.length]);
 
+  const testimonialSlides = [
+    [
+      {
+        quote: "EVA ATELIER GROUP transformed our dream into reality. Their professionalism, attention to detail and commitment to quality are truly exceptional.",
+        author: "Mr. Raghav, Chennai"
+      },
+      {
+        quote: "Excellent team, excellent execution! They delivered our project on time and beyond our expectations. Highly recommended.",
+        author: "Mrs. Priya, Coimbatore"
+      }
+    ],
+    [
+      {
+        quote: "From conceptual 3D architecture to flawless handover, their team delivered sheer luxury. The attention to space and natural lighting is unmatched.",
+        author: "Mr. & Mrs. Karthik, Bangalore"
+      },
+      {
+        quote: "Exceptional design aesthetics, premium material craftsmanship, and total transparency throughout the construction. Truly a benchmark in luxury architecture.",
+        author: "Dr. Ananya Sundaram, Madurai"
+      }
+    ],
+    [
+      {
+        quote: "The luxury villa designed and executed by EVA ATELIER in Trichy exceeded our highest expectations. Their turnkey management made the entire journey seamless and enjoyable.",
+        author: "Mr. S. Balasubramanian, Trichy"
+      },
+      {
+        quote: "Outstanding contemporary architecture and flawless execution. They meticulously paid attention to every fixture, material, and detail. Highly recommended!",
+        author: "Mrs. Deepa & Mr. Rajesh, Salem"
+      }
+    ]
+  ];
+
+  const [currentTestimonialIdx, setCurrentTestimonialIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonialIdx((prev) => (prev + 1) % testimonialSlides.length);
+    }, 2500);
+
+    return () => clearInterval(timer);
+  }, [testimonialSlides.length]);
+
   return (
     <div id="home">
       <section className="hero-section" style={{ padding: 0, position: 'relative' }}>
@@ -209,46 +252,43 @@ export default function Home({
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-            
-            {/* Testimonial 1 */}
-            <div style={{ 
-              border: '1px solid var(--border-gold)', 
-              background: 'rgba(255, 255, 255, 0.02)', 
-              borderRadius: '8px', 
-              padding: '2.5rem 2rem',
-              position: 'relative'
-            }}>
-              <div style={{ color: 'var(--primary-gold)', fontSize: '3rem', fontFamily: 'serif', lineHeight: 1, marginBottom: '0.5rem', opacity: 0.9 }}>
-                “
-              </div>
-              <p style={{ color: '#d1d1d1', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1.5rem', fontStyle: 'italic' }}>
-                EVA ATELIER GROUP transformed our dream into reality. Their professionalism, attention to detail and commitment to quality are truly exceptional.
-              </p>
-              <span style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 600, display: 'block' }}>
-                &mdash; Mr. Raghav, Chennai
-              </span>
+          <div className="testimonials-slider-wrapper">
+            <div 
+              className="testimonials-slider-track"
+              style={{ transform: `translateX(-${currentTestimonialIdx * 100}%)` }}
+            >
+              {testimonialSlides.map((slide, slideIdx) => (
+                <div key={slideIdx} className="testimonials-slide-page">
+                  {slide.map((item, itemIdx) => (
+                    <div key={itemIdx} className="testimonial-card-item">
+                      <div>
+                        <div style={{ color: 'var(--primary-gold)', fontSize: '3rem', fontFamily: 'serif', lineHeight: 1, marginBottom: '0.5rem', opacity: 0.9 }}>
+                          “
+                        </div>
+                        <p style={{ color: '#d1d1d1', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+                          {item.quote}
+                        </p>
+                      </div>
+                      <span style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 600, display: 'block' }}>
+                        &mdash; {item.author}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* Testimonial 2 */}
-            <div style={{ 
-              border: '1px solid var(--border-gold)', 
-              background: 'rgba(255, 255, 255, 0.02)', 
-              borderRadius: '8px', 
-              padding: '2.5rem 2rem',
-              position: 'relative'
-            }}>
-              <div style={{ color: 'var(--primary-gold)', fontSize: '3rem', fontFamily: 'serif', lineHeight: 1, marginBottom: '0.5rem', opacity: 0.9 }}>
-                “
-              </div>
-              <p style={{ color: '#d1d1d1', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1.5rem', fontStyle: 'italic' }}>
-                Excellent team, excellent execution! They delivered our project on time and beyond our expectations. Highly recommended.
-              </p>
-              <span style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 600, display: 'block' }}>
-                &mdash; Mrs. Priya, Coimbatore
-              </span>
-            </div>
-
+          {/* Slider navigation dots */}
+          <div className="testimonials-dots">
+            {testimonialSlides.map((_, idx) => (
+              <button
+                key={idx}
+                className={`testimonials-dot ${currentTestimonialIdx === idx ? 'active' : ''}`}
+                onClick={() => setCurrentTestimonialIdx(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
           </div>
 
         </div>
