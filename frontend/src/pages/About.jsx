@@ -1,5 +1,8 @@
 import React from 'react';
 import { Lightbulb, Award, ClipboardCheck, Clock, Target, Compass, Shield } from 'lucide-react';
+import ceoImg from '../assets/ceo_portrait.png';
+import architectImg from '../assets/architect_portrait.png';
+import structuralEngineerImg from '../assets/structural_engineer_portrait.jpg';
 
 export default function About({ aboutVillaImg, isHomePage = false, scrollToSection }) {
   const highlights = [
@@ -208,23 +211,23 @@ export default function About({ aboutVillaImg, isHomePage = false, scrollToSecti
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 320px))', justifyContent: 'center', gap: '2rem' }}>
               {/* CEO */}
               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-gold)', borderRadius: '6px', padding: '1.25rem', textAlign: 'center' }}>
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="CEO" style={{ width: '100%', height: '260px', objectFit: 'cover', borderRadius: '4px', marginBottom: '1rem' }} />
-                <h3 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '0.25rem', fontFamily: 'var(--font-serif)' }}>John Doe</h3>
-                <p style={{ color: 'var(--primary-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>Chief Executive Officer</p>
+                <img src={ceoImg} alt="Ramkumar - CEO" style={{ width: '100%', height: '260px', objectFit: 'cover', objectPosition: 'top center', borderRadius: '4px', marginBottom: '1rem' }} />
+                <h3 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '0.25rem', fontFamily: 'var(--font-serif)' }}>Ramkumar</h3>
+                <p style={{ color: 'var(--primary-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>CHIEF EXECUTIVE OFFICER</p>
               </div>
               
-              {/* Project Manager 1 */}
+              {/* Project Architect */}
               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-gold)', borderRadius: '6px', padding: '1.25rem', textAlign: 'center' }}>
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Principal Architect" style={{ width: '100%', height: '260px', objectFit: 'cover', borderRadius: '4px', marginBottom: '1rem' }} />
-                <h3 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '0.25rem', fontFamily: 'var(--font-serif)' }}>Jane Smith</h3>
-                <p style={{ color: 'var(--primary-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>Principal Architect</p>
+                <img src={architectImg} alt="Akash - Project Architect" style={{ width: '100%', height: '260px', objectFit: 'cover', objectPosition: 'top center', borderRadius: '4px', marginBottom: '1rem' }} />
+                <h3 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '0.25rem', fontFamily: 'var(--font-serif)' }}>Akash</h3>
+                <p style={{ color: 'var(--primary-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>PROJECT ARCHITECT</p>
               </div>
 
-              {/* Project Manager 2 */}
+              {/* Structural Engineer */}
               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-gold)', borderRadius: '6px', padding: '1.25rem', textAlign: 'center' }}>
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Head of Construction" style={{ width: '100%', height: '260px', objectFit: 'cover', borderRadius: '4px', marginBottom: '1rem' }} />
-                <h3 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '0.25rem', fontFamily: 'var(--font-serif)' }}>Robert Chen</h3>
-                <p style={{ color: 'var(--primary-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>Head of Construction</p>
+                <img src={structuralEngineerImg} alt="Mohamed Ansari - Structural Engineer" style={{ width: '100%', height: '260px', objectFit: 'cover', objectPosition: 'top center', borderRadius: '4px', marginBottom: '1rem' }} />
+                <h3 style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '0.25rem', fontFamily: 'var(--font-serif)' }}>Mohamed Ansari</h3>
+                <p style={{ color: 'var(--primary-gold)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>STRUCTURAL ENGINEER</p>
               </div>
             </div>
           </div>

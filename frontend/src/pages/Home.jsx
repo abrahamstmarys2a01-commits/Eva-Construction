@@ -161,7 +161,7 @@ export default function Home({
             <div className="hero-social-line"></div>
             <span className="hero-social-text">FOLLOW US</span>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginTop: '0.5rem' }}>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hero-social-icon" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61592784964504" target="_blank" rel="noopener noreferrer" className="hero-social-icon" aria-label="Facebook">
                 <FacebookIcon />
               </a>
               <a href="https://www.instagram.com/eva_atelier_group" target="_blank" rel="noopener noreferrer" className="hero-social-icon" aria-label="Instagram">

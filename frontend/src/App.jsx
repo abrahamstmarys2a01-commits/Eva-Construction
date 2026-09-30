@@ -601,7 +601,7 @@ export default function App() {
                 We design, build, and transform exceptional residential and commercial spaces with cutting-edge architecture, interior craftsmanship, and turnkey excellence.
               </p>
               <div className="footer-socials">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="Facebook">
+                <a href="https://www.facebook.com/profile.php?id=61592784964504" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="Facebook">
                   <FacebookIcon />
                 </a>
                 <a href="https://www.instagram.com/eva_atelier_group" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="Instagram">
