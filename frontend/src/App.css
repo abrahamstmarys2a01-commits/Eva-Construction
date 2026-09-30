@@ -803,6 +803,14 @@
   align-items: center;
 }
 
+.about-stats-bar-horizontal h3 {
+  font-family: var(--font-sans) !important;
+  font-variant-numeric: lining-nums proportional-nums !important;
+  font-feature-settings: "lnum" 1, "pnum" 1 !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 @media (max-width: 768px) {
   .about-stats-bar-horizontal {
     grid-template-columns: repeat(2, 1fr);

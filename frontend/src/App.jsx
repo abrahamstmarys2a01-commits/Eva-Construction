@@ -31,6 +31,10 @@ import galleryVilla6 from './assets/gallery_villa_6.jpg';
 import galleryVilla7 from './assets/gallery_villa_7.jpg';
 import galleryVilla8 from './assets/gallery_villa_8.jpg';
 import galleryVilla9 from './assets/gallery_villa_9.jpg';
+import interiorKitchen1 from './assets/interior_kitchen_1.jpg';
+import interiorKitchen2 from './assets/interior_kitchen_2.jpg';
+import interiorLivingRoom from './assets/interior_living_room.jpg';
+import interiorMasterBedroom from './assets/interior_master_bedroom.jpg';
 
 // Import newly created page components
 import Home from './pages/Home';
@@ -62,6 +66,12 @@ const LinkedinIcon = () => (
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
     <rect x="2" y="9" width="4" height="12" />
     <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const WhatsAppIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.711 1.456h.005c6.554 0 11.89-5.336 11.893-11.893a11.82 11.82 0 00-3.484-8.414z" />
   </svg>
 );
 
@@ -256,21 +266,21 @@ export default function App() {
     },
     {
       id: 8,
-      title: "Residence Interior - Trichy",
+      title: "Bespoke Residence Interior - Trichy",
       category: "INTERIOR",
       location: "Trichy, Tamil Nadu",
-      area: "4,200 sq.ft",
-      year: "2023",
+      area: "4,500 sq.ft",
+      year: "2024",
       status: "Completed",
-      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+      image: interiorLivingRoom,
       thumbnails: [
-        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+        interiorLivingRoom,
+        interiorKitchen1,
+        interiorKitchen2,
+        interiorMasterBedroom
       ],
-      description: "Elegant residential revamp focusing on modular panelings, hidden storage solutions, custom cove LED illuminations, and premium custom upholstered furniture layouts.",
-      features: ["Custom Veneered Paneling", "Smart Hidden storage", "Italian Light Fixtures", "Bespoke Bed Frames", "Premium Brass Accents"]
+      description: "A breathtaking turnkey interior transformation featuring an open double-height luxury living hall with a sculptural curved staircase and ring chandelier, an olive/sage modular kitchen with custom backsplash tiling, and an opulent master bedroom suite with warm wood accents.",
+      features: ["Double-Height Living Lounge", "Sculptural Curved Staircase", "Modern Modular Kitchen", "Master Bedroom Suite", "Cove LED & Designer Chandelier"]
     },
     {
       id: 9,
@@ -343,37 +353,57 @@ export default function App() {
       ],
       description: "A breathtaking fusion of traditional Kerala sloping hip roof geometry and sleek contemporary white stucco walls, accompanied by a grand paved driveway and stone column portico.",
       features: ["Heritage Fusion Roof", "Grand Car Portico", "Stone Clad Columns", "Expansive Paved Driveway", "Lush Manicured Lawn"]
+    },
+    {
+      id: 13,
+      title: "Modern Modular Kitchen & Master Suite",
+      category: "INTERIOR",
+      location: "Chennai, Tamil Nadu",
+      area: "3,800 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: interiorKitchen1,
+      thumbnails: [
+        interiorKitchen1,
+        interiorKitchen2,
+        interiorLivingRoom,
+        interiorMasterBedroom
+      ],
+      description: "State-of-the-art modular kitchen and bedroom execution with sleek integrated appliances, floral patterned backsplash, glossy sage green cabinetry, and bespoke wardrobe units.",
+      features: ["Sage Green Modular Cabinets", "Quartz Countertops", "Integrated Smart Appliances", "Bespoke Wardrobe Units", "Designer Ambient Lighting"]
     }
   ];
 
   const galleryItems = [
-    { id: 1, type: 'ARCHITECTURE', image: galleryVilla1 },
-    { id: 2, type: 'ARCHITECTURE', image: galleryVilla2 },
-    { id: 3, type: 'ARCHITECTURE', image: galleryVilla3 },
-    { id: 4, type: 'ARCHITECTURE', image: galleryVilla4 },
-    { id: 5, type: 'ARCHITECTURE', image: galleryVilla5 },
-    { id: 6, type: 'ARCHITECTURE', image: galleryVilla6 },
-    { id: 7, type: 'ARCHITECTURE', image: galleryVilla7 },
-    { id: 8, type: 'ARCHITECTURE', image: galleryVilla8 },
-    { id: 9, type: 'ARCHITECTURE', image: galleryVilla9 },
-    { id: 10, type: 'COMPLETED', image: galleryVilla1 },
-    { id: 11, type: 'COMPLETED', image: galleryVilla6 },
-    { id: 12, type: 'COMPLETED', image: galleryVilla7 },
-    { id: 13, type: 'COMPLETED', image: galleryVilla8 },
-    { id: 14, type: 'COMPLETED', image: galleryVilla9 },
-    { id: 15, type: 'ARCHITECTURE', image: heroVillaImg },
-    { id: 16, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
-    { id: 17, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" },
-    { id: 18, type: 'ARCHITECTURE', image: aboutVillaImg },
-    { id: 19, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" },
-    { id: 20, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
-    { id: 21, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
-    { id: 22, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" },
-    { id: 23, type: 'COMPLETED', image: galleryVilla3 },
-    { id: 24, type: 'COMPLETED', image: galleryVilla4 },
-    { id: 25, type: 'CONSTRUCTION', image: galleryVilla5 },
-    { id: 26, type: 'INTERIORS', image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" },
-    { id: 27, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" }
+    { id: 1, type: 'INTERIORS', image: interiorLivingRoom },
+    { id: 2, type: 'INTERIORS', image: interiorKitchen1 },
+    { id: 3, type: 'INTERIORS', image: interiorKitchen2 },
+    { id: 4, type: 'INTERIORS', image: interiorMasterBedroom },
+    { id: 5, type: 'ARCHITECTURE', image: galleryVilla1 },
+    { id: 6, type: 'ARCHITECTURE', image: galleryVilla2 },
+    { id: 7, type: 'ARCHITECTURE', image: galleryVilla3 },
+    { id: 8, type: 'ARCHITECTURE', image: galleryVilla4 },
+    { id: 9, type: 'ARCHITECTURE', image: galleryVilla5 },
+    { id: 10, type: 'ARCHITECTURE', image: galleryVilla6 },
+    { id: 11, type: 'ARCHITECTURE', image: galleryVilla7 },
+    { id: 12, type: 'ARCHITECTURE', image: galleryVilla8 },
+    { id: 13, type: 'ARCHITECTURE', image: galleryVilla9 },
+    { id: 14, type: 'COMPLETED', image: interiorLivingRoom },
+    { id: 15, type: 'COMPLETED', image: interiorMasterBedroom },
+    { id: 16, type: 'COMPLETED', image: interiorKitchen1 },
+    { id: 17, type: 'COMPLETED', image: galleryVilla1 },
+    { id: 18, type: 'COMPLETED', image: galleryVilla6 },
+    { id: 19, type: 'COMPLETED', image: galleryVilla7 },
+    { id: 20, type: 'COMPLETED', image: galleryVilla8 },
+    { id: 21, type: 'COMPLETED', image: galleryVilla9 },
+    { id: 22, type: 'ARCHITECTURE', image: heroVillaImg },
+    { id: 23, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
+    { id: 24, type: 'ARCHITECTURE', image: aboutVillaImg },
+    { id: 25, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
+    { id: 26, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
+    { id: 27, type: 'COMPLETED', image: galleryVilla3 },
+    { id: 28, type: 'COMPLETED', image: galleryVilla4 },
+    { id: 29, type: 'CONSTRUCTION', image: galleryVilla5 }
   ];
 
   const handleContactSubmit = (e) => {
@@ -571,14 +601,17 @@ export default function App() {
                 We design, build, and transform exceptional residential and commercial spaces with cutting-edge architecture, interior craftsmanship, and turnkey excellence.
               </p>
               <div className="footer-socials">
-                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="footer-social-icon" aria-label="Facebook">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="Facebook">
                   <FacebookIcon />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="footer-social-icon" aria-label="Instagram">
+                <a href="https://www.instagram.com/eva_atelier_group" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="Instagram">
                   <InstagramIcon />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="footer-social-icon" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/ar-ramkumar-muruganandam-0a4486395/" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="LinkedIn">
                   <LinkedinIcon />
+                </a>
+                <a href="https://wa.me/917397101215" target="_blank" rel="noopener noreferrer" className="footer-social-icon" aria-label="WhatsApp">
+                  <WhatsAppIcon />
                 </a>
               </div>
             </div>

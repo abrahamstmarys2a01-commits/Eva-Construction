@@ -236,19 +236,19 @@ export default function About({ aboutVillaImg, isHomePage = false, scrollToSecti
         <div className="container" style={{ paddingLeft: 'clamp(1rem, 4vw, 2.5rem)', paddingRight: 'clamp(1rem, 4vw, 2.5rem)' }}>
           <div className="about-stats-bar-horizontal" style={{ padding: 'clamp(1.75rem, 4vw, 2.5rem) 0', textAlign: 'center' }}>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)' }}>
-              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 'bold' }}>15+</h3>
+              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 700, fontFamily: 'var(--font-sans)', fontVariantNumeric: 'normal', letterSpacing: '0.02em' }}>15+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Years of Experience</p>
             </div>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)' }}>
-              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 'bold' }}>150+</h3>
+              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 700, fontFamily: 'var(--font-sans)', fontVariantNumeric: 'normal', letterSpacing: '0.02em' }}>150+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Projects Completed</p>
             </div>
             <div style={{ borderRight: '1px solid rgba(197, 168, 128, 0.3)' }}>
-              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 'bold' }}>100+</h3>
+              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 700, fontFamily: 'var(--font-sans)', fontVariantNumeric: 'normal', letterSpacing: '0.02em' }}>100+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Happy Clients</p>
             </div>
             <div>
-              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 'bold' }}>50+</h3>
+              <h3 style={{ color: 'var(--primary-gold)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.35rem', fontWeight: 700, fontFamily: 'var(--font-sans)', fontVariantNumeric: 'normal', letterSpacing: '0.02em' }}>50+</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Team Members</p>
             </div>
           </div>

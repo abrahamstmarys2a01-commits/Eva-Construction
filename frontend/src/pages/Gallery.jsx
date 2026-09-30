@@ -68,7 +68,6 @@ export default function Gallery({ galleryItems, galleryFilter, setGalleryFilter,
           {galleryItems
             .filter(item => {
               if (galleryFilter === 'ALL') return true;
-              if (galleryFilter === 'COMPLETED') return true;
               return item.type === galleryFilter;
             })
             .map((item, index) => (
