@@ -39,6 +39,9 @@ import heritageLivingCourtyard from './assets/heritage_living_courtyard.jpg';
 import heritageMuralLiving from './assets/heritage_mural_living.jpg';
 import heritageDiningBar from './assets/heritage_dining_bar.jpg';
 import heritageWardrobeCloset from './assets/heritage_wardrobe_closet.jpg';
+import modernVillaChennai from './assets/modern_villa_chennai.jpg';
+import luxuryMansionPoolVilla from './assets/luxury_mansion_pool_villa.jpg';
+import traditionalHeritageClayVilla from './assets/traditional_heritage_clay_villa.jpg';
 
 // Import newly created page components
 import Home from './pages/Home';
@@ -148,17 +151,17 @@ export default function App() {
       category: "VILLAS",
       location: "Chennai, Tamil Nadu",
       area: "6,500 sq.ft",
-      year: "2023",
+      year: "2024",
       status: "Completed",
-      image: heroVillaImg,
+      image: modernVillaChennai,
       thumbnails: [
+        modernVillaChennai,
         heroVillaImg,
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
+        galleryVilla1,
+        galleryVilla6
       ],
-      description: "This modern villa is a perfect blend of luxury and functionality. Open spaces, natural light, and premium materials create a timeless elegance. Positioned strategically to optimize natural ventilation and solar patterns.",
-      features: ["Spacious Living Area", "Modular Kitchen", "Landscaped Garden", "Premium Interiors", "Smart Home Automation"]
+      description: "This modern luxury villa is a perfect blend of tropical contemporary architecture and functional elegance. Features covered dual-car portico with stone pillars, private cantilevered balconies, lush perimeter landscape lighting, and refined interior spatial flow.",
+      features: ["Grand Car Portico with Stone Pillars", "Balcony Planters & Pergola", "Architectural Landscape Lighting", "Premium Imported Finishes", "Smart Home Automation"]
     },
     {
       id: 2,
@@ -234,21 +237,21 @@ export default function App() {
     },
     {
       id: 6,
-      title: "Office Interior - Chennai",
-      category: "INTERIOR",
-      location: "Nungambakkam, Chennai",
-      area: "6,800 sq.ft",
-      year: "2023",
+      title: "Grand Contemporary Pool Mansion - Coimbatore",
+      category: "VILLAS",
+      location: "Coimbatore, Tamil Nadu",
+      area: "10,500 sq.ft",
+      year: "2024",
       status: "Completed",
-      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
+      image: luxuryMansionPoolVilla,
       thumbnails: [
-        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
+        luxuryMansionPoolVilla,
+        traditionalHeritageClayVilla,
+        modernVillaChennai,
+        galleryVilla6
       ],
-      description: "An elegant corporate workspace featuring high-end wood veneer detailing, ergonomic meeting areas, custom acoustic glass walls, and a premium double-height reception lounge.",
-      features: ["Acoustic Glass Walls", "Veneer Cladding", "Bespoke Lighting Installations", "Ergonomic Desk Systems", "VIP Executive Boardroom"]
+      description: "An ultra-luxurious multi-level architectural masterpiece boasting an infinity pool, Japanese-style zen koi pond fountain, floor-to-ceiling panoramic glass facade, and illuminated grand driveway entrance.",
+      features: ["Infinity Lap Pool", "Zen Koi Pond & Waterfalls", "Multi-Level Cantilever Terraces", "Double-Height Glass Atrium", "Smart Landscape Illuminations"]
     },
     {
       id: 7,
@@ -397,41 +400,47 @@ export default function App() {
   ];
 
   const galleryItems = [
-    { id: 1, type: 'INTERIORS', image: heritageLivingCourtyard },
-    { id: 2, type: 'INTERIORS', image: heritageMuralLiving },
-    { id: 3, type: 'INTERIORS', image: heritageDiningBar },
-    { id: 4, type: 'INTERIORS', image: heritageWardrobeCloset },
-    { id: 5, type: 'INTERIORS', image: interiorLivingRoom },
-    { id: 6, type: 'INTERIORS', image: interiorKitchen1 },
-    { id: 7, type: 'INTERIORS', image: interiorKitchen2 },
-    { id: 8, type: 'INTERIORS', image: interiorMasterBedroom },
-    { id: 9, type: 'COMPLETED', image: heritageLivingCourtyard },
-    { id: 10, type: 'COMPLETED', image: heritageMuralLiving },
-    { id: 11, type: 'ARCHITECTURE', image: galleryVilla1 },
-    { id: 12, type: 'ARCHITECTURE', image: galleryVilla2 },
-    { id: 13, type: 'ARCHITECTURE', image: galleryVilla3 },
-    { id: 14, type: 'ARCHITECTURE', image: galleryVilla4 },
-    { id: 15, type: 'ARCHITECTURE', image: galleryVilla5 },
-    { id: 16, type: 'ARCHITECTURE', image: galleryVilla6 },
-    { id: 17, type: 'ARCHITECTURE', image: galleryVilla7 },
-    { id: 18, type: 'ARCHITECTURE', image: galleryVilla8 },
-    { id: 19, type: 'ARCHITECTURE', image: galleryVilla9 },
-    { id: 20, type: 'COMPLETED', image: interiorLivingRoom },
-    { id: 21, type: 'COMPLETED', image: interiorMasterBedroom },
-    { id: 22, type: 'COMPLETED', image: interiorKitchen1 },
-    { id: 23, type: 'COMPLETED', image: galleryVilla1 },
-    { id: 24, type: 'COMPLETED', image: galleryVilla6 },
-    { id: 25, type: 'COMPLETED', image: galleryVilla7 },
-    { id: 26, type: 'COMPLETED', image: galleryVilla8 },
-    { id: 27, type: 'COMPLETED', image: galleryVilla9 },
-    { id: 28, type: 'ARCHITECTURE', image: heroVillaImg },
-    { id: 29, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
-    { id: 30, type: 'ARCHITECTURE', image: aboutVillaImg },
-    { id: 31, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
-    { id: 32, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
-    { id: 33, type: 'COMPLETED', image: galleryVilla3 },
-    { id: 34, type: 'COMPLETED', image: galleryVilla4 },
-    { id: 35, type: 'CONSTRUCTION', image: galleryVilla5 }
+    { id: 1, type: 'ARCHITECTURE', image: luxuryMansionPoolVilla },
+    { id: 2, type: 'ARCHITECTURE', image: traditionalHeritageClayVilla },
+    { id: 3, type: 'ARCHITECTURE', image: modernVillaChennai },
+    { id: 4, type: 'INTERIORS', image: heritageLivingCourtyard },
+    { id: 5, type: 'INTERIORS', image: heritageMuralLiving },
+    { id: 6, type: 'INTERIORS', image: heritageDiningBar },
+    { id: 7, type: 'INTERIORS', image: heritageWardrobeCloset },
+    { id: 8, type: 'INTERIORS', image: interiorLivingRoom },
+    { id: 9, type: 'INTERIORS', image: interiorKitchen1 },
+    { id: 10, type: 'INTERIORS', image: interiorKitchen2 },
+    { id: 11, type: 'INTERIORS', image: interiorMasterBedroom },
+    { id: 12, type: 'COMPLETED', image: luxuryMansionPoolVilla },
+    { id: 13, type: 'COMPLETED', image: traditionalHeritageClayVilla },
+    { id: 14, type: 'COMPLETED', image: modernVillaChennai },
+    { id: 15, type: 'COMPLETED', image: heritageLivingCourtyard },
+    { id: 16, type: 'COMPLETED', image: heritageMuralLiving },
+    { id: 17, type: 'ARCHITECTURE', image: galleryVilla1 },
+    { id: 18, type: 'ARCHITECTURE', image: galleryVilla2 },
+    { id: 19, type: 'ARCHITECTURE', image: galleryVilla3 },
+    { id: 20, type: 'ARCHITECTURE', image: galleryVilla4 },
+    { id: 21, type: 'ARCHITECTURE', image: galleryVilla5 },
+    { id: 22, type: 'ARCHITECTURE', image: galleryVilla6 },
+    { id: 23, type: 'ARCHITECTURE', image: galleryVilla7 },
+    { id: 24, type: 'ARCHITECTURE', image: galleryVilla8 },
+    { id: 25, type: 'ARCHITECTURE', image: galleryVilla9 },
+    { id: 26, type: 'COMPLETED', image: interiorLivingRoom },
+    { id: 27, type: 'COMPLETED', image: interiorMasterBedroom },
+    { id: 28, type: 'COMPLETED', image: interiorKitchen1 },
+    { id: 29, type: 'COMPLETED', image: galleryVilla1 },
+    { id: 30, type: 'COMPLETED', image: galleryVilla6 },
+    { id: 31, type: 'COMPLETED', image: galleryVilla7 },
+    { id: 32, type: 'COMPLETED', image: galleryVilla8 },
+    { id: 33, type: 'COMPLETED', image: galleryVilla9 },
+    { id: 34, type: 'ARCHITECTURE', image: heroVillaImg },
+    { id: 35, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
+    { id: 36, type: 'ARCHITECTURE', image: aboutVillaImg },
+    { id: 37, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
+    { id: 38, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
+    { id: 39, type: 'COMPLETED', image: galleryVilla3 },
+    { id: 40, type: 'COMPLETED', image: galleryVilla4 },
+    { id: 41, type: 'CONSTRUCTION', image: galleryVilla5 }
   ];
 
   const handleContactSubmit = (e) => {
