@@ -35,6 +35,10 @@ import interiorKitchen1 from './assets/interior_kitchen_1.jpg';
 import interiorKitchen2 from './assets/interior_kitchen_2.jpg';
 import interiorLivingRoom from './assets/interior_living_room.jpg';
 import interiorMasterBedroom from './assets/interior_master_bedroom.jpg';
+import heritageLivingCourtyard from './assets/heritage_living_courtyard.jpg';
+import heritageMuralLiving from './assets/heritage_mural_living.jpg';
+import heritageDiningBar from './assets/heritage_dining_bar.jpg';
+import heritageWardrobeCloset from './assets/heritage_wardrobe_closet.jpg';
 
 // Import newly created page components
 import Home from './pages/Home';
@@ -371,39 +375,63 @@ export default function App() {
       ],
       description: "State-of-the-art modular kitchen and bedroom execution with sleek integrated appliances, floral patterned backsplash, glossy sage green cabinetry, and bespoke wardrobe units.",
       features: ["Sage Green Modular Cabinets", "Quartz Countertops", "Integrated Smart Appliances", "Bespoke Wardrobe Units", "Designer Ambient Lighting"]
+    },
+    {
+      id: 14,
+      title: "Chettinad Heritage Fusion Villa - Madurai",
+      category: "INTERIOR",
+      location: "Madurai, Tamil Nadu",
+      area: "5,400 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: heritageLivingCourtyard,
+      thumbnails: [
+        heritageLivingCourtyard,
+        heritageMuralLiving,
+        heritageDiningBar,
+        heritageWardrobeCloset
+      ],
+      description: "A masterful fusion of traditional South Indian Chettinad architecture and modern luxury living. Showcasing a central skylit courtyard with brass-chain teak oonjal (swing), hand-painted Radha-Krishna devotional mural wall, terracotta jali lattice dividers, breakfast bar nook, and floor-to-ceiling teak sliding wardrobe suites.",
+      features: ["Central Courtyard with Teak Oonjal", "Radha-Krishna Devotional Wall Mural", "Terracotta Jali Lattice Screens", "Breakfast Bar & Crockery Cabinet", "Floor-to-Ceiling Teak Wardrobes"]
     }
   ];
 
   const galleryItems = [
-    { id: 1, type: 'INTERIORS', image: interiorLivingRoom },
-    { id: 2, type: 'INTERIORS', image: interiorKitchen1 },
-    { id: 3, type: 'INTERIORS', image: interiorKitchen2 },
-    { id: 4, type: 'INTERIORS', image: interiorMasterBedroom },
-    { id: 5, type: 'ARCHITECTURE', image: galleryVilla1 },
-    { id: 6, type: 'ARCHITECTURE', image: galleryVilla2 },
-    { id: 7, type: 'ARCHITECTURE', image: galleryVilla3 },
-    { id: 8, type: 'ARCHITECTURE', image: galleryVilla4 },
-    { id: 9, type: 'ARCHITECTURE', image: galleryVilla5 },
-    { id: 10, type: 'ARCHITECTURE', image: galleryVilla6 },
-    { id: 11, type: 'ARCHITECTURE', image: galleryVilla7 },
-    { id: 12, type: 'ARCHITECTURE', image: galleryVilla8 },
-    { id: 13, type: 'ARCHITECTURE', image: galleryVilla9 },
-    { id: 14, type: 'COMPLETED', image: interiorLivingRoom },
-    { id: 15, type: 'COMPLETED', image: interiorMasterBedroom },
-    { id: 16, type: 'COMPLETED', image: interiorKitchen1 },
-    { id: 17, type: 'COMPLETED', image: galleryVilla1 },
-    { id: 18, type: 'COMPLETED', image: galleryVilla6 },
-    { id: 19, type: 'COMPLETED', image: galleryVilla7 },
-    { id: 20, type: 'COMPLETED', image: galleryVilla8 },
-    { id: 21, type: 'COMPLETED', image: galleryVilla9 },
-    { id: 22, type: 'ARCHITECTURE', image: heroVillaImg },
-    { id: 23, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
-    { id: 24, type: 'ARCHITECTURE', image: aboutVillaImg },
-    { id: 25, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
-    { id: 26, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
-    { id: 27, type: 'COMPLETED', image: galleryVilla3 },
-    { id: 28, type: 'COMPLETED', image: galleryVilla4 },
-    { id: 29, type: 'CONSTRUCTION', image: galleryVilla5 }
+    { id: 1, type: 'INTERIORS', image: heritageLivingCourtyard },
+    { id: 2, type: 'INTERIORS', image: heritageMuralLiving },
+    { id: 3, type: 'INTERIORS', image: heritageDiningBar },
+    { id: 4, type: 'INTERIORS', image: heritageWardrobeCloset },
+    { id: 5, type: 'INTERIORS', image: interiorLivingRoom },
+    { id: 6, type: 'INTERIORS', image: interiorKitchen1 },
+    { id: 7, type: 'INTERIORS', image: interiorKitchen2 },
+    { id: 8, type: 'INTERIORS', image: interiorMasterBedroom },
+    { id: 9, type: 'COMPLETED', image: heritageLivingCourtyard },
+    { id: 10, type: 'COMPLETED', image: heritageMuralLiving },
+    { id: 11, type: 'ARCHITECTURE', image: galleryVilla1 },
+    { id: 12, type: 'ARCHITECTURE', image: galleryVilla2 },
+    { id: 13, type: 'ARCHITECTURE', image: galleryVilla3 },
+    { id: 14, type: 'ARCHITECTURE', image: galleryVilla4 },
+    { id: 15, type: 'ARCHITECTURE', image: galleryVilla5 },
+    { id: 16, type: 'ARCHITECTURE', image: galleryVilla6 },
+    { id: 17, type: 'ARCHITECTURE', image: galleryVilla7 },
+    { id: 18, type: 'ARCHITECTURE', image: galleryVilla8 },
+    { id: 19, type: 'ARCHITECTURE', image: galleryVilla9 },
+    { id: 20, type: 'COMPLETED', image: interiorLivingRoom },
+    { id: 21, type: 'COMPLETED', image: interiorMasterBedroom },
+    { id: 22, type: 'COMPLETED', image: interiorKitchen1 },
+    { id: 23, type: 'COMPLETED', image: galleryVilla1 },
+    { id: 24, type: 'COMPLETED', image: galleryVilla6 },
+    { id: 25, type: 'COMPLETED', image: galleryVilla7 },
+    { id: 26, type: 'COMPLETED', image: galleryVilla8 },
+    { id: 27, type: 'COMPLETED', image: galleryVilla9 },
+    { id: 28, type: 'ARCHITECTURE', image: heroVillaImg },
+    { id: 29, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
+    { id: 30, type: 'ARCHITECTURE', image: aboutVillaImg },
+    { id: 31, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
+    { id: 32, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
+    { id: 33, type: 'COMPLETED', image: galleryVilla3 },
+    { id: 34, type: 'COMPLETED', image: galleryVilla4 },
+    { id: 35, type: 'CONSTRUCTION', image: galleryVilla5 }
   ];
 
   const handleContactSubmit = (e) => {
