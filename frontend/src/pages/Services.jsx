@@ -1,6 +1,12 @@
 import React from 'react';
 import { Compass, Hammer, Sparkles, Building2, Users, CheckCircle, Clock, Shield, Settings } from 'lucide-react';
 
+import galleryVilla1 from '../assets/gallery_villa_1.jpg';
+import galleryVilla6 from '../assets/gallery_villa_6.jpg';
+import interiorLivingRoom from '../assets/interior_living_room.jpg';
+import luxuryMansionPoolVilla from '../assets/luxury_mansion_pool_villa.jpg';
+import traditionalHeritageClayVilla from '../assets/traditional_heritage_clay_villa.jpg';
+
 export default function Services({ scrollToSection }) {
   return (
     <section id="services" className="services-section" style={{ background: '#080809', padding: '3.5rem 0 3rem' }}>
@@ -16,7 +22,7 @@ export default function Services({ scrollToSection }) {
           {/* Card 1 */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', height: '220px' }}>
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Architecture" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={galleryVilla1} alt="Architecture" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, #050506 0%, transparent 100%)' }}></div>
               <div style={{ position: 'absolute', bottom: '10px', left: '1.5rem', width: '36px', height: '36px', border: '1px solid var(--primary-gold)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(5, 5, 6, 0.8)' }}>
                 <Compass size={18} style={{ color: 'var(--primary-gold)' }} />
@@ -34,7 +40,7 @@ export default function Services({ scrollToSection }) {
           {/* Card 2 */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', height: '220px' }}>
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Construction" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={galleryVilla6} alt="Construction" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, #050506 0%, transparent 100%)' }}></div>
               <div style={{ position: 'absolute', bottom: '10px', left: '1.5rem', width: '36px', height: '36px', border: '1px solid var(--primary-gold)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(5, 5, 6, 0.8)' }}>
                 <Hammer size={18} style={{ color: 'var(--primary-gold)' }} />
@@ -52,7 +58,7 @@ export default function Services({ scrollToSection }) {
           {/* Card 3 */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', height: '220px' }}>
-              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Interior Design" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={interiorLivingRoom} alt="Interior Design" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, #050506 0%, transparent 100%)' }}></div>
               <div style={{ position: 'absolute', bottom: '10px', left: '1.5rem', width: '36px', height: '36px', border: '1px solid var(--primary-gold)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(5, 5, 6, 0.8)' }}>
                 <Sparkles size={18} style={{ color: 'var(--primary-gold)' }} />
@@ -70,7 +76,7 @@ export default function Services({ scrollToSection }) {
           {/* Card 4 */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', height: '220px' }}>
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Turnkey Solutions" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={luxuryMansionPoolVilla} alt="Turnkey Solutions" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, #050506 0%, transparent 100%)' }}></div>
               <div style={{ position: 'absolute', bottom: '10px', left: '1.5rem', width: '36px', height: '36px', border: '1px solid var(--primary-gold)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(5, 5, 6, 0.8)' }}>
                 <Building2 size={18} style={{ color: 'var(--primary-gold)' }} />
@@ -88,7 +94,7 @@ export default function Services({ scrollToSection }) {
           {/* Card 5 */}
           <div style={{ border: '1px solid var(--border-gold)', background: '#050506', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', height: '220px' }}>
-              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80" alt="Renovation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={traditionalHeritageClayVilla} alt="Renovation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, #050506 0%, transparent 100%)' }}></div>
               <div style={{ position: 'absolute', bottom: '10px', left: '1.5rem', width: '36px', height: '36px', border: '1px solid var(--primary-gold)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(5, 5, 6, 0.8)' }}>
                 <Settings size={18} style={{ color: 'var(--primary-gold)' }} />

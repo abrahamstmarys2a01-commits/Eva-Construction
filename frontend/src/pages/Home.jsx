@@ -4,6 +4,8 @@ import { Compass, Hammer, Clock, Shield } from 'lucide-react';
 import galleryVilla1 from '../assets/gallery_villa_1.jpg';
 import galleryVilla6 from '../assets/gallery_villa_6.jpg';
 import galleryVilla7 from '../assets/gallery_villa_7.jpg';
+import modernVillaChennai from '../assets/modern_villa_chennai.jpg';
+import corporateStudioTrichy from '../assets/corporate_studio_trichy.jpg';
 
 import About from './About';
 import Services from './Services';
@@ -58,7 +60,7 @@ export default function Home({
   setShowQuotePage
 }) {
   const heroImages = [
-    heroVillaImg,
+    corporateStudioTrichy,
     galleryVilla1,
     galleryVilla6,
     galleryVilla7
@@ -240,6 +242,8 @@ export default function Home({
         openProjectDetails={openProjectDetails} 
         projectFilter={projectFilter} 
         setProjectFilter={setProjectFilter} 
+        isHomePage={true}
+        scrollToSection={scrollToSection}
       />
       <Gallery 
         galleryItems={galleryItems} 
@@ -351,7 +355,7 @@ export default function Home({
       <section style={{ 
         position: 'relative', 
         padding: '5rem 2rem', 
-        background: 'linear-gradient(rgba(5, 5, 6, 0.88), rgba(5, 5, 6, 0.94)), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80")',
+        background: `linear-gradient(rgba(5, 5, 6, 0.88), rgba(5, 5, 6, 0.94)), url("${modernVillaChennai}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         textAlign: 'center',

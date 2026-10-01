@@ -2048,8 +2048,8 @@ img {
 
 .careers-roles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -2078,6 +2078,26 @@ img {
     gap: 1rem;
   }
 }
+
+/* Project Detail Responsive Layout */
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .project-specs-grid {
+    grid-template-columns: 100px 15px 1fr;
+    font-size: 0.9rem;
+  }
+}
+
 
 
 

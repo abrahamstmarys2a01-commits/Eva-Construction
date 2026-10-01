@@ -42,6 +42,8 @@ import heritageWardrobeCloset from './assets/heritage_wardrobe_closet.jpg';
 import modernVillaChennai from './assets/modern_villa_chennai.jpg';
 import luxuryMansionPoolVilla from './assets/luxury_mansion_pool_villa.jpg';
 import traditionalHeritageClayVilla from './assets/traditional_heritage_clay_villa.jpg';
+import corporateStudioTrichy from './assets/corporate_studio_trichy.jpg';
+import interiorLuxuryLiving from './assets/interior_luxury_living.jpg';
 
 // Import newly created page components
 import Home from './pages/Home';
@@ -143,7 +145,7 @@ export default function App() {
 
 
 
-  // Hardcoded Data
+  // Hardcoded Data - Authentic Gallery Assets Only (Interior Thumbnails for all project detail views)
   const projects = [
     {
       id: 1,
@@ -155,10 +157,10 @@ export default function App() {
       status: "Completed",
       image: modernVillaChennai,
       thumbnails: [
-        modernVillaChennai,
-        heroVillaImg,
-        galleryVilla1,
-        galleryVilla6
+        interiorLuxuryLiving,
+        interiorLivingRoom,
+        heritageMuralLiving,
+        interiorKitchen1
       ],
       description: "This modern luxury villa is a perfect blend of tropical contemporary architecture and functional elegance. Features covered dual-car portico with stone pillars, private cantilevered balconies, lush perimeter landscape lighting, and refined interior spatial flow.",
       features: ["Grand Car Portico with Stone Pillars", "Balcony Planters & Pergola", "Architectural Landscape Lighting", "Premium Imported Finishes", "Smart Home Automation"]
@@ -173,70 +175,16 @@ export default function App() {
       status: "Completed",
       image: aboutVillaImg,
       thumbnails: [
-        aboutVillaImg,
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
+        heritageMuralLiving,
+        interiorLivingRoom,
+        interiorKitchen2,
+        interiorMasterBedroom
       ],
       description: "Designed for a multigenerational family, this sprawling residence in Coimbatore merges traditional vaastu principles with a sharp, contemporary layout. It boasts tall ceiling structures and floating slabs.",
       features: ["Grand Foyer", "Infinity Lap Pool", "Home Theatre", "Private Terraces", "Italian Marble Flooring"]
     },
     {
       id: 3,
-      title: "Commercial Building - Madurai",
-      category: "COMMERCIAL",
-      location: "Madurai, Tamil Nadu",
-      area: "25,000 sq.ft",
-      year: "2024",
-      status: "Completed",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-      thumbnails: [
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
-      ],
-      description: "An architectural landmark in Madurai, this commercial office complex features double-glazed facades for thermal insulation, central atriums, and premium retail sections on the ground floor.",
-      features: ["LEED Certified Design", "High Speed Elevators", "Multi-Level Car Parking", "VRV Air Conditioning", "Rooftop Event Lounge"]
-    },
-    {
-      id: 4,
-      title: "Contemporary Home - ECR",
-      category: "RESIDENTIAL",
-      location: "ECR, Chennai",
-      area: "5,400 sq.ft",
-      year: "2023",
-      status: "Completed",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-      thumbnails: [
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
-      ],
-      description: "Located right on the scenic East Coast Road, this beachside luxury villa features sprawling glazing that offers uninterrupted ocean vistas, marine-grade external finishes, and open-plan hosting decks.",
-      features: ["Ocean Front View", "Wooden Decking", "Outdoor Barbecue", "Floor-to-Ceiling Windows", "Minimalist Interior Concept"]
-    },
-    {
-      id: 5,
-      title: "Premium Villa - Bangalore",
-      category: "VILLAS",
-      location: "Whitefield, Bangalore",
-      area: "7,000 sq.ft",
-      year: "2022",
-      status: "Completed",
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-      thumbnails: [
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80"
-      ],
-      description: "Embodying modern brickwork and exposed concrete facades, this Bangalore villa incorporates private internal courtyards with koi ponds that integrate nature inside the living quarters.",
-      features: ["Koi Pond Courtyard", "Solar Panels Grid", "Exposed Concrete Finishing", "Automated Louvers", "Basement Recreational Den"]
-    },
-    {
-      id: 6,
       title: "Grand Contemporary Pool Mansion - Coimbatore",
       category: "VILLAS",
       location: "Coimbatore, Tamil Nadu",
@@ -245,52 +193,124 @@ export default function App() {
       status: "Completed",
       image: luxuryMansionPoolVilla,
       thumbnails: [
-        luxuryMansionPoolVilla,
-        traditionalHeritageClayVilla,
-        modernVillaChennai,
-        galleryVilla6
+        interiorLivingRoom,
+        interiorMasterBedroom,
+        heritageLivingCourtyard,
+        interiorKitchen1
       ],
       description: "An ultra-luxurious multi-level architectural masterpiece boasting an infinity pool, Japanese-style zen koi pond fountain, floor-to-ceiling panoramic glass facade, and illuminated grand driveway entrance.",
       features: ["Infinity Lap Pool", "Zen Koi Pond & Waterfalls", "Multi-Level Cantilever Terraces", "Double-Height Glass Atrium", "Smart Landscape Illuminations"]
     },
     {
-      id: 7,
-      title: "Luxury Villa - Hyderabad",
+      id: 4,
+      title: "Traditional Heritage Clay Villa - Thanjavur",
       category: "VILLAS",
-      location: "Jubilee Hills, Hyderabad",
-      area: "9,000 sq.ft",
+      location: "Thanjavur, Tamil Nadu",
+      area: "7,200 sq.ft",
       year: "2024",
       status: "Completed",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
+      image: traditionalHeritageClayVilla,
       thumbnails: [
-        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
+        heritageLivingCourtyard,
+        heritageMuralLiving,
+        heritageDiningBar,
+        heritageWardrobeCloset
       ],
-      description: "A monolithic villa structure featuring premium imported Travertine stone facades, cascading levels, and double-height custom glass window structures offering vistas of Jubilee Hills.",
-      features: ["Travertine Facades", "Cascading Water Walls", "Professional Prep Kitchen", "Gym & Sauna Suite", "Double Height Lounge"]
+      description: "A breathtaking tribute to Dravidian and coastal vernacular architecture, featuring natural clay tile sloping roofs, exposed terracotta detailing, teakwood pillared porches, and tranquil central water features.",
+      features: ["Clay Tile Sloping Roofs", "Pillared Verandah & Courtyard", "Natural Terracotta Craftsmanship", "Brass Landscape Elements", "High-Thermal Insulation"]
+    },
+    {
+      id: 5,
+      title: "Contemporary Glass Residence - ECR",
+      category: "RESIDENTIAL",
+      location: "ECR, Chennai",
+      area: "5,400 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: galleryVilla1,
+      thumbnails: [
+        interiorLivingRoom,
+        heritageMuralLiving,
+        interiorKitchen1,
+        interiorMasterBedroom
+      ],
+      description: "A stunning seaside modern residence boasting minimalist cantilevered geometry, full-height floor-to-ceiling performance glass walls, and open-plan hosting decks that bathe the interior in natural ambient light.",
+      features: ["Full-Height Glass Facade", "Cantilevered Shading Slabs", "Open-Plan Living Lounge", "Italian Marble Flooring", "Smart Lighting Controls"]
+    },
+    {
+      id: 6,
+      title: "Minimalist Modern Haven - Trichy",
+      category: "RESIDENTIAL",
+      location: "Trichy, Tamil Nadu",
+      area: "4,800 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: galleryVilla2,
+      thumbnails: [
+        interiorMasterBedroom,
+        interiorLivingRoom,
+        interiorKitchen2,
+        heritageWardrobeCloset
+      ],
+      description: "An elegant contemporary residential design defined by clean horizontal planes, textured white limestone stucco, integrated balcony planter boxes, and warm concealed LED soffit lighting.",
+      features: ["Clean Horizontal Lines", "Balcony Planter Boxes", "Concealed LED Soffits", "Multi-Vehicle Covered Parking", "Custom Metal Pergola"]
+    },
+    {
+      id: 7,
+      title: "Royal Palms Luxury Villa - Madurai",
+      category: "VILLAS",
+      location: "Madurai, Tamil Nadu",
+      area: "8,600 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: galleryVilla3,
+      thumbnails: [
+        interiorLivingRoom,
+        heritageLivingCourtyard,
+        interiorMasterBedroom,
+        interiorKitchen1
+      ],
+      description: "An imposing luxury villa featuring twin-tier cantilever balconies, double-height entryway glazing, tropical palm landscaping, and expansive outdoor entertainment terraces.",
+      features: ["Twin-Tier Cantilever Balconies", "Double-Height Glass Foyer", "Tropical Palm Landscaping", "Outdoor Entertainment Deck", "Italian Granite Facade"]
     },
     {
       id: 8,
-      title: "Bespoke Residence Interior - Trichy",
-      category: "INTERIOR",
-      location: "Trichy, Tamil Nadu",
-      area: "4,500 sq.ft",
+      title: "Urban Courtyard Residence - Chennai",
+      category: "RESIDENTIAL",
+      location: "Chennai, Tamil Nadu",
+      area: "6,000 sq.ft",
       year: "2024",
       status: "Completed",
-      image: interiorLivingRoom,
+      image: galleryVilla4,
       thumbnails: [
+        heritageLivingCourtyard,
         interiorLivingRoom,
-        interiorKitchen1,
-        interiorKitchen2,
+        heritageDiningBar,
         interiorMasterBedroom
       ],
-      description: "A breathtaking turnkey interior transformation featuring an open double-height luxury living hall with a sculptural curved staircase and ring chandelier, an olive/sage modular kitchen with custom backsplash tiling, and an opulent master bedroom suite with warm wood accents.",
-      features: ["Double-Height Living Lounge", "Sculptural Curved Staircase", "Modern Modular Kitchen", "Master Bedroom Suite", "Cove LED & Designer Chandelier"]
+      description: "A refined urban home designed around an internal green courtyard, combining modern vertical wood louvers, expansive glass sliding systems, and private landscaped garden terraces.",
+      features: ["Internal Green Courtyard", "Vertical Wooden Louvers", "Glass Sliding System", "Private Garden Terraces", "Acoustic Insulation"]
     },
     {
       id: 9,
+      title: "Eva Atelier Corporate Studio - Trichy",
+      category: "COMMERCIAL",
+      location: "Trichy, Tamil Nadu",
+      area: "12,000 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: corporateStudioTrichy,
+      thumbnails: [
+        interiorLuxuryLiving,
+        interiorLivingRoom,
+        heritageMuralLiving,
+        heritageDiningBar
+      ],
+      description: "A signature commercial architectural design studio showcasing monumental cantilevered stone volumes, illuminated glass conference pods, and sustainable energy-efficient ventilation systems.",
+      features: ["Monumental Stone Facade", "Glass Conference Pods", "Solar Passive Architecture", "High-Speed EV Chargers", "Rooftop Executive Lounge"]
+    },
+    {
+      id: 10,
       title: "Grand Contemporary Villa - Salem",
       category: "VILLAS",
       location: "Salem, Tamil Nadu",
@@ -299,16 +319,16 @@ export default function App() {
       status: "Completed",
       image: galleryVilla6,
       thumbnails: [
-        galleryVilla6,
-        galleryVilla7,
-        galleryVilla8,
-        galleryVilla9
+        interiorLivingRoom,
+        interiorMasterBedroom,
+        interiorKitchen1,
+        heritageMuralLiving
       ],
       description: "Striking 2-story contemporary villa featuring exposed brick patterns, cantilevered slabs, integrated balcony planter boxes, and warm architectural landscape lighting.",
       features: ["Exposed Brick Architecture", "Cantilevered Balconies", "Landscape Lighting", "Italian Marble Flooring", "Smart Home Automation"]
     },
     {
-      id: 10,
+      id: 11,
       title: "Signature Residence - Vellore",
       category: "RESIDENTIAL",
       location: "Vellore, Tamil Nadu",
@@ -317,16 +337,16 @@ export default function App() {
       status: "Completed",
       image: galleryVilla7,
       thumbnails: [
-        galleryVilla7,
-        galleryVilla6,
-        galleryVilla4,
-        galleryVilla1
+        interiorMasterBedroom,
+        interiorLivingRoom,
+        heritageWardrobeCloset,
+        interiorKitchen2
       ],
       description: "Modern 3-story vertical residence showcasing dynamic wooden wall louvers, exposed brick pillars, textured stone masonry, and a signature circular architectural cutout.",
       features: ["Geometric Cutout Feature", "Vertical Wooden Louvers", "Private Terrace Garden", "Double Glazed Windows", "High-End Security Gate"]
     },
     {
-      id: 11,
+      id: 12,
       title: "Modernist Horizon Home - Pondicherry",
       category: "RESIDENTIAL",
       location: "Pondicherry",
@@ -335,16 +355,16 @@ export default function App() {
       status: "Completed",
       image: galleryVilla8,
       thumbnails: [
-        galleryVilla8,
-        galleryVilla2,
-        galleryVilla3,
-        galleryVilla6
+        heritageMuralLiving,
+        interiorLivingRoom,
+        interiorMasterBedroom,
+        interiorKitchen1
       ],
       description: "Sophisticated single-story minimalist villa blending earthy terracotta tones, dark wood accents, recessed soffit lighting, and welcoming symmetrical entryway architecture.",
       features: ["Minimalist Single Story", "Terracotta Facade Accent", "Lush Entryway Planters", "Integrated Soffit Lights", "Spacious Portico Deck"]
     },
     {
-      id: 12,
+      id: 13,
       title: "Heritage Fusion Villa - Kochi",
       category: "VILLAS",
       location: "Kochi, Kerala",
@@ -353,16 +373,34 @@ export default function App() {
       status: "Completed",
       image: galleryVilla9,
       thumbnails: [
-        galleryVilla9,
-        galleryVilla3,
-        galleryVilla1,
-        galleryVilla7
+        heritageLivingCourtyard,
+        heritageMuralLiving,
+        heritageDiningBar,
+        heritageWardrobeCloset
       ],
       description: "A breathtaking fusion of traditional Kerala sloping hip roof geometry and sleek contemporary white stucco walls, accompanied by a grand paved driveway and stone column portico.",
       features: ["Heritage Fusion Roof", "Grand Car Portico", "Stone Clad Columns", "Expansive Paved Driveway", "Lush Manicured Lawn"]
     },
     {
-      id: 13,
+      id: 14,
+      title: "Bespoke Residence Interior - Trichy",
+      category: "INTERIOR",
+      location: "Trichy, Tamil Nadu",
+      area: "4,500 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: interiorLivingRoom,
+      thumbnails: [
+        interiorLuxuryLiving,
+        interiorLivingRoom,
+        interiorKitchen1,
+        interiorMasterBedroom
+      ],
+      description: "A breathtaking turnkey interior transformation featuring an open double-height luxury living hall with a sculptural curved staircase and ring chandelier, an olive/sage modular kitchen with custom backsplash tiling, and an opulent master bedroom suite with warm wood accents.",
+      features: ["Double-Height Living Lounge", "Sculptural Curved Staircase", "Modern Modular Kitchen", "Master Bedroom Suite", "Cove LED & Designer Chandelier"]
+    },
+    {
+      id: 15,
       title: "Modern Modular Kitchen & Master Suite",
       category: "INTERIOR",
       location: "Chennai, Tamil Nadu",
@@ -380,7 +418,7 @@ export default function App() {
       features: ["Sage Green Modular Cabinets", "Quartz Countertops", "Integrated Smart Appliances", "Bespoke Wardrobe Units", "Designer Ambient Lighting"]
     },
     {
-      id: 14,
+      id: 16,
       title: "Chettinad Heritage Fusion Villa - Madurai",
       category: "INTERIOR",
       location: "Madurai, Tamil Nadu",
@@ -396,6 +434,42 @@ export default function App() {
       ],
       description: "A masterful fusion of traditional South Indian Chettinad architecture and modern luxury living. Showcasing a central skylit courtyard with brass-chain teak oonjal (swing), hand-painted Radha-Krishna devotional mural wall, terracotta jali lattice dividers, breakfast bar nook, and floor-to-ceiling teak sliding wardrobe suites.",
       features: ["Central Courtyard with Teak Oonjal", "Radha-Krishna Devotional Wall Mural", "Terracotta Jali Lattice Screens", "Breakfast Bar & Crockery Cabinet", "Floor-to-Ceiling Teak Wardrobes"]
+    },
+    {
+      id: 17,
+      title: "Heritage Courtyard Mural & Dining Suite",
+      category: "INTERIOR",
+      location: "Madurai, Tamil Nadu",
+      area: "3,200 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: heritageMuralLiving,
+      thumbnails: [
+        heritageMuralLiving,
+        heritageDiningBar,
+        heritageLivingCourtyard,
+        heritageWardrobeCloset
+      ],
+      description: "Exquisite interior suite showcasing hand-painted devotional heritage wall art, custom teak dining and bar island, recessed brass accent luminaires, and warm timber ceilings.",
+      features: ["Custom Teak Dining Island", "Hand-Painted Wall Art", "Brass Accent Fixtures", "Recessed Cove Lighting", "South Indian Heritage Details"]
+    },
+    {
+      id: 18,
+      title: "Opulent Master Bedroom Suite",
+      category: "INTERIOR",
+      location: "Coimbatore, Tamil Nadu",
+      area: "2,800 sq.ft",
+      year: "2024",
+      status: "Completed",
+      image: interiorMasterBedroom,
+      thumbnails: [
+        interiorMasterBedroom,
+        interiorLivingRoom,
+        interiorKitchen2,
+        heritageWardrobeCloset
+      ],
+      description: "Ultra-luxurious master bedroom suite featuring geometric wood panel headboard walls, integrated bedside floating consoles, warm perimeter ambient cove lighting, and plush Italian leather finishes.",
+      features: ["Geometric Wood Wall Panels", "Floating Bedside Consoles", "Warm Cove Ambient Lighting", "Custom Built-in Wardrobes", "Hardwood Timber Flooring"]
     }
   ];
 
@@ -433,14 +507,16 @@ export default function App() {
     { id: 31, type: 'COMPLETED', image: galleryVilla7 },
     { id: 32, type: 'COMPLETED', image: galleryVilla8 },
     { id: 33, type: 'COMPLETED', image: galleryVilla9 },
-    { id: 34, type: 'ARCHITECTURE', image: heroVillaImg },
-    { id: 35, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" },
+    { id: 34, type: 'ARCHITECTURE', image: corporateStudioTrichy },
+    { id: 35, type: 'CONSTRUCTION', image: galleryVilla5 },
     { id: 36, type: 'ARCHITECTURE', image: aboutVillaImg },
-    { id: 37, type: 'CONSTRUCTION', image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" },
-    { id: 38, type: 'ARCHITECTURE', image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" },
+    { id: 37, type: 'CONSTRUCTION', image: galleryVilla4 },
+    { id: 38, type: 'CONSTRUCTION', image: galleryVilla2 },
     { id: 39, type: 'COMPLETED', image: galleryVilla3 },
     { id: 40, type: 'COMPLETED', image: galleryVilla4 },
-    { id: 41, type: 'CONSTRUCTION', image: galleryVilla5 }
+    { id: 41, type: 'CONSTRUCTION', image: galleryVilla5 },
+    { id: 42, type: 'INTERIORS', image: interiorLuxuryLiving },
+    { id: 43, type: 'COMPLETED', image: interiorLuxuryLiving }
   ];
 
   const handleContactSubmit = (e) => {
@@ -594,6 +670,8 @@ export default function App() {
                 openProjectDetails={openProjectDetails} 
                 projectFilter={projectFilter} 
                 setProjectFilter={setProjectFilter} 
+                isHomePage={false}
+                scrollToSection={scrollToSection}
               />
             } />
             <Route path="/gallery" element={
