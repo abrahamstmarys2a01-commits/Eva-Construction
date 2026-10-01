@@ -41,29 +41,76 @@ export default function ProjectDetail({ selectedProject, setSelectedProject, clo
           
           {/* Left Column: Images */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div style={{ border: '1px solid rgba(197, 168, 128, 0.5)', height: 'clamp(280px, 45vw, 550px)', borderRadius: '12px', overflow: 'hidden' }}>
-              <img src={selectedProject.thumbnails[activeProjectThumbIndex]} alt={selectedProject.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ 
+              border: '1px solid rgba(197, 168, 128, 0.5)', 
+              height: 'clamp(280px, 45vw, 550px)', 
+              borderRadius: '12px', 
+              overflow: 'hidden',
+              position: 'relative',
+              background: '#090b0e'
+            }}>
+              <img 
+                src={
+                  activeProjectThumbIndex !== null && selectedProject.thumbnails && selectedProject.thumbnails[activeProjectThumbIndex]
+                    ? selectedProject.thumbnails[activeProjectThumbIndex]
+                    : selectedProject.image
+                } 
+                alt={selectedProject.title} 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'all 0.4s ease' }} 
+              />
+              
+              {/* Badge indicating Exterior / Interior */}
+              <div style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'rgba(5, 5, 6, 0.75)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid var(--border-gold)',
+                color: 'var(--primary-gold)',
+                padding: '0.35rem 0.85rem',
+                borderRadius: '20px',
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                {activeProjectThumbIndex === null ? 'Exterior View' : `Interior View 0${activeProjectThumbIndex + 1}`}
+              </div>
             </div>
             
-            <div className="gallery-grid">
-              {selectedProject.thumbnails.map((thumb, index) => (
-                <div 
-                  key={index} 
-                  onClick={() => setActiveProjectThumbIndex(index)}
-                  style={{ 
-                    border: '1px solid rgba(197, 168, 128, 0.5)', 
-                    height: '100px',
-                    cursor: 'pointer',
-                    opacity: activeProjectThumbIndex === index ? 1 : 0.5,
-                    transition: 'opacity 0.3s ease',
-                    borderRadius: '8px',
-                    overflow: 'hidden'
-                  }}
-                >
-                  <img src={thumb} alt="thumbnail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-              ))}
-            </div>
+            {/* 4 Small Interior Images */}
+            {selectedProject.thumbnails && selectedProject.thumbnails.length > 0 && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem' }}>
+                {selectedProject.thumbnails.slice(0, 4).map((thumb, index) => (
+                  <div 
+                    key={index} 
+                    onClick={() => {
+                      if (activeProjectThumbIndex === index) {
+                        setActiveProjectThumbIndex(null); // Click active thumbnail again to return to exterior view
+                      } else {
+                        setActiveProjectThumbIndex(index);
+                      }
+                    }}
+                    style={{ 
+                      border: activeProjectThumbIndex === index ? '2px solid var(--primary-gold)' : '1px solid rgba(197, 168, 128, 0.4)', 
+                      height: 'clamp(70px, 12vw, 100px)',
+                      cursor: 'pointer',
+                      opacity: activeProjectThumbIndex === index ? 1 : 0.6,
+                      transform: activeProjectThumbIndex === index ? 'scale(1.02)' : 'scale(1)',
+                      transition: 'all 0.3s ease',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      position: 'relative',
+                      boxShadow: activeProjectThumbIndex === index ? '0 0 12px rgba(212, 175, 55, 0.35)' : 'none'
+                    }}
+                    title={`Click to view Interior ${index + 1}`}
+                  >
+                    <img src={thumb} alt={`interior-view-${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Right Column: Info */}

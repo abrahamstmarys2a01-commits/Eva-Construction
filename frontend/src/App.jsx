@@ -97,7 +97,7 @@ export default function App() {
   const [galleryFilter, setGalleryFilter] = useState('ALL');
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedGalleryImg, setSelectedGalleryImg] = useState(null);
-  const [activeProjectThumbIndex, setActiveProjectThumbIndex] = useState(0);
+  const [activeProjectThumbIndex, setActiveProjectThumbIndex] = useState(null);
   const [showQuotePage, setShowQuotePage] = useState(false);
 
   // Forms
@@ -541,7 +541,7 @@ export default function App() {
   // Click Project Card
   const openProjectDetails = (proj) => {
     setSelectedProject(proj);
-    setActiveProjectThumbIndex(0);
+    setActiveProjectThumbIndex(null);
     window.scrollTo({ top: 100, behavior: 'smooth' });
   };
 

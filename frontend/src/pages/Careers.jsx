@@ -13,62 +13,29 @@ export default function Careers({ setShowCareersPage, scrollToSection }) {
     {
       id: 'architect',
       title: 'Senior Architect / Junior Architect',
+      department: 'Architecture & Design',
+      experience: '0 to 5 Years',
       location: 'Office / Hybrid',
-      experience: '0 to 5 years',
-      qualification: 'B.Arch / M.Arch with COA registration',
-      jobDescription: 'We are looking for a creative and experienced Senior Architect to lead design projects from concept through completion.',
-      keyResponsibilities: [
-        'Lead architectural design and planning for residential & commercial projects',
-        'Develop conceptual designs, presentations, and working drawings',
-        'Coordinate with structural, MEP, and site teams',
-        'Manage project timelines, budgets, and client communications',
-        'Guide and review work of junior architects and interns'
-      ],
-      skillsRequired: [
-        'Strong design portfolio and creative thinking',
-        'Expertise in AutoCAD, SketchUp, Revit, and rendering tools',
-        'Excellent leadership and presentation skills'
-      ]
+      type: 'Full Time',
+      description: 'Lead conceptual architectural planning, develop presentation & working drawings, and coordinate with structural, MEP, and site teams for residential & commercial landmarks.'
     },
     {
       id: 'site-engineer',
       title: 'Site Engineer',
+      department: 'Site & Execution',
+      experience: '2 to 6 Years',
       location: 'Project Site',
-      experience: '2 to 6 years',
-      qualification: 'B.E / Diploma in Civil Engineering',
-      jobDescription: 'We are seeking an experienced Site Engineer to supervise day-to-day construction activities and ensure work is executed as per drawings and safety standards.',
-      keyResponsibilities: [
-        'Oversee on-site construction and quality control',
-        'Manage labor and subcontractors',
-        'Ensure adherence to project timelines and safety standards',
-        'Prepare daily progress reports and material requirements',
-        'Coordinate with architects and project managers'
-      ],
-      skillsRequired: [
-        'Understanding of construction drawings and execution',
-        'Good communication and problem-solving skills',
-        'Proficiency in AutoCAD and MS Office'
-      ]
+      type: 'Full Time',
+      description: 'Supervise on-site construction works, ensure structural accuracy, coordinate subcontractors, manage material logistics, and uphold rigorous quality and safety standards.'
     },
     {
       id: 'accountant',
       title: 'Accountant',
+      department: 'Finance & Accounts',
+      experience: '2 to 5 Years',
       location: 'Office Location',
-      experience: '2 to 5 years',
-      qualification: 'B.Com / M.Com / CA Inter preferred',
-      jobDescription: 'We are looking for a detail-oriented Accountant to manage daily financial transactions, maintain ledgers, and ensure accurate bookkeeping.',
-      keyResponsibilities: [
-        'Prepare and maintain financial records and reports',
-        'Manage accounts payable and receivable',
-        'Reconcile bank statements and oversee petty cash',
-        'Assist in budgeting and financial analysis',
-        'Coordinate with auditors and management'
-      ],
-      skillsRequired: [
-        'Proficiency in Tally / Excel / accounting software',
-        'Strong attention to detail and time management',
-        'Knowledge of GST, TDS, and statutory compliance'
-      ]
+      type: 'Full Time',
+      description: 'Manage daily financial transactions, ledger accounts, GST/TDS compliance, petty cash, vendor invoicing, and financial reporting with accounting software.'
     }
   ];
 
@@ -248,9 +215,9 @@ ${formData.coverLetter || 'No cover message provided.'}
                 style={{
                   background: '#090b0e',
                   border: selectedRole === role.title ? '1px solid var(--primary-gold)' : '1px solid var(--border-gold)',
-                  boxShadow: selectedRole === role.title ? '0 0 25px rgba(212, 175, 55, 0.2)' : '0 4px 20px rgba(0, 0, 0, 0.3)',
-                  borderRadius: '8px',
-                  padding: 'clamp(1.5rem, 3vw, 2.25rem)',
+                  boxShadow: selectedRole === role.title ? '0 0 20px rgba(212, 175, 55, 0.15)' : 'none',
+                  borderRadius: '6px',
+                  padding: '2rem',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -258,97 +225,41 @@ ${formData.coverLetter || 'No cover message provided.'}
                 }}
               >
                 <div>
-                  {/* Title */}
-                  <h3 style={{ fontSize: '1.6rem', color: '#fff', fontWeight: 700, marginBottom: '1rem', fontFamily: 'var(--font-serif)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', gap: '0.5rem' }}>
+                    <span style={{ 
+                      background: 'rgba(212, 175, 55, 0.12)', 
+                      color: 'var(--primary-gold)', 
+                      fontSize: '0.75rem', 
+                      fontWeight: 600, 
+                      padding: '0.25rem 0.75rem', 
+                      borderRadius: '4px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em'
+                    }}>
+                      {role.department}
+                    </span>
+                    <span style={{ color: '#fff', fontSize: '0.8rem', fontWeight: 600, background: 'rgba(255,255,255,0.05)', padding: '0.25rem 0.6rem', borderRadius: '4px' }}>
+                      {role.type}
+                    </span>
+                  </div>
+
+                  <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 600, marginBottom: '1rem', fontFamily: 'var(--font-serif)' }}>
                     {role.title}
                   </h3>
 
-                  {/* Badges */}
-                  <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
-                    <div style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      background: 'rgba(34, 197, 94, 0.12)',
-                      border: '1px solid rgba(34, 197, 94, 0.35)',
-                      color: '#4ade80',
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '8px',
-                      fontSize: '0.82rem',
-                      fontWeight: 600
-                    }}>
-                      <MapPin size={14} style={{ color: '#22c55e' }} />
-                      <span>Location: {role.location}</span>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+                    {role.description}
+                  </p>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                      <Award size={16} style={{ color: 'var(--primary-gold)' }} />
+                      <span>Experience: <strong style={{ color: '#fff' }}>{role.experience}</strong></span>
                     </div>
-
-                    <div style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      background: 'rgba(34, 197, 94, 0.12)',
-                      border: '1px solid rgba(34, 197, 94, 0.35)',
-                      color: '#4ade80',
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '8px',
-                      fontSize: '0.82rem',
-                      fontWeight: 600
-                    }}>
-                      <Briefcase size={14} style={{ color: '#22c55e' }} />
-                      <span>Experience: {role.experience}</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                      <MapPin size={16} style={{ color: 'var(--primary-gold)' }} />
+                      <span>Location: <strong style={{ color: '#fff' }}>{role.location}</strong></span>
                     </div>
-                  </div>
-
-                  {/* Qualification Banner */}
-                  <div style={{
-                    background: 'rgba(34, 197, 94, 0.08)',
-                    borderLeft: '4px solid #22c55e',
-                    padding: '0.75rem 1rem',
-                    borderRadius: '0 6px 6px 0',
-                    marginBottom: '1.5rem',
-                    fontSize: '0.88rem',
-                    lineHeight: '1.5',
-                    color: '#e2e8f0'
-                  }}>
-                    <strong style={{ color: '#4ade80', marginRight: '0.4rem' }}>Qualification:</strong>
-                    {role.qualification}
-                  </div>
-
-                  {/* Job Description */}
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <h4 style={{ color: '#22c55e', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                      JOB DESCRIPTION
-                    </h4>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: '1.65' }}>
-                      {role.jobDescription}
-                    </p>
-                  </div>
-
-                  {/* Key Responsibilities */}
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <h4 style={{ color: '#22c55e', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
-                      KEY RESPONSIBILITIES
-                    </h4>
-                    <ul style={{ margin: 0, paddingLeft: '1.2rem', color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: '1.65', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                      {role.keyResponsibilities.map((resp, idx) => (
-                        <li key={idx} style={{ paddingLeft: '0.2rem' }}>
-                          {resp}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Skills Required */}
-                  <div style={{ marginBottom: '1.75rem' }}>
-                    <h4 style={{ color: '#22c55e', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
-                      SKILLS REQUIRED
-                    </h4>
-                    <ul style={{ margin: 0, paddingLeft: '1.2rem', color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: '1.65', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                      {role.skillsRequired.map((skill, idx) => (
-                        <li key={idx} style={{ paddingLeft: '0.2rem' }}>
-                          {skill}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
 
@@ -370,7 +281,6 @@ ${formData.coverLetter || 'No cover message provided.'}
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '0.5rem',
-                    marginTop: '1rem',
                     transition: 'all 0.3s ease'
                   }}
                 >
@@ -489,7 +399,7 @@ ${formData.coverLetter || 'No cover message provided.'}
                   >
                     {roles.map(r => (
                       <option key={r.id} value={r.title} style={{ background: '#050506', color: '#fff' }}>
-                        {r.title}
+                        {r.title} ({r.department})
                       </option>
                     ))}
                   </select>
