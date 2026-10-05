@@ -86,7 +86,7 @@ export default function About({ aboutVillaImg, isHomePage = false, scrollToSecti
                 marginBottom: '2.5rem',
                 fontWeight: 400
               }}>
-                EVA ATELIER GROUP is a multidisciplinary firm specializing in Architecture, Construction, and Interior Design. We deliver end-to-end solutions with innovation, precision, and a commitment to excellence.
+                EVA ATELIER is a multidisciplinary firm specializing in Architecture, Construction, and Interior Design. We deliver end-to-end solutions with innovation, precision, and a commitment to excellence.
               </p>
 
               {isHomePage ? (

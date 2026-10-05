@@ -121,7 +121,7 @@ export default function Contact({ contactForm, setContactForm, handleContactSubm
               allowFullScreen="" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Eva Atelier Group Location"
+              title="Eva Atelier Location"
             ></iframe>
           </div>
 

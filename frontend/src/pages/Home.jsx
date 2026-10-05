@@ -79,7 +79,7 @@ export default function Home({
   const testimonialSlides = [
     [
       {
-        quote: "EVA ATELIER GROUP transformed our dream into reality. Their professionalism, attention to detail and commitment to quality are truly exceptional.",
+        quote: "EVA ATELIER transformed our dream into reality. Their professionalism, attention to detail and commitment to quality are truly exceptional.",
         author: "Mr. Raghav, Chennai"
       },
       {

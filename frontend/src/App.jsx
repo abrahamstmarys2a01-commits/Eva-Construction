@@ -474,49 +474,36 @@ export default function App() {
   ];
 
   const galleryItems = [
+    // ARCHITECTURE
     { id: 1, type: 'ARCHITECTURE', image: luxuryMansionPoolVilla },
     { id: 2, type: 'ARCHITECTURE', image: traditionalHeritageClayVilla },
     { id: 3, type: 'ARCHITECTURE', image: modernVillaChennai },
-    { id: 4, type: 'INTERIORS', image: heritageLivingCourtyard },
-    { id: 5, type: 'INTERIORS', image: heritageMuralLiving },
-    { id: 6, type: 'INTERIORS', image: heritageDiningBar },
-    { id: 7, type: 'INTERIORS', image: heritageWardrobeCloset },
-    { id: 8, type: 'INTERIORS', image: interiorLivingRoom },
-    { id: 9, type: 'INTERIORS', image: interiorKitchen1 },
-    { id: 10, type: 'INTERIORS', image: interiorKitchen2 },
-    { id: 11, type: 'INTERIORS', image: interiorMasterBedroom },
-    { id: 12, type: 'COMPLETED', image: luxuryMansionPoolVilla },
-    { id: 13, type: 'COMPLETED', image: traditionalHeritageClayVilla },
-    { id: 14, type: 'COMPLETED', image: modernVillaChennai },
-    { id: 15, type: 'COMPLETED', image: heritageLivingCourtyard },
-    { id: 16, type: 'COMPLETED', image: heritageMuralLiving },
-    { id: 17, type: 'ARCHITECTURE', image: galleryVilla1 },
-    { id: 18, type: 'ARCHITECTURE', image: galleryVilla2 },
-    { id: 19, type: 'ARCHITECTURE', image: galleryVilla3 },
-    { id: 20, type: 'ARCHITECTURE', image: galleryVilla4 },
-    { id: 21, type: 'ARCHITECTURE', image: galleryVilla5 },
-    { id: 22, type: 'ARCHITECTURE', image: galleryVilla6 },
-    { id: 23, type: 'ARCHITECTURE', image: galleryVilla7 },
-    { id: 24, type: 'ARCHITECTURE', image: galleryVilla8 },
-    { id: 25, type: 'ARCHITECTURE', image: galleryVilla9 },
-    { id: 26, type: 'COMPLETED', image: interiorLivingRoom },
-    { id: 27, type: 'COMPLETED', image: interiorMasterBedroom },
-    { id: 28, type: 'COMPLETED', image: interiorKitchen1 },
-    { id: 29, type: 'COMPLETED', image: galleryVilla1 },
-    { id: 30, type: 'COMPLETED', image: galleryVilla6 },
-    { id: 31, type: 'COMPLETED', image: galleryVilla7 },
-    { id: 32, type: 'COMPLETED', image: galleryVilla8 },
-    { id: 33, type: 'COMPLETED', image: galleryVilla9 },
-    { id: 34, type: 'ARCHITECTURE', image: corporateStudioTrichy },
-    { id: 35, type: 'CONSTRUCTION', image: galleryVilla5 },
-    { id: 36, type: 'ARCHITECTURE', image: aboutVillaImg },
-    { id: 37, type: 'CONSTRUCTION', image: galleryVilla4 },
-    { id: 38, type: 'CONSTRUCTION', image: galleryVilla2 },
-    { id: 39, type: 'COMPLETED', image: galleryVilla3 },
-    { id: 40, type: 'COMPLETED', image: galleryVilla4 },
-    { id: 41, type: 'CONSTRUCTION', image: galleryVilla5 },
-    { id: 42, type: 'INTERIORS', image: interiorLuxuryLiving },
-    { id: 43, type: 'COMPLETED', image: interiorLuxuryLiving }
+    { id: 4, type: 'ARCHITECTURE', image: corporateStudioTrichy },
+    { id: 5, type: 'ARCHITECTURE', image: aboutVillaImg },
+    { id: 6, type: 'ARCHITECTURE', image: galleryVilla1 },
+    
+    // CONSTRUCTION
+    { id: 7, type: 'CONSTRUCTION', image: galleryVilla2 },
+    { id: 8, type: 'CONSTRUCTION', image: galleryVilla3 },
+    { id: 9, type: 'CONSTRUCTION', image: galleryVilla4 },
+    { id: 10, type: 'CONSTRUCTION', image: galleryVilla5 },
+
+    // INTERIORS
+    { id: 11, type: 'INTERIORS', image: heritageLivingCourtyard },
+    { id: 12, type: 'INTERIORS', image: heritageMuralLiving },
+    { id: 13, type: 'INTERIORS', image: heritageDiningBar },
+    { id: 14, type: 'INTERIORS', image: heritageWardrobeCloset },
+    { id: 15, type: 'INTERIORS', image: interiorLivingRoom },
+    { id: 16, type: 'INTERIORS', image: interiorKitchen1 },
+    { id: 17, type: 'INTERIORS', image: interiorKitchen2 },
+    { id: 18, type: 'INTERIORS', image: interiorMasterBedroom },
+    { id: 19, type: 'INTERIORS', image: interiorLuxuryLiving },
+
+    // COMPLETED
+    { id: 20, type: 'COMPLETED', image: galleryVilla6 },
+    { id: 21, type: 'COMPLETED', image: galleryVilla7 },
+    { id: 22, type: 'COMPLETED', image: galleryVilla8 },
+    { id: 23, type: 'COMPLETED', image: galleryVilla9 }
   ];
 
   const handleContactSubmit = (e) => {
@@ -593,7 +580,7 @@ export default function App() {
               <div className="logo-icon-inner"></div>
             </div>
             <div className="logo-text">
-              <h1 style={{ color: 'var(--primary-gold)' }}>EVA ATELIER GROUP</h1>
+              <h1 style={{ color: 'var(--primary-gold)' }}>EVA ATELIER</h1>
               <span style={{ textTransform: 'uppercase', letterSpacing: '0.05em' }}>CRAFTING THE FUTURE, ONE SPACE AT A TIME.</span>
             </div>
           </div>
@@ -708,7 +695,7 @@ export default function App() {
                   <div className="logo-icon-inner"></div>
                 </div>
                 <div className="logo-text">
-                  <h1 style={{fontSize: '1rem', color: 'var(--primary-gold)'}}>EVA ATELIER GROUP</h1>
+                  <h1 style={{fontSize: '1rem', color: 'var(--primary-gold)'}}>EVA ATELIER</h1>
                   <span style={{ textTransform: 'uppercase', letterSpacing: '0.05em' }}>CRAFTING THE FUTURE, ONE SPACE AT A TIME.</span>
                 </div>
               </div>
@@ -786,7 +773,7 @@ export default function App() {
 
           {/* Bottom Bar */}
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} EVA ATELIER GROUP. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} EVA ATELIER. All Rights Reserved.</p>
             <p style={{ color: 'var(--primary-gold)', opacity: 0.85 }}>Architecture &bull; Construction &bull; Interiors &bull; Trichy, Tamil Nadu</p>
           </div>
         </div>

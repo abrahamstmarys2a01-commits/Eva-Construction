@@ -109,7 +109,7 @@ export default function Careers({ setShowCareersPage, scrollToSection }) {
 
     const fileSizeStr = resumeFile ? `${(resumeFile.size / (1024 * 1024) > 1 ? (resumeFile.size / (1024 * 1024)).toFixed(2) + ' MB' : (resumeFile.size / 1024).toFixed(1) + ' KB')}` : '';
 
-    const message = `*🌟 New Job Application - EVA ATELIER GROUP*
+    const message = `*🌟 New Job Application - EVA ATELIER*
 
 📌 *Applied Role:* ${selectedRole}
 ━━━━━━━━━━━━━━━━━━━━
@@ -173,7 +173,7 @@ ${formData.coverLetter || 'No cover message provided.'}
               <ArrowLeft size={16} /> Back to Home
             </button>
             <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              EVA ATELIER GROUP CAREERS
+              EVA ATELIER CAREERS
             </span>
           </div>
 
@@ -184,7 +184,7 @@ ${formData.coverLetter || 'No cover message provided.'}
             </div>
             
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 5.5vw, 3.8rem)', color: '#fff', lineHeight: '1.15', marginBottom: '1.5rem' }}>
-              Build Your Future With <span style={{ color: 'var(--primary-gold)' }}>EVA ATELIER GROUP</span>
+              Build Your Future With <span style={{ color: 'var(--primary-gold)' }}>EVA ATELIER</span>
             </h1>
             
             <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.7', maxWidth: '700px' }}>
@@ -310,7 +310,7 @@ ${formData.coverLetter || 'No cover message provided.'}
                 <CheckCircle2 size={52} style={{ color: 'var(--primary-gold)', margin: '0 auto 1.25rem' }} />
                 <h3 style={{ color: 'var(--primary-gold)', fontSize: '1.6rem', marginBottom: '0.75rem' }}>Application Ready for WhatsApp!</h3>
                 <p style={{ color: '#eaeaea', fontSize: '0.95rem', maxWidth: '600px', margin: '0 auto 1.5rem', lineHeight: '1.6' }}>
-                  Thank you for applying for the <strong>{selectedRole}</strong> position at EVA ATELIER GROUP.
+                  Thank you for applying for the <strong>{selectedRole}</strong> position at EVA ATELIER.
                 </p>
 
                 {/* PDF Sending Guidance Card */}
@@ -334,7 +334,7 @@ ${formData.coverLetter || 'No cover message provided.'}
                   <button 
                     onClick={() => {
                       const fileSizeStr = resumeFile ? `${(resumeFile.size / (1024 * 1024) > 1 ? (resumeFile.size / (1024 * 1024)).toFixed(2) + ' MB' : (resumeFile.size / 1024).toFixed(1) + ' KB')}` : '';
-                      const message = `*🌟 New Job Application - EVA ATELIER GROUP*\n\n📌 *Applied Role:* ${selectedRole}\n━━━━━━━━━━━━━━━━━━━━\n👤 *Full Name:* ${formData.fullName}\n📧 *Email:* ${formData.email}\n📞 *Phone:* ${formData.phone}\n📍 *Current Location:* ${formData.currentLocation}\n🎓 *Highest Qualification:* ${formData.highestQualification}\n⏳ *Years of Experience:* ${formData.yearsOfExperience}\n🏢 *Current Company:* ${formData.currentCompany || 'N/A'}\n💰 *Expected Salary:* ${formData.expectedSalary || 'N/A'}\n⏱️ *Notice Period:* ${formData.noticePeriod}\n🔗 *LinkedIn Profile:* ${formData.linkedIn || 'N/A'}\n\n📄 *Attached Resume:* ${resumeFile ? `${resumeFile.name} (${fileSizeStr})` : 'Will attach PDF directly in this chat'}\n📎 *Note:* Please find my attached Resume PDF document sent along with this message.\n\n📝 *Cover Letter / Candidate Message:*\n${formData.coverLetter || 'No cover message provided.'}\n━━━━━━━━━━━━━━━━━━━━`;
+                      const message = `*🌟 New Job Application - EVA ATELIER*\n\n📌 *Applied Role:* ${selectedRole}\n━━━━━━━━━━━━━━━━━━━━\n👤 *Full Name:* ${formData.fullName}\n📧 *Email:* ${formData.email}\n📞 *Phone:* ${formData.phone}\n📍 *Current Location:* ${formData.currentLocation}\n🎓 *Highest Qualification:* ${formData.highestQualification}\n⏳ *Years of Experience:* ${formData.yearsOfExperience}\n🏢 *Current Company:* ${formData.currentCompany || 'N/A'}\n💰 *Expected Salary:* ${formData.expectedSalary || 'N/A'}\n⏱️ *Notice Period:* ${formData.noticePeriod}\n🔗 *LinkedIn Profile:* ${formData.linkedIn || 'N/A'}\n\n📄 *Attached Resume:* ${resumeFile ? `${resumeFile.name} (${fileSizeStr})` : 'Will attach PDF directly in this chat'}\n📎 *Note:* Please find my attached Resume PDF document sent along with this message.\n\n📝 *Cover Letter / Candidate Message:*\n${formData.coverLetter || 'No cover message provided.'}\n━━━━━━━━━━━━━━━━━━━━`;
                       window.open(`https://wa.me/917397101215?text=${encodeURIComponent(message)}`, '_blank');
                     }}
                     style={{
@@ -649,7 +649,7 @@ ${formData.coverLetter || 'No cover message provided.'}
                     style={{ accentColor: 'var(--primary-gold)', width: '18px', height: '18px', cursor: 'pointer', marginTop: '2px', flexShrink: 0 }}
                   />
                   <label htmlFor="termsAgreement" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', cursor: 'pointer', lineHeight: '1.4' }}>
-                    I agree to the terms & privacy policy and authorize EVA ATELIER GROUP to contact me regarding my job application.
+                    I agree to the terms & privacy policy and authorize EVA ATELIER to contact me regarding my job application.
                   </label>
                 </div>
 
