@@ -307,49 +307,6 @@ export default function Home({
         </div>
       </section>
 
-      {/* Featured Projects Grid */}
-      <section className="featured-projects-home-section" style={{ background: '#050506', paddingTop: '2.5rem', paddingBottom: '4rem' }}>
-        <div className="container" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>
-          <div className="section-header-left" style={{ marginBottom: '2rem' }}>
-            <h2 style={{ fontSize: '1.5rem', color: 'var(--primary-gold)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>FEATURED PROJECTS</h2>
-          </div>
-
-          <div className="featured-projects-grid-full" style={{ marginBottom: '2.5rem' }}>
-            {projects.slice(0, 4).map((proj) => (
-              <div 
-                key={proj.id} 
-                className="project-card" 
-                onClick={() => openProjectDetails(proj)} 
-                style={{ 
-                  border: '1px solid var(--border-gold)', 
-                  padding: '0.25rem', 
-                  background: 'rgba(197, 168, 128, 0.05)', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  cursor: 'pointer' 
-                }}
-              >
-                <div style={{ overflow: 'hidden', height: '170px' }}>
-                  <img src={proj.image} alt={proj.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ padding: '0.85rem 0.6rem', background: '#050506', marginTop: '0.25rem', flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: '#fff', fontSize: '0.82rem', fontWeight: 600 }}>{proj.title}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <button 
-              className="btn-outline" 
-              onClick={() => scrollToSection('projects')} 
-              style={{ padding: '0.75rem 2.5rem', fontSize: '0.85rem', letterSpacing: '0.05em', fontWeight: 600 }}
-            >
-              VIEW ALL PROJECTS
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Banner: Ready to Build Your Dream Space */}
       <section style={{ 
