@@ -346,31 +346,30 @@ export default function App() {
     // ARCHITECTURE
     { id: 1, type: 'ARCHITECTURE', image: modernVillaChennai },
     { id: 2, type: 'ARCHITECTURE', image: luxuryMansionPoolVilla },
-    { id: 3, type: 'ARCHITECTURE', image: heroVillaImg },
-    { id: 4, type: 'ARCHITECTURE', image: galleryVilla1 },
-    { id: 5, type: 'ARCHITECTURE', image: corporateStudioTrichy },
-    { id: 6, type: 'ARCHITECTURE', image: galleryVilla5 },
+    { id: 3, type: 'ARCHITECTURE', image: galleryVilla1 },
+    { id: 4, type: 'ARCHITECTURE', image: corporateStudioTrichy },
+    { id: 5, type: 'ARCHITECTURE', image: galleryVilla5 },
     
     // CONSTRUCTION
-    { id: 7, type: 'CONSTRUCTION', image: traditionalHeritageClayVilla },
-    { id: 8, type: 'CONSTRUCTION', image: galleryVilla2 },
-    { id: 9, type: 'CONSTRUCTION', image: galleryVilla4 },
-    { id: 10, type: 'CONSTRUCTION', image: galleryVilla6 },
-    { id: 11, type: 'CONSTRUCTION', image: galleryVilla7 },
-    { id: 12, type: 'CONSTRUCTION', image: galleryVilla8 },
+    { id: 6, type: 'CONSTRUCTION', image: traditionalHeritageClayVilla },
+    { id: 7, type: 'CONSTRUCTION', image: galleryVilla2 },
+    { id: 8, type: 'CONSTRUCTION', image: galleryVilla4 },
+    { id: 9, type: 'CONSTRUCTION', image: galleryVilla6 },
+    { id: 10, type: 'CONSTRUCTION', image: galleryVilla7 },
+    { id: 11, type: 'CONSTRUCTION', image: galleryVilla8 },
 
     // INTERIORS
-    { id: 13, type: 'INTERIORS', image: interiorLivingRoom },
-    { id: 14, type: 'INTERIORS', image: interiorLuxuryLiving },
-    { id: 15, type: 'INTERIORS', image: interiorKitchen1 },
-    { id: 16, type: 'INTERIORS', image: interiorKitchen2 },
-    { id: 17, type: 'INTERIORS', image: interiorMasterBedroom },
-    { id: 18, type: 'INTERIORS', image: heritageLivingCourtyard },
+    { id: 12, type: 'INTERIORS', image: interiorLivingRoom },
+    { id: 13, type: 'INTERIORS', image: interiorLuxuryLiving },
+    { id: 14, type: 'INTERIORS', image: interiorKitchen1 },
+    { id: 15, type: 'INTERIORS', image: interiorKitchen2 },
+    { id: 16, type: 'INTERIORS', image: interiorMasterBedroom },
+    { id: 17, type: 'INTERIORS', image: heritageLivingCourtyard },
 
     // COMPLETED
-    { id: 19, type: 'COMPLETED', image: heritageMuralLiving },
-    { id: 20, type: 'COMPLETED', image: heritageDiningBar },
-    { id: 21, type: 'COMPLETED', image: heritageWardrobeCloset }
+    { id: 18, type: 'COMPLETED', image: heritageMuralLiving },
+    { id: 19, type: 'COMPLETED', image: heritageDiningBar },
+    { id: 20, type: 'COMPLETED', image: heritageWardrobeCloset }
   ];
 
   const handleContactSubmit = (e) => {
