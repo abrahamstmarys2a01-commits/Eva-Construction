@@ -184,18 +184,6 @@ export default function App() {
       features: ["Infinity Lap Pool", "Zen Koi Pond & Waterfalls", "Multi-Level Cantilever Terraces", "Double-Height Glass Atrium", "Smart Landscape Illuminations"]
     },
     {
-      id: 4,
-      title: "Royal Palms Luxury Villa - Madurai",
-      category: "VILLAS",
-      location: "Madurai, Tamil Nadu",
-      area: "8,600 sq.ft",
-      year: "2024",
-      status: "Completed",
-      image: heroVillaImg,
-      description: "An imposing luxury glass villa featuring multi-tier cantilever balconies, illuminated infinity pool deck, panoramic glazing, and lavish outdoor entertainment terraces.",
-      features: ["Infinity Lap Pool", "Multi-Tier Cantilever Balconies", "Double-Height Glass Foyer", "Outdoor Entertainment Deck", "Architectural Perimeter Lighting"]
-    },
-    {
       id: 5,
       title: "Traditional Heritage Clay Villa - Thanjavur",
       category: "VILLAS",
