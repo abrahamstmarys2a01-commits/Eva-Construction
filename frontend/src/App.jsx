@@ -156,6 +156,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: modernVillaChennai,
+      thumbnails: [interiorLivingRoom, interiorLuxuryLiving, interiorKitchen1, interiorMasterBedroom],
       description: "This modern luxury villa is a perfect blend of tropical contemporary architecture and functional elegance. Features covered dual-car portico with stone pillars, private cantilevered balconies, lush perimeter landscape lighting, and refined interior spatial flow.",
       features: ["Grand Car Portico with Stone Pillars", "Balcony Planters & Pergola", "Architectural Landscape Lighting", "Premium Imported Finishes", "Smart Home Automation"]
     },
@@ -168,6 +169,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: galleryVilla1,
+      thumbnails: [interiorLuxuryLiving, interiorLivingRoom, interiorKitchen2, interiorMasterBedroom],
       description: "A stunning seaside modern residence boasting minimalist cantilevered geometry, full-height floor-to-ceiling performance glass walls, and open-plan hosting decks that bathe the interior in natural ambient light.",
       features: ["Full-Height Glass Facade", "Cantilevered Shading Slabs", "Open-Plan Living Lounge", "Italian Marble Flooring", "Smart Lighting Controls"]
     },
@@ -180,6 +182,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: luxuryMansionPoolVilla,
+      thumbnails: [interiorLivingRoom, interiorLuxuryLiving, interiorMasterBedroom, interiorKitchen1],
       description: "An ultra-luxurious multi-level architectural masterpiece boasting an infinity pool, Japanese-style zen koi pond fountain, floor-to-ceiling panoramic glass facade, and illuminated grand driveway entrance.",
       features: ["Infinity Lap Pool", "Zen Koi Pond & Waterfalls", "Multi-Level Cantilever Terraces", "Double-Height Glass Atrium", "Smart Landscape Illuminations"]
     },
@@ -192,6 +195,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: traditionalHeritageClayVilla,
+      thumbnails: [heritageLivingCourtyard, heritageMuralLiving, heritageDiningBar, heritageWardrobeCloset],
       description: "A breathtaking tribute to Dravidian and coastal vernacular architecture, featuring natural clay tile sloping roofs, exposed terracotta detailing, teakwood pillared porches, and tranquil central water features.",
       features: ["Clay Tile Sloping Roofs", "Pillared Verandah & Courtyard", "Natural Terracotta Craftsmanship", "Brass Landscape Elements", "High-Thermal Insulation"]
     },
@@ -204,6 +208,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: corporateStudioTrichy,
+      thumbnails: [interiorLuxuryLiving, interiorLivingRoom, heritageDiningBar, interiorKitchen2],
       description: "A signature commercial architectural design studio showcasing monumental cantilevered stone volumes, illuminated glass conference pods, and sustainable energy-efficient ventilation systems.",
       features: ["Monumental Stone Facade", "Glass Conference Pods", "Solar Passive Architecture", "High-Speed EV Chargers", "Rooftop Executive Lounge"]
     },
@@ -216,6 +221,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: galleryVilla2,
+      thumbnails: [interiorLivingRoom, interiorKitchen1, interiorMasterBedroom, interiorLuxuryLiving],
       description: "An elegant contemporary residential design defined by clean horizontal planes, textured white limestone stucco, integrated balcony planter boxes, and warm concealed LED soffit lighting.",
       features: ["Clean Horizontal Lines", "Balcony Planter Boxes", "Concealed LED Soffits", "Multi-Vehicle Covered Parking", "Custom Metal Pergola"]
     },
@@ -228,6 +234,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: galleryVilla4,
+      thumbnails: [interiorLuxuryLiving, interiorLivingRoom, interiorKitchen2, interiorMasterBedroom],
       description: "A refined urban home designed around an internal green courtyard, combining modern vertical wood louvers, expansive glass sliding systems, and private landscaped garden terraces.",
       features: ["Internal Green Courtyard", "Vertical Wooden Louvers", "Glass Sliding System", "Private Garden Terraces", "Acoustic Insulation"]
     },
@@ -240,6 +247,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: galleryVilla5,
+      thumbnails: [interiorLuxuryLiving, interiorLivingRoom, heritageDiningBar, interiorKitchen1],
       description: "A contemporary multi-level commercial complex showcasing deep teal textured masonry, perimeter architectural illumination, and automated secure vehicle parking.",
       features: ["Multi-Level Commercial Facade", "Perimeter Architectural Lighting", "Textured Masonry Panels", "Secure Access Control", "Executive Conference Suites"]
     },
@@ -252,6 +260,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: galleryVilla6,
+      thumbnails: [interiorLivingRoom, interiorLuxuryLiving, interiorKitchen1, interiorMasterBedroom],
       description: "Striking 2-story contemporary villa featuring exposed brick patterns, cantilevered slabs, integrated balcony planter boxes, and warm architectural landscape lighting.",
       features: ["Exposed Brick Architecture", "Cantilevered Balconies", "Landscape Lighting", "Italian Marble Flooring", "Smart Home Automation"]
     },
@@ -264,6 +273,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: galleryVilla7,
+      thumbnails: [interiorLuxuryLiving, interiorLivingRoom, interiorKitchen2, interiorMasterBedroom],
       description: "Modern 3-story vertical residence showcasing dynamic wooden wall louvers, exposed brick pillars, textured stone masonry, and a signature circular architectural cutout.",
       features: ["Geometric Cutout Feature", "Vertical Wooden Louvers", "Private Terrace Garden", "Double Glazed Windows", "High-End Security Gate"]
     },
@@ -276,6 +286,7 @@ export default function App() {
       year: "2023",
       status: "Completed",
       image: galleryVilla8,
+      thumbnails: [interiorLivingRoom, interiorKitchen1, interiorMasterBedroom, interiorLuxuryLiving],
       description: "Sophisticated single-story minimalist villa blending earthy terracotta tones, dark wood accents, recessed soffit lighting, and welcoming symmetrical entryway architecture.",
       features: ["Minimalist Single Story", "Terracotta Facade Accent", "Lush Entryway Planters", "Integrated Soffit Lights", "Spacious Portico Deck"]
     },
@@ -288,6 +299,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: interiorLivingRoom,
+      thumbnails: [interiorLivingRoom, interiorLuxuryLiving, interiorKitchen1, interiorMasterBedroom],
       description: "A breathtaking turnkey interior transformation featuring an open double-height luxury living hall with a sculptural curved staircase and ring chandelier, warm cove lighting, and Italian marble finishes.",
       features: ["Double-Height Living Lounge", "Sculptural Curved Staircase", "Italian Marble Flooring", "Designer Ambient Chandelier", "Bespoke Wall Panelling"]
     },
@@ -300,6 +312,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: interiorKitchen1,
+      thumbnails: [interiorKitchen1, interiorKitchen2, interiorLivingRoom, interiorMasterBedroom],
       description: "State-of-the-art modular kitchen execution with sleek integrated appliances, floral patterned backsplash, glossy sage green cabinetry, and quartz countertops.",
       features: ["Sage Green Modular Cabinets", "Quartz Countertops", "Integrated Smart Appliances", "Soft-Close Hardware", "Under-Cabinet LED Lighting"]
     },
@@ -312,6 +325,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: heritageLivingCourtyard,
+      thumbnails: [heritageLivingCourtyard, heritageMuralLiving, heritageDiningBar, heritageWardrobeCloset],
       description: "A masterful fusion of traditional South Indian Chettinad architecture and modern luxury living. Showcasing a central skylit courtyard with brass-chain teak oonjal (swing), terracotta jali lattice dividers, and traditional craftsmanship.",
       features: ["Central Courtyard with Teak Oonjal", "Terracotta Jali Lattice Screens", "Brass Accent Hardware", "Natural Stone Inlays", "Skylit Ventilation Roof"]
     },
@@ -324,6 +338,7 @@ export default function App() {
       year: "2024",
       status: "Completed",
       image: heritageMuralLiving,
+      thumbnails: [heritageMuralLiving, heritageLivingCourtyard, heritageDiningBar, heritageWardrobeCloset],
       description: "Exquisite interior suite showcasing hand-painted devotional heritage wall art, custom teak accents, recessed brass accent luminaires, and warm timber ceiling woodwork.",
       features: ["Hand-Painted Wall Art Mural", "Custom Teak Woodwork", "Brass Accent Fixtures", "Recessed Cove Lighting", "South Indian Heritage Details"]
     }
