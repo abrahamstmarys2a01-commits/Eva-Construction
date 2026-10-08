@@ -2,14 +2,16 @@ import React from 'react';
 import { Check, ArrowLeft, Image as ImageIcon } from 'lucide-react';
 
 import defaultLiving from '../assets/interior_living_room.jpg';
-import defaultKitchen from '../assets/interior_kitchen_1.jpg';
-import defaultBedroom from '../assets/interior_master_bedroom.jpg';
 import defaultLuxuryLiving from '../assets/interior_luxury_living.jpg';
+import defaultLivingClassic from '../assets/interior_living_classic.jpg';
+import defaultKitchen from '../assets/interior_kitchen_1.jpg';
+import defaultKitchenIsland from '../assets/interior_kitchen_island.jpg';
+import defaultBedroom from '../assets/interior_master_bedroom.jpg';
 
 export default function ProjectDetail({ selectedProject, setSelectedProject, closeProjectDetails, activeProjectThumbIndex, setActiveProjectThumbIndex }) {
   const displayThumbnails = (selectedProject?.thumbnails && selectedProject.thumbnails.length > 0)
     ? selectedProject.thumbnails
-    : [defaultLiving, defaultKitchen, defaultBedroom, defaultLuxuryLiving];
+    : [defaultLiving, defaultLuxuryLiving, defaultLivingClassic, defaultKitchen, defaultKitchenIsland, defaultBedroom];
 
   const currentMainImage = activeProjectThumbIndex !== null && displayThumbnails[activeProjectThumbIndex]
     ? displayThumbnails[activeProjectThumbIndex]
@@ -93,7 +95,7 @@ export default function ProjectDetail({ selectedProject, setSelectedProject, clo
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                 <span style={{ color: 'var(--primary-gold)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <ImageIcon size={14} /> Interior Views ({displayThumbnails.slice(0, 4).length})
+                  <ImageIcon size={14} /> Interior Views ({displayThumbnails.length})
                 </span>
                 {activeProjectThumbIndex !== null && (
                   <button 
@@ -105,8 +107,12 @@ export default function ProjectDetail({ selectedProject, setSelectedProject, clo
                 )}
               </div>
 
-              {/* 4 Small Interior Images */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.75rem' }}>
+              {/* Small Interior Images Thumbnails Grid (4 Photos) */}
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(4, 1fr)', 
+                gap: '0.75rem' 
+              }}>
                 {displayThumbnails.slice(0, 4).map((thumb, index) => (
                   <div 
                     key={index} 
